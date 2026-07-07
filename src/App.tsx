@@ -11,6 +11,7 @@ import { normalizeText } from './lib/normalize'
 import { clearProgress, loadProgress, saveProgress } from './lib/storage'
 import { QuestionCard } from './components/QuestionCard'
 import { ResultPanel } from './components/ResultPanel'
+import { en } from './i18n/en'
 
 type LearnMode = 'exam' | 'practice' | 'mistakes'
 
@@ -181,7 +182,7 @@ export default function App() {
       })
       .catch((err: unknown) => {
         if (!isActive) return
-        setError(err instanceof Error ? err.message : 'Không đọc được dữ liệu câu hỏi')
+        setError(err instanceof Error ? err.message : en.app.loadDataError)
         setLoading(false)
       })
 
@@ -389,30 +390,29 @@ export default function App() {
   }
 
   function getModeLabel(label: LearnMode): string {
-    if (label === 'exam') return 'Làm bài kiểm tra'
-    if (label === 'practice') return 'Ôn tập nhanh'
-    return 'Ôn câu sai'
+    if (label === 'exam') return en.app.modeLabel.exam
+    if (label === 'practice') return en.app.modeLabel.practice
+    return en.app.modeLabel.mistakes
   }
 
   function getModeHint() {
     if (mode === 'exam') {
-      return canSubmit ? 'Bạn đã trả lời đủ câu. Nhấn nộp để chấm.'
-      : 'Vui lòng trả lời đủ tất cả câu để nộp bài.'
+      return canSubmit ? en.app.modeHint.examReady : en.app.modeHint.examIncomplete
     }
     if (mode === 'practice') {
-      return 'Câu trắc nghiệm/chọn nối chấm ngay. Câu điền text cần bấm “Kiểm tra” mới chấm.'
+      return en.app.modeHint.practice
     }
     return wrongQuestionIds.length === 0
-      ? 'Không còn câu sai để ôn lại.'
-      : 'Chỉ hiển thị các câu đã trả lời sai trước đó. Trả lời đúng sẽ tự động xoá khỏi danh sách.'
+      ? en.app.modeHint.mistakesEmpty
+      : en.app.modeHint.mistakes
   }
 
   if (loading) {
     return (
       <main className="app">
         <section className="status-card card">
-          <h1>Đang tải bài ôn</h1>
-          <p>Đang tải dữ liệu từ {selectedChapter}.json...</p>
+          <h1>{en.app.loadingTitle}</h1>
+          <p>{en.app.loadingDescription(selectedChapter)}</p>
         </section>
       </main>
     )
@@ -422,7 +422,7 @@ export default function App() {
     return (
       <main className="app">
         <section className="status-card card">
-          <h1>Lỗi</h1>
+          <h1>{en.app.errorTitle}</h1>
           <p>{error}</p>
         </section>
       </main>
@@ -432,22 +432,22 @@ export default function App() {
   const lockInput = mode === 'exam' && isSubmitted
   const activeSubmitText = mode === 'exam'
     ? isSubmitted
-      ? 'Đã nộp'
-      : `Nộp bài ${answeredCount}/${currentQuestionCount}`
-    : 'Đang ôn tập'
+      ? en.app.status.submit.submitted
+      : `${en.app.status.submit.submitLabel} ${answeredCount}/${currentQuestionCount}`
+    : en.app.status.submit.practiceModeLabel
 
   return (
     <main className="app">
       <header className="topbar card">
         <div className="topbar-main">
           <div>
-            <p className="eyebrow">ÔN LUYỆN CHƯƠNG</p>
+            <p className="eyebrow">{en.app.eyebrow}</p>
             <h1>{questions[0]?.chapter || `${toDisplayChapter(selectedChapter)}`}</h1>
             <p className="subtitle">{getModeLabel(mode)}</p>
           </div>
           <div className="chapter-switch">
             <label htmlFor="chapter-select" className="chapter-switch-label">
-              Chọn chương
+              {en.app.chapterSelectLabel}
             </label>
             <select
               id="chapter-select"
@@ -464,22 +464,22 @@ export default function App() {
           </div>
           <div className="mode-stats">
             <div className="mode-stat">
-              <span>Tiến độ</span>
+              <span>{en.app.status.stats.progress}</span>
               <strong>{answeredCount}/{currentQuestionCount}</strong>
             </div>
             <div className="mode-stat">
-              <span>Thời gian</span>
+              <span>{en.app.status.stats.time}</span>
               <strong>{formatTime(elapsedSeconds)}</strong>
             </div>
             {mode === 'exam' && isSubmitted ? (
               <div className="mode-stat">
-                <span>Điểm</span>
+                <span>{en.app.status.stats.score}</span>
                 <strong>{score}/{currentQuestionCount}</strong>
               </div>
             ) : null}
             {mode !== 'exam' ? (
               <div className="mode-stat">
-                <span>Đúng</span>
+                <span>{en.app.status.stats.correct}</span>
                 <strong>
                   {correctCount}/{currentQuestionCount} ({accuracyPercent}%)
                 </strong>
@@ -494,27 +494,31 @@ export default function App() {
             className={mode === 'exam' ? 'mode-btn active' : 'mode-btn'}
             onClick={() => handleModeChange('exam')}
           >
-            Làm bài
+            {en.app.modeLabel.exam}
           </button>
           <button
             type="button"
             className={mode === 'practice' ? 'mode-btn active' : 'mode-btn'}
             onClick={() => handleModeChange('practice')}
           >
-            Ôn tập
+            {en.app.modeLabel.practice}
           </button>
           <button
             type="button"
             className={mode === 'mistakes' ? 'mode-btn active' : 'mode-btn'}
             onClick={() => handleModeChange('mistakes')}
           >
-            Câu sai
+            {en.app.modeLabel.mistakes}
           </button>
         </div>
 
         <div className="progress-wrap">
           <div className="progress-meta">
-            <span>{mode === 'exam' ? 'Hành trình làm bài' : 'Tiến độ ôn tập'}</span>
+            <span>
+              {mode === 'exam'
+                ? en.app.status.progressMetaExam
+                : en.app.status.progressMetaPractice}
+            </span>
             <strong>{progressPercent}%</strong>
           </div>
           <div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progressPercent}>
@@ -531,8 +535,8 @@ export default function App() {
         <section className="question-list-card card">
         {mode === 'mistakes' && wrongQuestionIds.length === 0 ? (
           <section className="status-card">
-            <h2>Không có câu sai</h2>
-            <p>Bạn chưa có câu sai đang chờ ôn lại. Chuyển sang chế độ Ôn tập hoặc làm bài để tạo dữ liệu.</p>
+            <h2>{en.app.status.emptyWrongTitle}</h2>
+            <p>{en.app.status.emptyWrongBody}</p>
           </section>
         ) : (
           <>
@@ -585,10 +589,10 @@ export default function App() {
 
         <div className="extra-actions">
           <button type="button" className="ghost-btn" onClick={handleResetAnswers}>
-            Xoá đáp án đã làm
+            {en.app.status.buttons.clearAnswers}
           </button>
           <button type="button" className="ghost-btn" onClick={handleClearWrongHistory}>
-            Xoá lịch sử câu sai
+            {en.app.status.buttons.clearWrongHistory}
           </button>
         </div>
       </section>
