@@ -173,10 +173,6 @@ export default function App() {
   const prevChapterRef = useRef<ChapterId>(selectedChapter)
 
   useEffect(() => {
-    if (mode === 'mixed_review') {
-      return
-    }
-
     const shouldLoad =
       prevModeRef.current === null ||
       prevModeRef.current === 'mixed_review' ||
@@ -184,6 +180,10 @@ export default function App() {
 
     prevChapterRef.current = selectedChapter
     prevModeRef.current = mode
+
+    if (mode === 'mixed_review') {
+      return
+    }
 
     if (!shouldLoad) {
       return
