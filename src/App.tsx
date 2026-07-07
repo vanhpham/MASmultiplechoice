@@ -186,6 +186,7 @@ export default function App() {
     }
 
     if (!shouldLoad) {
+      setLoading(false)
       return
     }
 
@@ -455,10 +456,20 @@ export default function App() {
 
   const canSubmit = useMemo(() => {
     if (mode !== 'mixed_review') {
+      if (mode === 'exam') {
+        for (const question of visibleQuestions) {
+          if (question.type === 'text_answer' && !textSubmittedSet.has(question.id)) {
+            return false
+          }
+        }
+      }
       return visibleQuestions.length > 0 && answeredCount === visibleQuestions.length
     }
     const current = currentQuestionId ? questionMap.get(currentQuestionId) : null
     if (!current) {
+      return false
+    }
+    if (doneQuestionIds.includes(current.id)) {
       return false
     }
     if (!hasAnswered(current, answers[current.id])) {
@@ -468,7 +479,7 @@ export default function App() {
       return false
     }
     return true
-  }, [visibleQuestions.length, answeredCount, mode, currentQuestionId, questionMap, answers, textSubmittedSet])
+  }, [visibleQuestions.length, answeredCount, mode, currentQuestionId, questionMap, answers, textSubmittedSet, doneQuestionIds])
 
   const currentQuestionCount = mode === 'mixed_review' ? allQuestions.length : visibleQuestions.length
 
@@ -517,14 +528,20 @@ export default function App() {
   }, [answers, isSubmitted, score, startedAt, mode, wrongQuestionIds, textSubmittedQuestionIds, isReadyToSave, questions.length, selectedChapter, allQuestions.length, reviewQueue, currentQuestionId, attempts, doneQuestionIds, reviewFinalCorrect])
 
   function handleSingleChoice(questionId: string, value: string) {
-    if ((mode === 'exam' && isSubmitted) || (mode === 'mixed_review' && !currentQuestionId)) {
+    if (
+      (mode === 'exam' && isSubmitted) ||
+      (mode === 'mixed_review' && (!currentQuestionId || doneQuestionIds.includes(questionId)))
+    ) {
       return
     }
     setAnswers((prev) => ({ ...prev, [questionId]: value }))
   }
 
   function handleTextAnswer(questionId: string, value: string) {
-    if ((mode === 'exam' && isSubmitted) || (mode === 'mixed_review' && !currentQuestionId)) {
+    if (
+      (mode === 'exam' && isSubmitted) ||
+      (mode === 'mixed_review' && (!currentQuestionId || doneQuestionIds.includes(questionId)))
+    ) {
       return
     }
     setTextSubmittedQuestionIds((prev) => prev.filter((id) => id !== questionId))
@@ -532,7 +549,10 @@ export default function App() {
   }
 
   function handleMatchingAnswer(questionId: string, number: string, value: string) {
-    if ((mode === 'exam' && isSubmitted) || (mode === 'mixed_review' && !currentQuestionId)) {
+    if (
+      (mode === 'exam' && isSubmitted) ||
+      (mode === 'mixed_review' && (!currentQuestionId || doneQuestionIds.includes(questionId)))
+    ) {
       return
     }
     setAnswers((prev) => {
@@ -572,6 +592,17 @@ export default function App() {
   function handleSubmit() {
     if (isSubmitted && mode === 'exam') return
     if (mode === 'exam') {
+      const answeredTextIds = questions
+        .filter(
+          (question) => question.type === 'text_answer' && hasAnswered(question, answers[question.id])
+        )
+        .map((question) => question.id)
+      setTextSubmittedQuestionIds((prev) => {
+        const merged = new Set(prev)
+        answeredTextIds.forEach((id) => merged.add(id))
+        return Array.from(merged)
+      })
+
       const finalWrong = reconcileWrongQuestionIds(
         wrongQuestionIds,
         questions,
@@ -617,11 +648,20 @@ export default function App() {
         const randomIndex = Math.floor(Math.random() * (nextQueue.length + 1))
         nextQueue.splice(randomIndex, 0, currentQuestionId)
       }
+      return nextQueue
+    })
+  }
 
-      const { nextQuestionId, nextQueue: afterPopQueue } = getNextQuestionIdFromQueue(nextQueue)
+  function handleReviewNext() {
+    if (!currentQuestionId) {
+      return
+    }
+
+    setTextSubmittedQuestionIds((prev) => prev.filter((id) => id !== currentQuestionId))
+    setReviewQueue((prevQueue) => {
+      const { nextQuestionId, nextQueue } = getNextQuestionIdFromQueue(prevQueue)
       setCurrentQuestionId(nextQuestionId)
-      setTextSubmittedQuestionIds((prev) => prev.filter((id) => id !== currentQuestionId))
-      return afterPopQueue
+      return nextQueue
     })
   }
 
@@ -730,7 +770,9 @@ export default function App() {
   }
 
   const isMixedReviewComplete = mode === 'mixed_review' && !reviewQueue.length && !currentQuestionId
-  const lockInput = (mode === 'exam' && isSubmitted) || isMixedReviewComplete
+  const isMixedReviewCurrentDone =
+    mode === 'mixed_review' && currentQuestionId !== null && doneQuestionIds.includes(currentQuestionId)
+  const lockInput = (mode === 'exam' && isSubmitted) || isMixedReviewComplete || isMixedReviewCurrentDone
   const activeSubmitText = mode === 'exam'
     ? isSubmitted
       ? en.app.status.submit.submitted
@@ -871,7 +913,7 @@ export default function App() {
                   answer={answers[question.id] || ''}
                   showResult={
                     mode === 'exam'
-                      ? isSubmitted
+                      ? isSubmitted || (question.type === 'text_answer' && textSubmittedSet.has(question.id))
                       : mode === 'mixed_review'
                         ? doneQuestionIds.includes(question.id)
                         : question.type === 'text_answer'
@@ -882,7 +924,7 @@ export default function App() {
                   onSingleChoice={handleSingleChoice}
                   onTextAnswer={handleTextAnswer}
                   onMatching={handleMatchingAnswer}
-                  onTextSubmit={mode === 'exam' ? undefined : handleTextSubmit}
+                  onTextSubmit={handleTextSubmit}
                   result={getResultForQuestion(question.id)}
                 />
               ))}
@@ -890,14 +932,25 @@ export default function App() {
 
             {mode === 'exam' || mode === 'mixed_review' ? (
               <div className="submit-row">
-                <button
-                  type="button"
-                  className="submit-btn"
-                  onClick={handleSubmit}
-                  disabled={!canSubmit || isSubmitted}
-                >
-                  {activeSubmitText}
-                </button>
+                {mode === 'exam' ? (
+                  <button
+                    type="button"
+                    className="submit-btn"
+                    onClick={handleSubmit}
+                    disabled={!canSubmit || isSubmitted}
+                  >
+                    {activeSubmitText}
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="submit-btn"
+                    onClick={isMixedReviewCurrentDone ? handleReviewNext : handleSubmit}
+                    disabled={isMixedReviewCurrentDone ? !currentQuestionId : !canSubmit}
+                  >
+                    {isMixedReviewCurrentDone ? en.app.status.submit.nextQuestion : en.app.status.submit.mixedReviewSubmit}
+                  </button>
+                )}
               </div>
             ) : null}
           </>

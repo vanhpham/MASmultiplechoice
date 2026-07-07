@@ -16,32 +16,32 @@
         ],
         "answer": [
             {
-                "component": "Clutch cover",
-                "number": "2"
+                "number": "Clutch cover",
+                "component": "2"
             },
             {
-                "component": "Friction disc",
-                "number": "4"
+                "number": "Friction disc",
+                "component": "4"
             },
             {
-                "component": "Release bearing",
-                "number": "9"
+                "number": "Release bearing",
+                "component": "9"
             },
             {
-                "component": "Release fork",
-                "number": "12"
+                "number": "Release fork",
+                "component": "12"
             },
             {
-                "component": "Release lever (diaphragm spring)",
-                "number": "11"
+                "number": "Release lever (diaphragm spring)",
+                "component": "11"
             },
             {
-                "component": "Pressure plate",
-                "number": "3"
+                "number": "Pressure plate",
+                "component": "3"
             },
             {
-                "component": "Transmission input shaft",
-                "number": "6"
+                "number": "Transmission input shaft",
+                "component": "6"
             }
         ],
         "manual_image_needed": true,

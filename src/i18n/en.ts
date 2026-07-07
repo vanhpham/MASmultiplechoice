@@ -41,7 +41,8 @@ export const en = {
         submitted: 'Submitted',
         submitLabel: 'Submit',
         practiceModeLabel: 'Practicing',
-        mixedReviewSubmit: 'Submit answer'
+        mixedReviewSubmit: 'Submit answer',
+        nextQuestion: 'Next question'
       },
       buttons: {
         clearAnswers: 'Clear answers',
