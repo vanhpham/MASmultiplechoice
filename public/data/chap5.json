@@ -1,0 +1,162 @@
+[
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 37,
+        "question_number": "1",
+        "question": "Talking about propeller shaft, which of the following sentence is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The propeller shaft is constructed to produce relative rotation and relative translation (sliding).",
+            "The instantaneous angular velocities of two shafts on the same joint are different, but the instantaneous angular velocities at the two ends of the propeller shaft are the same.",
+            "On the shafts, there are dynamic balancing pads welded.",
+            "The type of propeller shaft with two halves connected by a slip joint does not need alignment marks because it is balanced."
+        ],
+        "answer": "The type of propeller shaft with two halves connected by a slip joint does not need alignment marks because it is balanced.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Có trong cả PDF gốc và file Chapter 5 Postest."
+    },
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 37,
+        "question_number": "2",
+        "question": "Talking about propeller shaft, which of the following sentence is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The propeller shaft is constructed to produce relative rotation and relative translation (sliding).",
+            "Cardan universal joint use spider (cross shaft) and needle bearings.",
+            "On the shafts, there are dynamic balancing pads welded.",
+            "The type of propeller shaft with two halves connected by a slip joint does not need alignment marks because it is balanced."
+        ],
+        "answer": "The type of propeller shaft with two halves connected by a slip joint does not need alignment marks because it is balanced.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. File Postest xác nhận cùng nội dung với PDF gốc."
+    },
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 37,
+        "question_number": "3",
+        "question": "Regarding constant velocity joint, which of the following statements is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "To obtain constant velocity joint, the plane of force transfer between the two shaft ends of the joint must be the bisector of the angle formed by the centerlines of the two shafts.",
+            "Constant velocity joint should be specially lubricated with heat-resistant grease.",
+            "Constant velocity joints are wrapped in special rubber, heat resistant, good grease resistance.",
+            "Joints named Tripot are constant velocity joints."
+        ],
+        "answer": "Joints named Tripot are constant velocity joints.",
+        "manual_image_needed": false,
+        "note": "Trong PDF gốc câu này được tick đúng ở option 'Joints named Tripot are constant velocity joints.' File Postest mới ghi câu 3 bị Incorrect 0/1 Points, nhưng không hiển thị đáp án đúng trong parsed text, nên mình giữ đáp án theo PDF gốc. Nên review lại nếu giảng viên sửa đáp án."
+    },
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 38,
+        "question_number": "4",
+        "question": "Regarding constant velocity joint, which of the following statements is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "To obtain constant velocity joint, the plane of force transfer between the two shaft ends of the joint must be the bisector of the angle formed by the centerlines of the two shafts.",
+            "Constant velocity joint should be specially lubricated with heat-resistant grease.",
+            "There is a synchronizer in constant velocity joint to equalize the two shaft speed.",
+            "Joints named Bendix-Weise, Bendix-Tracta are constant velocity joints."
+        ],
+        "answer": "There is a synchronizer in constant velocity joint to equalize the two shaft speed.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 38,
+        "question_number": "5",
+        "question": "Regarding the functions of the propeller shaft and drive shaft, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "These shafts are often used to transmit torque between two assemblies on the same housing (or frame).",
+            "These shafts transmit the torque between two assemblies with rotation relative to each other.",
+            "These shafts transmit the torque between the two assemblies with a large transmission angle.",
+            "These shafts transmit the torque between two assemblies with sliding motion relative to each other."
+        ],
+        "answer": "These shafts are often used to transmit torque between two assemblies on the same housing (or frame).",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 38,
+        "question_number": "6",
+        "question": "Regarding the Cardan universal joint, which of the following statements is correct?",
+        "type": "single_choice",
+        "options": [
+            "It is a torque transmission joint with different velocities of the two shafts of the same joint.",
+            "It is a torque transmission joint with different angular velocities of the two shafts of the same joint.",
+            "It is a torque transmission joints with different instantaneous angular velocities of the two shafts of the same joint.",
+            "Usually used on FF vehicles."
+        ],
+        "answer": "It is a torque transmission joints with different instantaneous angular velocities of the two shafts of the same joint.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 39,
+        "question_number": "7",
+        "question": "Regarding the Cardan universal joint, which of the following statements is correct?",
+        "type": "single_choice",
+        "options": [
+            "It is a torque transmission joint with the same velocities of the two shafts of the same joint.",
+            "It is a torque transmission joint with the same angular velocities of the two shafts of the same joint.",
+            "It is a torque transmission joints with the same instantaneous angular velocities of the two shafts of the same joint.",
+            "Usually used on FR vehicles."
+        ],
+        "answer": "Usually used on FR vehicles.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 39,
+        "question_number": "8",
+        "question": "Regarding the hole for the needle bearing on the yokes of the Cardan universal joint, which of the following statements is correct?",
+        "type": "single_choice",
+        "options": [
+            "The main purpose of large hole machining on yokes is to install needle ball bearings.",
+            "The main purpose of large hole machining on yokes is to assembly the cross shaft.",
+            "The main purpose of large hole machining on yokes is for installation snap ring easyly.",
+            "The main purpose of large hole machining on yokes is to lighten the yokes."
+        ],
+        "answer": "The main purpose of large hole machining on yokes is to assembly the cross shaft.",
+        "manual_image_needed": true,
+        "note": "Câu có hình Cardan universal joint trong PDF gốc, nên nên tạo ảnh thủ công để ôn dễ hơn. File Postest mới có cùng nội dung nhưng không kèm hình rõ trong parsed text."
+    },
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 40,
+        "question_number": "9",
+        "question": "Regarding the spider in the tripod constant velocity joint, which of the following statements is correct?",
+        "type": "single_choice",
+        "options": [
+            "The spider is threaded for fixation with driving yoke.",
+            "The spider is splined inside so that it can be slide relatively with driving yoke in operation.",
+            "The spider has construction that can be removed from the driving yoke so that when necessary, the rubber covering over the joints can be replaced.",
+            "The balls are fixed on the spider."
+        ],
+        "answer": "The spider has construction that can be removed from the driving yoke so that when necessary, the rubber covering over the joints can be replaced.",
+        "manual_image_needed": true,
+        "note": "Câu có hình tripod constant velocity joint trong PDF gốc. File Postest mới xác nhận đây là câu 9 của Chapter 5, nên mình bổ sung vào Chapter 5 thay vì để lẫn sang Chapter 6."
+    },
+    {
+        "chapter": "Chapter 5: Propeller shaft, drive shaft, universal joint",
+        "source_page": 40,
+        "question_number": "10",
+        "question": "Regarding the boot (rubber) covering outside the constant velocity joints, which of the following statements is correct?",
+        "type": "single_choice",
+        "options": [
+            "The boot only has the role of blocking dust and dirt under the vehicle to protect joints.",
+            "The boot only has the role of preventing water from entering the joints.",
+            "The boot only has the role of keeping the amount of grease inside.",
+            "The boot has all the above roles and also has to work in the conditions of bending, torsion, and heat, so it requires to be made from good rubber material."
+        ],
+        "answer": "The boot has all the above roles and also has to work in the conditions of bending, torsion, and heat, so it requires to be made from good rubber material.",
+        "manual_image_needed": false,
+        "note": "File Postest mới xác nhận đây là câu 10 của Chapter 5. Câu text-only xử lý được."
+    }
+]

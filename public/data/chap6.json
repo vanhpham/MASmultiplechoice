@@ -1,0 +1,358 @@
+[
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 41,
+        "question_number": "1",
+        "question": "Which of the following selections is the final gear in the figure?",
+        "type": "single_choice",
+        "options": [
+            "Single reduction bevel gear type final gear",
+            "Single reduction spur (cylindrical) gear type final gear",
+            "Double reduction center type final gear",
+            "Double reduction side type final gear"
+        ],
+        "answer": "Single reduction bevel gear type final gear",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình final gear. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 42,
+        "question_number": "2",
+        "question": "Which of the following selections is the final gear in the figure?",
+        "type": "single_choice",
+        "options": [
+            "Single reduction bevel gear type final gear",
+            "Single reduction spur gear type final gear",
+            "Double reduction center type final gear",
+            "Double reduction side type final gear"
+        ],
+        "answer": "Single reduction spur gear type final gear",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình final gear. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 42,
+        "question_number": "3",
+        "question": "Which of the following selections is the final gear in the figure?",
+        "type": "single_choice",
+        "options": [
+            "Single reduction bevel gear type final gear",
+            "Single reduction spur gear type final gear",
+            "Double reduction center type final gear",
+            "Double reduction side type final gear"
+        ],
+        "answer": "Double reduction center type final gear",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình final gear. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 43,
+        "question_number": "4",
+        "question": "Which of the following selections is the final gear in the figure?",
+        "type": "single_choice",
+        "options": [
+            "Single reduction bevel gear type final gear",
+            "Single reduction spur gear type final gear",
+            "Double reduction center type final gear",
+            "Double reduction side type final gear"
+        ],
+        "answer": "Double reduction side type final gear",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình final gear. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 43,
+        "question_number": "5",
+        "question": "Where is the hypoid gear in the following figures?",
+        "type": "single_choice",
+        "options": [
+            "Figure a",
+            "Figure b",
+            "Figure c",
+            "No figures at all."
+        ],
+        "answer": "Figure b",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình so sánh các loại bánh răng. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 44,
+        "question_number": "6",
+        "question": "Regarding the advantages of the hypoid gear, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "Has a higher gear ratio and contact ratio than a spiral bevel gear of the same size.",
+            "Minimize noise level at high speed.",
+            "Can help lower the vehicle's center of gravity while keeping the ground clearance.",
+            "Low cost."
+        ],
+        "answer": "Low cost.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 44,
+        "question_number": "7",
+        "question": "Regarding the disadvantages of the hypoid gear, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "Complicated manufacturing, requiring high assembly accuracy.",
+            "The longitudinal sliding along the tooth length in the meshing area increase.",
+            "Requires special lubricating oil",
+            "Does not help lower the vehicle's center of gravity."
+        ],
+        "answer": "Does not help lower the vehicle's center of gravity.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 45,
+        "question_number": "8",
+        "question": "Through the layout of bearings, it is possible to evaluate which final gear in the figure has the greatest torque transmission capacity?",
+        "type": "single_choice",
+        "options": [
+            "Left figure",
+            "Middle figure",
+            "Right figure",
+            "Both middle and right figure"
+        ],
+        "answer": "Right figure",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình bố trí ổ bi/bearing layout. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 45,
+        "question_number": "9",
+        "question": "Regarding the final gear, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "The pinion gear of the FR vehicle is usually arranged in cantilever beam type.",
+            "Pairs of two tapered roller bearings are usually arranged in an O letter-shape for better rigidity of the shaft.",
+            "The double reduction final gear is designed for a large gear ratio with little impact on ground clearance.",
+            "The double reduction final gear has center type and side type."
+        ],
+        "answer": "Pairs of two tapered roller bearings are usually arranged in an O letter-shape for better rigidity of the shaft.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 46,
+        "question_number": "10",
+        "question": "Regarding the functions of differential, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "The differential is used to transmit torque to the drive wheels.",
+            "The differential is used to distribute torque to the drive wheels.",
+            "The differential is used to change the torque before it is transmitted to the drive wheels.",
+            "The differential ensures that the drive wheels can rotate at different speeds."
+        ],
+        "answer": "The differential is used to change the torque before it is transmitted to the drive wheels.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 46,
+        "question_number": "11",
+        "question": "Find the incorrect sentence in the following sentences? Bevel gear type final gears for FR vehicles are usually constructed to:",
+        "type": "single_choice",
+        "options": [
+            "Be able to adjust the preload of bearing.",
+            "Be able to adjust the backlash between pinion gear and ring gear.",
+            "Be able to adjust the vehicle's ground clearance.",
+            "Be able to adjust the tooth contact pattern."
+        ],
+        "answer": "Be able to adjust the vehicle's ground clearance.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 47,
+        "question_number": "12",
+        "question": "The figure show the construction of differential, choose the name for numbered part in the following table?",
+        "type": "matching_matrix",
+        "columns": [
+            "Pinion shaft",
+            "Differential pinion",
+            "Side gear",
+            "Differential case",
+            "Thrust washer"
+        ],
+        "answer": [
+            {
+                "number": "1",
+                "component": "Differential case"
+            },
+            {
+                "number": "2",
+                "component": "Thrust washer"
+            },
+            {
+                "number": "3",
+                "component": "Side gear"
+            },
+            {
+                "number": "4",
+                "component": "Differential pinion"
+            },
+            {
+                "number": "8",
+                "component": "Pinion shaft"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu matching/matrix dựa trên hình cấu tạo differential. Cần ảnh thủ công để người học nhìn số trên sơ đồ."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 47,
+        "question_number": "13",
+        "question": "In the final gear and differential unit, which of the following part meshing with the ring gear?",
+        "type": "single_choice",
+        "options": [
+            "Planetary gear.",
+            "Differential case.",
+            "Side gear.",
+            "Pinion gear."
+        ],
+        "answer": "Pinion gear.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 48,
+        "question_number": "14",
+        "question": "In the final gear and differential unit of FR vehicle, which of the following part meshing with the pinion gear?",
+        "type": "single_choice",
+        "options": [
+            "Haft shaft.",
+            "Side gear.",
+            "Ring gear.",
+            "Differential case."
+        ],
+        "answer": "Ring gear.",
+        "manual_image_needed": false,
+        "note": "Trong đề ghi 'Haft shaft', có thể là lỗi chính tả của 'Half shaft'. Mình giữ nguyên wording theo đề. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 48,
+        "question_number": "15",
+        "question": "Which the following part constructed the final gear and differential of the FR vehicle, is directly related to the speed distribution operation.",
+        "type": "single_choice",
+        "options": [
+            "Driven gear (ring gear).",
+            "Final gear housing.",
+            "Side gear.",
+            "Driving gear (pinion gear)."
+        ],
+        "answer": "Side gear.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 48,
+        "question_number": "16",
+        "question": "Talking about full floating rear axle shaft, which of the following sentences is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Normally, used for heavy trucks and buses.",
+            "Its construction make vehicle can support heavy load.",
+            "Rear axle shaft can be removed from axle housing without disassembly wheel.",
+            "Rear axle shaft both transmits torque to the drive wheels and support the load of vehicle."
+        ],
+        "answer": "Rear axle shaft both transmits torque to the drive wheels and support the load of vehicle.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 49,
+        "question_number": "17",
+        "question": "The following figure shows differential construction with locking differential, find the incorrect statement in the following sentences?",
+        "type": "single_choice",
+        "options": [
+            "When the one side drive wheel is spined, the differential must be locking differential.",
+            "Locking operation is possible when the wheels have come to a complete stop.",
+            "When locking, the driver act the differential lever, the lock shift lever 3 push the sliding sleeve 5 into the teething ring 6 to lock the differential.",
+            "There is usually no locking differential indicator on the dashboard, so remember to unlock it after use."
+        ],
+        "answer": "There is usually no locking differential indicator on the dashboard, so remember to unlock it after use.",
+        "manual_image_needed": true,
+        "note": "Câu có hình locking differential và option có nhắc các chi tiết số 3, 5, 6. Nên tạo ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 50,
+        "question_number": "18",
+        "question": "Choose a proper name for the axle shaft in figure a, b, c?",
+        "type": "matching_matrix",
+        "columns": [
+            "No floating axle shaft",
+            "Semi floating axle shaft (1/2 load)",
+            "Semi floating axle shaft (3/4 load)",
+            "Full floating axle shaft",
+            "Load increasing axle shaft"
+        ],
+        "answer": [
+            {
+                "figure": "Figure a",
+                "type": "Semi floating axle shaft (1/2 load)"
+            },
+            {
+                "figure": "Figure b",
+                "type": "Semi floating axle shaft (3/4 load)"
+            },
+            {
+                "figure": "Figure c",
+                "type": "Full floating axle shaft"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu matching/matrix dựa trên hình a, b, c. Cần ảnh thủ công để người học phân biệt loại axle shaft."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 50,
+        "question_number": "19",
+        "question": "Talking about semi floating axle shaft, which of the following sentences is correct?",
+        "type": "single_choice",
+        "options": [
+            "Normally, used for heavy trucks and buses.",
+            "In terms of construction, it is possible to make the vehicle withstand a bigger load than the fully floating axle shaft.",
+            "There is only one supporting bearing between the axle shaft and the axle housing.",
+            "Axle shaft transmits torque to the drive wheel and support only a part of the vehicle's load."
+        ],
+        "answer": "There is only one supporting bearing between the axle shaft and the axle housing.",
+        "manual_image_needed": false,
+        "note": "Mình lấy đáp án theo file Postest mới: option này có x ở cuối. File PDF gốc/Pretest có dấu chọn khác gây nhiễu, nhưng theo lưu ý của bạn, dấu x trong file mới là đáp án đúng."
+    },
+    {
+        "chapter": "Chapter 6: Final gear, differential and axle shaft",
+        "source_page": 51,
+        "question_number": "20",
+        "question": "Talking about full floating axle shaft, which of the following sentences is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Normally, used for heavy trucks and buses.",
+            "In terms of construction, it is possible to make the vehicle withstand a bigger load than other axle shaft.",
+            "The axle shaft can be pulled out without jacking up the axle or removing the wheels.",
+            "The end of axle shaft mounted with the hub has one supporting bearing."
+        ],
+        "answer": "The end of axle shaft mounted with the hub has one supporting bearing.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    }
+]

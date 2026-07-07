@@ -1,0 +1,221 @@
+[
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 59,
+        "question_number": "1",
+        "question": "Choose a name for the tire types A, B in the figure and the names for the tire structure?",
+        "type": "matching_matrix",
+        "columns": [
+            "A",
+            "B",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "answer": [
+            {
+                "item": "Radial ply tire",
+                "label": "A"
+            },
+            {
+                "item": "Bias ply tire",
+                "label": "B"
+            },
+            {
+                "item": "Steel bead wire",
+                "label": "5"
+            },
+            {
+                "item": "Casing plies",
+                "label": "3"
+            },
+            {
+                "item": "Tread reinforced plies (Belt)",
+                "label": "2"
+            },
+            {
+                "item": "Tread",
+                "label": "1"
+            },
+            {
+                "item": "Inner line",
+                "label": "4"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu matching/matrix dựa trên hình cấu tạo lốp. Cần ảnh thủ công để người học nhìn A, B và các số 1-5."
+    },
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 59,
+        "question_number": "2",
+        "question": "Choose the incorrect statement from the following talking about wheel requirements?",
+        "type": "single_choice",
+        "options": [
+            "Wheels must have high wear resistance.",
+            "Wheels need to have good adhearsion to promote traction, brake force, and ensure safety when the vehicle turning.",
+            "Wheels must have good heat dissipation.",
+            "Wheels must be heavy increasing unsprung mass to help the vehicle move smoothly."
+        ],
+        "answer": "Wheels must be heavy increasing unsprung mass to help the vehicle move smoothly.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest. Trong đề có typo 'adhearsion', mình giữ nguyên wording theo đề."
+    },
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 60,
+        "question_number": "3",
+        "question": "Regarding wheel rims, which of the following is not correct?",
+        "type": "single_choice",
+        "options": [
+            "The wheel rim has a concave for easy tire removal.",
+            "The rim is centered to the hub by locating pins.",
+            "Wheel rims made of aluminum alloy will help reduce unsprung mass.",
+            "Vehicles using pressed steel rims often have an outer rim cover."
+        ],
+        "answer": "The rim is centered to the hub by locating pins.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 60,
+        "question_number": "4",
+        "question": "The numbers and letters in the figure are the tire size designation, Choose proper meaning for these indicators in the table?",
+        "type": "matching_matrix",
+        "columns": [
+            "225",
+            "50",
+            "R",
+            "16",
+            "92",
+            "V"
+        ],
+        "answer": [
+            {
+                "indicator": "225",
+                "meaning": "Section width (mm)"
+            },
+            {
+                "indicator": "50",
+                "meaning": "Aspect ratio H/B (%)"
+            },
+            {
+                "indicator": "R",
+                "meaning": "Type of casing plies: radial ply"
+            },
+            {
+                "indicator": "16",
+                "meaning": "Rim diameter (inches)"
+            },
+            {
+                "indicator": "92",
+                "meaning": "Load index"
+            },
+            {
+                "indicator": "V",
+                "meaning": "Speed rating index"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu matching/matrix dựa trên hình ký hiệu lốp 225/50 R16 92V. Cần ảnh thủ công. Các dòng 'Section high (mm)', 'Wheel diameter (mm)', và 'Type of casing plies: bias ply' không có đáp án được chọn."
+    },
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 61,
+        "question_number": "5",
+        "question": "Which of the following statement not belong to the functions of tire?",
+        "type": "single_choice",
+        "options": [
+            "The wheels support total load of the vehicle.",
+            "The wheels transmit the driving torque to the road surface and receive the reaction force to move the vehicle.",
+            "The wheel change rolling friction to sliding friction for easy vehicle movement.",
+            "The wheels reduce the impact load on vehicle to provide smooth ride."
+        ],
+        "answer": "The wheel change rolling friction to sliding friction for easy vehicle movement.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 61,
+        "question_number": "6",
+        "question": "Which of the following statement not belong to the functions of tire?",
+        "type": "single_choice",
+        "options": [
+            "The wheels support total load of the vehicle.",
+            "The wheels turn rotational motion into translational motion, so that vehicle can travel on the road.",
+            "The wheels along with the steering system ensure the ability to change direction of motion.",
+            "The wheels reduce the impact load on vehicle to provide smooth ride."
+        ],
+        "answer": "The wheels along with the steering system ensure the ability to change direction of motion.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 61,
+        "question_number": "7",
+        "question": "Regarding vehicle tires, which of the following statements is true?",
+        "type": "single_choice",
+        "options": [
+            "The letter P in the tire size designation shows the type of tire casing plies.",
+            "There is no wear indicator on the tire, so use it until the tread is completely worn.",
+            "Tire tread is designed to increase the aesthetics of the tire and to distinguish the tire brands.",
+            "Tires heat up when the vehicle is running due to friction with the road surface and internal friction when the tire deforms."
+        ],
+        "answer": "Tires heat up when the vehicle is running due to friction with the road surface and internal friction when the tire deforms.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 62,
+        "question_number": "8",
+        "question": "Which is the following classifications of wheels incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Classification according to working characteristics: steerable wheel, non-steerable wheel, drive wheel, driven wheel.",
+            "Classification by use: wheels for passenger cars, trucks, coaches and buses...",
+            "Classification by construction: wheel with tube, without tube, wheel with concave rim, flat rim...",
+            "Sort by weather: snow wheels, sun wheels, rain wheel..."
+        ],
+        "answer": "Sort by weather: snow wheels, sun wheels, rain wheel...",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 62,
+        "question_number": "9",
+        "question": "Choose the incorrect statement from the following talking about wheel requirements?",
+        "type": "single_choice",
+        "options": [
+            "Wheels must have enough durability, roll for a long time in conditions of load and speed changing on the road.",
+            "Wheels need to have good adhearsion to promote traction, brake force, and ensure safety when the vehicle turning.",
+            "Wheels must have good heat dissipation.",
+            "Wheels must be heavy increasing unsprung mass to help the vehicle move smoothly."
+        ],
+        "answer": "Wheels must be heavy increasing unsprung mass to help the vehicle move smoothly.",
+        "manual_image_needed": false,
+        "note": "Câu này gần giống câu 2 nhưng option đầu khác. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 8: Wheel",
+        "source_page": 62,
+        "question_number": "10",
+        "question": "Regarding the temporary (spare) wheel, which of the following is true?",
+        "type": "single_choice",
+        "options": [
+            "Temporary wheel is smaller than the normal wheel, it is for fitting the wear of normal wheel.",
+            "The temporary wheel has a much higher pressure than the normal wheel to prevent pressure leakage.",
+            "Temporary wheel is used to replace when the normal wheel has problems.",
+            "Temporary wheel same as the normal wheel is used for tire rotation for even wear."
+        ],
+        "answer": "Temporary wheel is used to replace when the normal wheel has problems.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    }
+]

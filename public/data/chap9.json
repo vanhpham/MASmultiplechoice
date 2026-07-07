@@ -1,0 +1,162 @@
+[
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 63,
+        "question_number": "1",
+        "question": "Angle A in the figure shows which of the following wheel alignment of front steerable axle?",
+        "type": "single_choice",
+        "options": [
+            "Camber",
+            "Kingpin offset",
+            "Kingpin",
+            "Caster"
+        ],
+        "answer": "Kingpin",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình góc A của trụ đứng/kingpin, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest."
+    },
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 63,
+        "question_number": "2",
+        "question": "Talking about Caster, which of the following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Caster is the tilt of steering axis toward the front or rear of the vehicle.",
+            "Caster has a value of 1 to 7 degrees.",
+            "Caster and Caster trail maintain directional stability and control.",
+            "Caster can not increase steering returnability."
+        ],
+        "answer": "Caster can not increase steering returnability.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest."
+    },
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 64,
+        "question_number": "3",
+        "question": "The following figure shows the wheel alignment, the arrow shows which of the following words?",
+        "type": "single_choice",
+        "options": [
+            "Caster",
+            "Tread",
+            "Camber",
+            "Kingpin"
+        ],
+        "answer": "Camber",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình mũi tên chỉ góc nghiêng bánh xe nhìn từ phía trước, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest."
+    },
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 64,
+        "question_number": "4",
+        "question": "A in the figure shows which of the following wheel alignment of front steerable wheel?",
+        "type": "single_choice",
+        "options": [
+            "Camber",
+            "Toe in",
+            "Kingpin",
+            "Caster trail"
+        ],
+        "answer": "Caster trail",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình caster trail nhìn ngang, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest."
+    },
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 65,
+        "question_number": "5",
+        "question": "The figure show the wheel alignment seeing from the front of the automotive vehicle. What is the A angle?",
+        "type": "single_choice",
+        "options": [
+            "Kingpin",
+            "Kingpin offset",
+            "Camber",
+            "Caster"
+        ],
+        "answer": "Camber",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình góc A nhìn từ phía trước, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest."
+    },
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 65,
+        "question_number": "6",
+        "question": "Talking about Toe, which of the following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Toe in, Toe out are generally called Toe.",
+            "Toe has the value of 1 to 5 mm.",
+            "Positive toe (Toe in) is used for wheel has positive Camber.",
+            "Toe is used only for steerable wheel."
+        ],
+        "answer": "Toe is used only for steerable wheel.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest."
+    },
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 66,
+        "question_number": "7",
+        "question": "b-a difference in the figure shows which of the following?",
+        "type": "single_choice",
+        "options": [
+            "Camber",
+            "Caster",
+            "Kingpin",
+            "Toe"
+        ],
+        "answer": "Toe",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình so sánh b-a/a-b của bánh xe nhìn từ trên xuống, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest."
+    },
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 66,
+        "question_number": "8",
+        "question": "Talking about Camber, which of the following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Camber is the inward or outward tilt of a wheel from the vertical when viewed from the front of the vehicle.",
+            "Camber can be negative or positive within 1 degree.",
+            "Normally, truck has negative camber and passenger car has positive camber.",
+            "The purpose of setting camber is to make wheels are perpendicular to the road surface and provide good traction."
+        ],
+        "answer": "Normally, truck has negative camber and passenger car has positive camber.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest."
+    },
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 67,
+        "question_number": "9",
+        "question": "Talking about Kingpin, which of following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Kingpin is the inward tilt of steering axis from the vertical as viewed from the front of the vehicle.",
+            "Kingpin usually has value of 6 to 15 degrees.",
+            "Kingpin can not make steering wheel returnability.",
+            "Kingpin reduces steering effort, especially if the vehicle is not moving."
+        ],
+        "answer": "Kingpin can not make steering wheel returnability.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest."
+    },
+    {
+        "chapter": "Chapter 9: Wheel alignment",
+        "source_page": 67,
+        "question_number": "10",
+        "question": "The figure show the wheel alignment seeing from the side of the automotive vehicle. What is the A angle?",
+        "type": "single_choice",
+        "options": [
+            "Kingpin",
+            "Caster trail",
+            "Camber",
+            "Caster"
+        ],
+        "answer": "Caster",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình nhìn ngang của trục quay đứng/steering axis, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest."
+    }
+]

@@ -1,0 +1,312 @@
+[
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 77,
+        "question_number": "1",
+        "question": "Talking about the requirements of automotive vehicle, which of the following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Brake system has a high and stable braking effect.",
+            "Braking torques are distributed equally on axles.",
+            "Brake smoothly and quietly, ensure high reliability and sensitivity.",
+            "Easy to operate, adjust, maintain."
+        ],
+        "answer": "Braking torques are distributed equally on axles.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x/X trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 77,
+        "question_number": "2",
+        "question": "Which of the following classification is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Classify brake system by using purpose: foot brake and hand brake.",
+            "Classify brake system by brake assembly: drum brake and disc brake.",
+            "Classify brake system by season: summer brake and winter brake.",
+            "Classify brake system by brake linkage: mechanical, hydraulic, compressed air..."
+        ],
+        "answer": "Classify brake system by season: summer brake and winter brake.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 78,
+        "question_number": "3",
+        "question": "Choose a name for drum brake assembly in each figure?",
+        "type": "matching_matrix",
+        "columns": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+        ],
+        "answer": [
+            {
+                "assembly": "Two - leading shoes",
+                "figure": "b"
+            },
+            {
+                "assembly": "Trailing and leading shoe",
+                "figure": "a"
+            },
+            {
+                "assembly": "Floating",
+                "figure": "d"
+            },
+            {
+                "assembly": "Duo servo",
+                "figure": "c"
+            },
+            {
+                "assembly": "Self energizing",
+                "figure": "e"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu matching/matrix dựa trên hình 5 loại drum brake assembly. Cần ảnh thủ công để người học nhìn các hình a-e."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 79,
+        "question_number": "4",
+        "question": "Find the incorrect statement talking about the brake assembly in figure?",
+        "type": "single_choice",
+        "options": [
+            "This is a axially symmetrical drum brake assembly.",
+            "This brake assembly makes greater braking torque when forward than when reverse.",
+            "The cam and eccentric bush in the figure are used to adjust the clearance between the brake shoes and the drum.",
+            "The part number 1 in the figure locates the brake shoes on the surface of the backing plate."
+        ],
+        "answer": "This brake assembly makes greater braking torque when forward than when reverse.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình brake assembly. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 80,
+        "question_number": "5",
+        "question": "Find the incorrect statement talking about the brake assembly in figure?",
+        "type": "single_choice",
+        "options": [
+            "This is a axially symmetrical drum brake assembly.",
+            "This brake assembly is usually applied to trucks",
+            "The clearance between the brake shoe and the drum is adjusted by the initial pressure of the brake chamber 3.",
+            "The cam can be rotated due to the brake chamber pushing into the swing arm 5."
+        ],
+        "answer": "The clearance between the brake shoe and the drum is adjusted by the initial pressure of the brake chamber 3.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình brake assembly. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 80,
+        "question_number": "6",
+        "question": "Talking about drum brakes, which of the following sentences is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The two leading shoe brake assembly has a strengthening brake effect only when the vehicle is moving forward.",
+            "The leading shoe is the shoe that have the self energizing effect.",
+            "The trailing shoe is the shoe that have not the self energizing effect.",
+            "The self energizing effect is the effect of increasing braking torque due to the brake shoe tend to press firmly against the drum."
+        ],
+        "answer": "The self energizing effect is the effect of increasing braking torque due to the brake shoe tend to press firmly against the drum.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 81,
+        "question_number": "7",
+        "question": "Regarding the brake assembly with two leading shoes, which of the following sentences is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Usually used for the front axle of trucks.",
+            "When the direction of rotation of the brake drum changes, the braking force remains the same.",
+            "The leading shoe is the shoe that have the self energizing effect.",
+            "The self energizing effect is the effect of increasing braking torque due to the brake shoe tend to press firmly against the drum."
+        ],
+        "answer": "When the direction of rotation of the brake drum changes, the braking force remains the same.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 81,
+        "question_number": "8",
+        "question": "Regarding the brake assembly with one leading shoe and one trailing shoe, which of the following sentences is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Usually used for the front axle of trucks.",
+            "When the direction of rotation of the brake drum changes, the braking force change.",
+            "The leading shoe is the shoe that have the self energizing effect.",
+            "The self energizing effect is the effect of increasing braking torque due to the brake shoe tend to press firmly against the drum."
+        ],
+        "answer": "When the direction of rotation of the brake drum changes, the braking force change.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 82,
+        "question_number": "9",
+        "question": "Find the wrong sentence when talking about the construction in the following figure?",
+        "type": "single_choice",
+        "options": [
+            "This is a mechanism that automatically adjusts the brake shoe clearance applied to the drum brake assembly.",
+            "The adjusting screw between the two brake shoes is made up of two halves connected by thread.",
+            "When press on the brake or pull the handbrake, the adjusting lever on the gear of adjusting screw will move upwards.",
+            "When the clearance is worn more than the allowable value, the adjusting lever will slide down to rotate the gear and shorten the adjusting screw."
+        ],
+        "answer": "When the clearance is worn more than the allowable value, the adjusting lever will slide down to rotate the gear and shorten the adjusting screw.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình cơ cấu tự động điều chỉnh khe hở má phanh. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 82,
+        "question_number": "10",
+        "question": "Compare disc brakes with drum brakes, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "Disc brakes have brake discs in direct contact with the outside air, so they are better cooled, and the braking torque is stable.",
+            "Disc brakes are more sensitive due to the small and even clearance between disc and pads.",
+            "Disc brakes have a compact construction and are cheaper than drum brakes when compared to the same braking torque.",
+            "Because disc brakes are not protected like drum brakes, water and dirt can affect braking torque."
+        ],
+        "answer": "Disc brakes have a compact construction and are cheaper than drum brakes when compared to the same braking torque.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 83,
+        "question_number": "11",
+        "question": "Talking about disc brakes, which of the following sentences is correct?",
+        "type": "single_choice",
+        "options": [
+            "The ventilated brake disc is a type with a hollow structure in the middle to easily dissipate heat caused by friction when braking.",
+            "The clearance between the brake pad and the brake disc is automatically adjusted by the rubber boot.",
+            "Fixed caliper disc brakes have piston only on one side of the disc.",
+            "Brake pads are usually made from asbestos fibers combined with wear-resistant friction materials and are bonded by adhesives."
+        ],
+        "answer": "The ventilated brake disc is a type with a hollow structure in the middle to easily dissipate heat caused by friction when braking.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 83,
+        "question_number": "12",
+        "question": "Talking about disc brakes, which of the following sentences is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Floating caliper disc brakes have piston only on one side of the disc.",
+            "The ventilated brake disc is a type with a hollow structure in the middle to easily dissipate heat caused by friction when braking.",
+            "The clearance between the brake pad and the brake disc is automatically adjusted by the seal inside the cylinder.",
+            "Brake pads are usually made from asbestos fibers combined with wear-resistant friction materials and are bonded by adhesives."
+        ],
+        "answer": "Brake pads are usually made from asbestos fibers combined with wear-resistant friction materials and are bonded by adhesives.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 83,
+        "question_number": "13",
+        "question": "Regarding hydraulic disc brakes, which of the following statements is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Floating caliper disc brakes have piston only on one side of the disc.",
+            "The ventilated disc has hollow structure in the middle to easily dissipate heat caused by friction when braking.",
+            "The clearance between the brake pad and the brake disc is automatically adjusted by the rubber boot.",
+            "Brake pads are usually made from non-asbestos materials such as glass fiber combined with wear-resistant friction materials and are bonded by adhesives."
+        ],
+        "answer": "The clearance between the brake pad and the brake disc is automatically adjusted by the rubber boot.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 84,
+        "question_number": "14",
+        "question": "Find the incorrect statement about the following figure?",
+        "type": "single_choice",
+        "options": [
+            "The figure describes the principle of automatically adjusting the clearance between the brake pads and the brake disc.",
+            "The rubber seal in the figure has the role of sealing to create pressure in the cylinder.",
+            "When the clearance between the brake pad and the brake disc is greater than the deformation of the rubber, the piston will slide relative to the rubber seal.",
+            "The rubber seal always pulls the piston return back by an amount less than its deformation."
+        ],
+        "answer": "The rubber seal always pulls the piston return back by an amount less than its deformation.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình nguyên lý tự điều chỉnh khe hở disc brake bằng seal. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 85,
+        "question_number": "15",
+        "question": "Find the incorrect statement talking about the working principle of the vacuum booster in the figures?",
+        "type": "single_choice",
+        "options": [
+            "The figure on the left shows the vacuum booster in the brake pedal stop state.",
+            "The figure on the right shows the vacuum booster when the brake is not applied.",
+            "In the brake pedal stop state, the vacuum valve and the air valve are both closed.",
+            "In the non-brake state, the vacuum valve opens, the air valve closes."
+        ],
+        "answer": "The figure on the right shows the vacuum booster when the brake is not applied.",
+        "manual_image_needed": true,
+        "note": "Câu có hình vacuum booster. Postest và PDF gốc chọn option này; Pretest lại có x ở option 'In the brake pedal stop state...' nên đây là câu cần review nếu muốn chắc tuyệt đối. Mình ưu tiên Postest + PDF gốc."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 86,
+        "question_number": "16",
+        "question": "Find the correct sentence from the following options?",
+        "type": "single_choice",
+        "options": [
+            "The figure depicts the load sensing proportioning valve.",
+            "The proportioning valve is usually installed on the front axle to prevent brake locking for this axle.",
+            "When the oil pressure rises to a certain value, the force pushing piston to the left will overcome the spring force and the force pushing piston to the right, the piston will be moved to the left and close the oil line at that time.",
+            "When the oil pressure from the master cylinder increases, the piston is still not pushed to the right to reduce the oil outlet pressure."
+        ],
+        "answer": "When the oil pressure rises to a certain value, the force pushing piston to the left will overcome the spring force and the force pushing piston to the right, the piston will be moved to the left and close the oil line at that time.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình proportioning valve. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 87,
+        "question_number": "17",
+        "question": "Find the correct sentence talking about the following figure?",
+        "type": "single_choice",
+        "options": [
+            "The figure is a diagram depicting the construction of the independent four-line brake valve.",
+            "According to the working principle, the compressed air flow to the rear axle will open before the compressed air flow to the front axle.",
+            "The arrow with the letter R represents the flow of compressed air returning to the tank when the brake pedal is released.",
+            "The braking sensation is created by the reaction of the return coil springs located under the plunger."
+        ],
+        "answer": "According to the working principle, the compressed air flow to the rear axle will open before the compressed air flow to the front axle.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình independent four-line brake valve. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 11: Brake system",
+        "source_page": 88,
+        "question_number": "18",
+        "question": "Talking about spring brake chamber, which of the following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The spring brake chamber has a single brake chamber that pushes and rotates the cam of the rear brake assembly.",
+            "The spring brake chamber include parking brake function thanks to the power spring.",
+            "When lowering the handbrake (releasing the parking brake), compressed air will be drawn in to chamber to compress the power spring.",
+            "The bolt behind the spring brake chamber is used to adjust the clearance between drum and shoes when the brake lining is worn."
+        ],
+        "answer": "The bolt behind the spring brake chamber is used to adjust the clearance between drum and shoes when the brake lining is worn.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình spring brake chamber. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    }
+]

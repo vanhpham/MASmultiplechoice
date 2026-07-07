@@ -1,0 +1,322 @@
+[
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 52,
+        "question_number": "1",
+        "question": "Which of the following statements does not describe the function of a suspension system?",
+        "type": "single_choice",
+        "options": [
+            "The suspension system softly connects the body and the wheel, reduce the vertical dynamic load on the body and ensure the wheel rolls smoothly on the road.",
+            "The suspension system quickly absorb the vibrations of the road surface affecting the vehicle body.",
+            "Suspension system transmits force from the axle to the body and vice versa, so that the vehicle can move, and at the same time ensure a reasonable displacement of the wheels relative to the vehicle body.",
+            "Suspension system helps to reduce the car's static load through the spring element."
+        ],
+        "answer": "Suspension system helps to reduce the car's static load through the spring element.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 52,
+        "question_number": "2",
+        "question": "Regarding the suspension system, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "The three basic components of the suspension system are: the spring, the shock absorber, and the control arm.",
+            "Sprung mass is the mass above the sping component, usually including the vehicle body mass, the mass of people and goods on the vehicle.",
+            "The unsprung mass is the mass below the sping component, usually including the axle, wheel, axle shaft.",
+            "The bigger the unsprung mass, the more comfortable ride the vehicle will run on bumpy roads."
+        ],
+        "answer": "The bigger the unsprung mass, the more comfortable ride the vehicle will run on bumpy roads.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Trong đề có typo 'sping', mình giữ nguyên wording theo đề."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 52,
+        "question_number": "3",
+        "question": "Which of the following component of the suspension system smooths the movement of the vehicle body when running on the road by converting the frequency transfering from road into an appropriate frequency, suitable for the human physiology?",
+        "type": "single_choice",
+        "options": [
+            "Sring.",
+            "Shock absorber.",
+            "Control arm.",
+            "Stabilizer bar."
+        ],
+        "answer": "Sring.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Trong đề ghi 'Sring', nhiều khả năng là typo của 'Spring', nhưng mình giữ nguyên theo đề."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 53,
+        "question_number": "4",
+        "question": "Which of the following component in the suspension system is responsible for transmitting force and determining the relative displacement of the wheel relative to the vehicle body, allowing vertical displacement and limiting unwanted displacement of the wheel.",
+        "type": "single_choice",
+        "options": [
+            "Sring.",
+            "Shock absorber.",
+            "Control arm.",
+            "Stabilizer bar."
+        ],
+        "answer": "Control arm.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Trong đề ghi 'Sring', nhiều khả năng là typo của 'Spring'."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 53,
+        "question_number": "5",
+        "question": "Which of the following component in the suspension system is responsible for quickly absorb the vibrations of the body and wheels by converting the vibrational energy into heat and radiating it to the environment.",
+        "type": "single_choice",
+        "options": [
+            "Sring.",
+            "Shock absorber.",
+            "Control arm.",
+            "Stabilizer bar."
+        ],
+        "answer": "Shock absorber.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Trong đề ghi 'Sring', nhiều khả năng là typo của 'Spring'."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 53,
+        "question_number": "6",
+        "question": "Choose the proper name for suspension system in the figure?",
+        "type": "single_choice",
+        "options": [
+            "Dependent suspension system.",
+            "Mc.Pherson suspension system.",
+            "Two horizontal control arms (wishbone-shape arm) suspension system.",
+            "Two longitudinal control arms."
+        ],
+        "answer": "Dependent suspension system.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình hệ thống treo, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 54,
+        "question_number": "7",
+        "question": "Choose the proper name for suspension system in the figure?",
+        "type": "single_choice",
+        "options": [
+            "Dependent suspension system.",
+            "Mc.Pherson suspension system.",
+            "Two horizontal control arms (wishbone-shape arm) suspension system.",
+            "Two longitudinal control arms."
+        ],
+        "answer": "Two horizontal control arms (wishbone-shape arm) suspension system.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình wishbone suspension, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 54,
+        "question_number": "8",
+        "question": "Choose the proper name for suspension system in the figure?",
+        "type": "single_choice",
+        "options": [
+            "Dependent suspension system.",
+            "Mc.Pherson suspension system.",
+            "Two horizontal control arms (wishbone-shape arm) suspension system.",
+            "Two longitudinal control arms."
+        ],
+        "answer": "Mc.Pherson suspension system.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình Mc.Pherson suspension, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 55,
+        "question_number": "9",
+        "question": "Regarding the characteristics of the Mc.Pherson suspension system, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "Mc.Pherson suspension system has a simple and compact construction because it has coil spring embedded out of sock absorber and has no upper control arm.",
+            "The construction of the Mc.Pherson suspension system creates more space in the engine compartment, helping to rotate transvertly the engine and transmission.",
+            "The shock absorber also plays a part of the control arm, so the piston rod of the shock absorber has a large diameter to increase rigidity.",
+            "The upper end of the shock absorber is fixed to the vehicle body, the lower end is fixed to the axle bracket."
+        ],
+        "answer": "The upper end of the shock absorber is fixed to the vehicle body, the lower end is fixed to the axle bracket.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Trong đề có typo 'sock absorber' và 'transvertly', mình giữ nguyên wording theo đề."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 55,
+        "question_number": "10",
+        "question": "Regarding the characteristics of the Mc.Pherson suspension system, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "Mc.Pherson suspension usually uses dual tubes shock absorber.",
+            "The construction of the Mc.Pherson suspension system creates more space in the engine compartment, helping to rotate transvertly the engine and transmission.",
+            "The Mc.Pherson suspension system contributes to reducing the turning resistance torque on the steerable wheel.",
+            "Mc.Pherson suspension is usually used for FF vehicles."
+        ],
+        "answer": "Mc.Pherson suspension usually uses dual tubes shock absorber.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 55,
+        "question_number": "11",
+        "question": "Regarding dependent suspension system, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "Dependent suspension system is a suspension system placed on a rigid axle connecting the two wheels, when one wheel is displaced relative to the body of the vehicle, it will cause the other wheel to displace dependently.",
+            "Dependent suspension is classify to single type and bogie type.",
+            "Dependent suspension system can support large loads, so it is often used for trucks.",
+            "The dependent suspension has a small unsprung mass."
+        ],
+        "answer": "The dependent suspension has a small unsprung mass.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 56,
+        "question_number": "12",
+        "question": "Regarding dependent suspension, which of the following statements is not true?",
+        "type": "single_choice",
+        "options": [
+            "Rigid axle construction under the body occupies large space, low center of gravity.",
+            "The large unsprung mass affects the comfortable ride of the vehicle.",
+            "Leaf springs in the dependent suspension act as both a spring and a control arm.",
+            "The wheel track is little changed with the dependent suspension."
+        ],
+        "answer": "Rigid axle construction under the body occupies large space, low center of gravity.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 56,
+        "question_number": "13",
+        "question": "Regarding the characteristics of independent suspension systems, which of the following statements is not correct?",
+        "type": "single_choice",
+        "options": [
+            "The unsprung mass is small, so the force and moment of inertia are small, reducing the impact load with the vehicle body when moving on the road.",
+            "Space for two wheels on both sides of the vehicle, allowing to lower the center of gravity, improving stability at high speeds.",
+            "With the independent linkage between the two wheels, there is little ability to prevent horizontal slip. If there is a slip in one wheel, it can cause a side slip for the whole axle.",
+            "Has a simple structure but can support large loads, so it is often used for passenger car."
+        ],
+        "answer": "Has a simple structure but can support large loads, so it is often used for passenger car.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 56,
+        "question_number": "14",
+        "question": "Which of the following statements is not correct for an independent suspension system?",
+        "type": "single_choice",
+        "options": [
+            "The displacement of the two wheels on a axle has almost no influence on each other. The two wheels are not connected on the rigidly axle so they can move independently.",
+            "Independent suspension has basic types: two horizontal, two logitudinal, two diagonal and Mc.Pherson.",
+            "Mc.Pherson suspension is an independent suspension with only one horizontal control arm.",
+            "The independent suspension system has many advantages that should be applied to all types of automotive vehicle."
+        ],
+        "answer": "The independent suspension system has many advantages that should be applied to all types of automotive vehicle.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Trong đề có typo 'logitudinal', mình giữ nguyên wording theo đề."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 57,
+        "question_number": "15",
+        "question": "Which of the following statements incorrectly describes the structure of the leaf spring?",
+        "type": "single_choice",
+        "options": [
+            "The leaf spring have two ends to connect to the vehicle body, one can be rotated and the other can slides or swings vertically.",
+            "One plate of leaf spring have different curvature radii when disassembly from the leaf spring.",
+            "The center bolt is used to get the center between the plate of leaf spring when installing it, so its role will be run out when the leaf spring clamp is fixed.",
+            "U-bolts fix the leaf spring to the axle."
+        ],
+        "answer": "The center bolt is used to get the center between the plate of leaf spring when installing it, so its role will be run out when the leaf spring clamp is fixed.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 57,
+        "question_number": "16",
+        "question": "Talking about leaf springs, which of the following sentences is correct?",
+        "type": "single_choice",
+        "options": [
+            "When the load is large, the required spring rate will be large.",
+            "When the load is large, the required spring rate will be small.",
+            "In general, light trucks use leaf spring with greater spring rate than trucks with heavy loads.",
+            "Required spring rate does not depend on the vehicle load."
+        ],
+        "answer": "When the load is large, the required spring rate will be large.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 57,
+        "question_number": "17",
+        "question": "Regarding the leaf spring, which of the following sentences is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Leaf springs are mainly used for dependent suspension system.",
+            "The smaller the spring rate, the softer the leaf spring.",
+            "In general, light trucks use leaf spring with greater spring rate than trucks with heavy loads.",
+            "Leaf spring length is calculated as the distance between the center lines of the spring eye and spring shackle."
+        ],
+        "answer": "In general, light trucks use leaf spring with greater spring rate than trucks with heavy loads.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 58,
+        "question_number": "18",
+        "question": "Regarding the leaf spring in suspension system, which of the following sentences is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Leaf springs are mainly used for independent suspension system.",
+            "The smaller the spring rate, the softer the leaf spring.",
+            "Leaf spring length is the distance between the center of the spring eye and spring shackle.",
+            "In general, heavy trucks use leaf spring with greater spring rate than trucks with light loads."
+        ],
+        "answer": "Leaf springs are mainly used for independent suspension system.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 58,
+        "question_number": "19",
+        "question": "Regarding shock absorber, which of the following sentences is correct?",
+        "type": "single_choice",
+        "options": [
+            "Normally the shock absorber has a removable construction.",
+            "Normally, the damping resistance in compression is greater than in rebound.",
+            "Gas in shock absorbers is usually nitrogen gas.",
+            "Shock absorbers with gas in side do not use oil."
+        ],
+        "answer": "Gas in shock absorbers is usually nitrogen gas.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 7: Suspension system",
+        "source_page": 58,
+        "question_number": "20",
+        "question": "Regarding dual tube shock absorbers, which of the following statements is correct?",
+        "type": "single_choice",
+        "options": [
+            "When testing, if the resistance when compressing is strong and the resistance when rebound is light, it can be said that the shock absorber works normally.",
+            "Whether the function of the shock absorber is good or not can be assessed through the vibration and noise of the car when running.",
+            "Gas in shock absorbers is usually carbon dioxide (CO2) gas.",
+            "Shock absorbers with gas in side do not use oil."
+        ],
+        "answer": "Whether the function of the shock absorber is good or not can be assessed through the vibration and noise of the car when running.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    }
+]

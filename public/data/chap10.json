@@ -1,0 +1,338 @@
+[
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 68,
+        "question_number": "1",
+        "question": "Which of the following statement is not talking about the function of steering system?",
+        "type": "single_choice",
+        "options": [
+            "To ensure the ability to turn with small turning radius and to be stable.",
+            "To ensure the correct turning kinematic with different centers of rotation for each wheel.",
+            "To ensure the steerable wheels have high self stabilization.",
+            "To reduce the impact from steerable wheel to the steering wheel."
+        ],
+        "answer": "To ensure the correct turning kinematic with different centers of rotation for each wheel.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 68,
+        "question_number": "2",
+        "question": "Which of the following statement talking incorrectly about the requirement of steering system?",
+        "type": "single_choice",
+        "options": [
+            "Ensure proper torque distribution for the two side wheels.",
+            "Ensure precise control, force and stroke are proportional to the turning status of vehicle and within the permissible limit.",
+            "Ensure the self-returning ability of steerable wheels.",
+            "The steerable wheels must have the correct kinematic required by the steering system and suspension system."
+        ],
+        "answer": "Ensure proper torque distribution for the two side wheels.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 68,
+        "question_number": "3",
+        "question": "Talking about general construction of steering system, which of the following statement is not correct?",
+        "type": "single_choice",
+        "options": [
+            "General construction of steering system include steering gear and steering linkage.",
+            "The steering gear is actually an acceleration gear box that helps to steer quickly.",
+            "The major components of steering linkage mechanism include steering wheel, steering column and steering linkage.",
+            "The steering gear is located on one side of the vehicle, so it is necessary to have a ackermann linkage (trapezoid linkage) for both steerable wheels to be controlled."
+        ],
+        "answer": "The steering gear is actually an acceleration gear box that helps to steer quickly.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 69,
+        "question_number": "4",
+        "question": "Which of the following part is the part that makes up the power cylinder in the hydraulic power rack and pinion steering system?",
+        "type": "single_choice",
+        "options": [
+            "Drag link.",
+            "Hydraulic pump.",
+            "Gear box housing.",
+            "Rack housing."
+        ],
+        "answer": "Rack housing.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 69,
+        "question_number": "5",
+        "question": "Talking about worm and nut steering gear, which of the following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The ball nut moves on the worm screw in the axial direction.",
+            "Sector gear meshes directly with worm screw.",
+            "The steel balls pass through the ball pipes and circulate inside the grooves of ball nut.",
+            "The contact sides of the screw and the ball nut are in contact with the steel balls."
+        ],
+        "answer": "Sector gear meshes directly with worm screw.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 70,
+        "question_number": "6",
+        "question": "Select a name for part numbered in the following table?",
+        "type": "matching_matrix",
+        "columns": [
+            "1",
+            "2",
+            "3",
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "answer": [
+            {
+                "component": "Tie rod",
+                "number": "8"
+            },
+            {
+                "component": "Drag link",
+                "number": "5"
+            },
+            {
+                "component": "Steering arm",
+                "number": "6"
+            },
+            {
+                "component": "Steering wheel",
+                "number": "1"
+            },
+            {
+                "component": "Steering column",
+                "number": "2"
+            },
+            {
+                "component": "Kingpin",
+                "number": "7"
+            },
+            {
+                "component": "Steering gear",
+                "number": "3"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu matching/matrix dựa trên hình hệ thống lái đánh số. Cần ảnh thủ công để người học nhìn số trên sơ đồ."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 71,
+        "question_number": "7",
+        "question": "With the steering system shown in the picture and the arrow being the direction of the vehicle, when the steering wheel turns the left (turning counter-clockwise), in which direction will the steerable wheel turn?",
+        "type": "single_choice",
+        "options": [
+            "Turn left",
+            "Turn right",
+            "Two steerable wheel bunched up (like toe in)",
+            "Two steerable wheel spread out (like toe out)"
+        ],
+        "answer": "Turn left",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình hệ thống lái và chiều mũi tên, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 71,
+        "question_number": "8",
+        "question": "Figures a, b, c show steering states of vehicles, find the correct sentence in the following sentences?",
+        "type": "single_choice",
+        "options": [
+            "a is correct steer, b is over steer, c is under steer.",
+            "a is correct steer, b is under steer, c is over steer",
+            "a is over steer, b is correct steer, c is under steer",
+            "a is under steer, b is correct steer, c is over steer"
+        ],
+        "answer": "a is correct steer, b is over steer, c is under steer.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình a, b, c về trạng thái lái, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 72,
+        "question_number": "9",
+        "question": "Find the incorrect sentence talking about following figure?",
+        "type": "single_choice",
+        "options": [
+            "Figure describes the layout of steerable axles.",
+            "This vehicle has two steerable axles.",
+            "The dashed lines are the lines extending the wheel axis, intersecting each other at a point called the turning center of the vehicle.",
+            "The steerable wheels when turning are always parallel to each other."
+        ],
+        "answer": "The steerable wheels when turning are always parallel to each other.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình bố trí các trục bánh xe khi quay vòng, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 73,
+        "question_number": "10",
+        "question": "Find the incorrect sentence talking about following figure?",
+        "type": "single_choice",
+        "options": [
+            "The formula in the figure shows the relationship between the turning angles of the left and right steerable wheels, the right side is a fixed value.",
+            "The relation between the two angles in this formula is the ideal.",
+            "The construction creates a relationship as in the formula that requires many rods (15 rods).",
+            "The 4-rods or 6-rods steering trapezoidal shape also meets the above ideal relationship precisely."
+        ],
+        "answer": "The 4-rods or 6-rods steering trapezoidal shape also meets the above ideal relationship precisely.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình công thức Ackermann/cotgβ - cotgα, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 74,
+        "question_number": "11",
+        "question": "Talking about the ackermann link (trapezoid) in the picture, which of the following is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "This is a ackermann link with 6 rods.",
+            "This ackermann link is widely used for passenger car with independent suspension.",
+            "The dimension of rods in ackermann link do not depend on the kinetic relationships of the steerable wheels, but only on the layout space and the torque required to act to rotate the wheel.",
+            "The ackermann link in the figure is used to link the left and right steerable wheels."
+        ],
+        "answer": "The dimension of rods in ackermann link do not depend on the kinetic relationships of the steerable wheels, but only on the layout space and the torque required to act to rotate the wheel.",
+        "manual_image_needed": true,
+        "note": "Câu có hình Ackermann linkage/trapezoid, nên cần ảnh thủ công. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 74,
+        "question_number": "12",
+        "question": "Talking about the basic parameters of steering gear, which of the following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Kinematic steering gear ratio and dynamics steering gear ratio are basic parameters of the steering gear.",
+            "The steering system has both forward and reverse efficiency. The greater the forward efficiency is the better, and the smaller the inverse efficiency is the better.",
+            "The nature of the steering gear is a reduction gearbox, so it is possible to choose a very large gear ratio for heavy load vehicles to avoid designing the steering power system.",
+            "The backlash (clearance) in the steering gear determines the free play of steering wheel."
+        ],
+        "answer": "The nature of the steering gear is a reduction gearbox, so it is possible to choose a very large gear ratio for heavy load vehicles to avoid designing the steering power system.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Đáp án được xác nhận bằng dấu x trong Pretest/Postest."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 75,
+        "question_number": "13",
+        "question": "Select a name for part numbered in the following table?",
+        "type": "matching_matrix",
+        "columns": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "7",
+            "11"
+        ],
+        "answer": [
+            {
+                "component": "Pinion",
+                "number": "7"
+            },
+            {
+                "component": "Rack",
+                "number": "1"
+            },
+            {
+                "component": "Rack guid",
+                "number": "2"
+            },
+            {
+                "component": "Compression spring",
+                "number": "3"
+            },
+            {
+                "component": "Yoke plug (adjusting plug)",
+                "number": "4"
+            },
+            {
+                "component": "Tie rod",
+                "number": "11"
+            },
+            {
+                "component": "Jam nut (adjusting nut)",
+                "number": "5"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu matching/matrix dựa trên hình rack and pinion steering gear. Cần ảnh thủ công. Row 'Worm' không có đáp án được chọn trong bảng."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 75,
+        "question_number": "14",
+        "question": "Talking about rack and pinion steering gear, which of the following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Rack and pinion steering gear has a simple structure, capable of eliminating gaps at the meshing place.",
+            "The positive (forward) and negative (reverse) efficiency are equal.",
+            "Commonly used on trucks with hydraulic power to limit impact on the steering wheel.",
+            "The disadvantage is the large length of the structure, the rack made of high quality steel, small size, and easy to bend during use."
+        ],
+        "answer": "Commonly used on trucks with hydraulic power to limit impact on the steering wheel.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Trong Postest câu này hiện 7 Points nhưng bản chất là single_choice 1 đáp án."
+    },
+    {
+        "chapter": "Chapter 10: Steering system",
+        "source_page": 76,
+        "question_number": "15",
+        "question": "Select a name for part numbered in the following table?",
+        "type": "matching_matrix",
+        "columns": [
+            "1",
+            "2",
+            "6",
+            "7",
+            "12",
+            "21",
+            "22"
+        ],
+        "answer": [
+            {
+                "component": "Worm",
+                "number": "12"
+            },
+            {
+                "component": "Ball nut",
+                "number": "7"
+            },
+            {
+                "component": "Sector gear",
+                "number": "6"
+            },
+            {
+                "component": "Adjusting screw",
+                "number": "21"
+            },
+            {
+                "component": "Lock nut",
+                "number": "22"
+            },
+            {
+                "component": "Sector shaft",
+                "number": "2"
+            },
+            {
+                "component": "Pitman arm",
+                "number": "1"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu matching/matrix dựa trên hình worm and nut steering gear. Cần ảnh thủ công để người học nhìn các số trên sơ đồ."
+    }
+]
