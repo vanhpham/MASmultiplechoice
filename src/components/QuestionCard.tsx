@@ -15,6 +15,12 @@ interface QuestionCardProps {
   result?: QuestionResult
 }
 
+function getQuestionTypeLabel(type: NormalizedQuestionUnion['type']): string {
+  if (type === 'single_choice') return 'Trắc nghiệm một đáp án'
+  if (type === 'text_answer') return 'Điền từ khóa'
+  return 'Khớp cột'
+}
+
 export function QuestionCard({
   question,
   answer,
@@ -28,6 +34,7 @@ export function QuestionCard({
 }: QuestionCardProps) {
   const resultText = result ? (result.isCorrect ? 'Bạn làm đúng' : 'Bạn làm sai') : ''
   const answerTextClass = result && (result.isCorrect ? 'result-correct' : 'result-wrong')
+  const isEvaluated = !!result
 
   return (
     <article className="question-card" id={question.id}>
@@ -36,8 +43,9 @@ export function QuestionCard({
           <div className="chapter-name">{question.chapter}</div>
           <h2>Câu {question.question_number}</h2>
         </div>
-        {question.manual_image_needed ? <span className="manual-chip">Có hình</span> : null}
+        <span className="question-chip">{getQuestionTypeLabel(question.type)}</span>
       </div>
+      {question.manual_image_needed ? <span className="manual-chip">Có hình</span> : null}
 
       <p className="question-text">{question.question}</p>
 
@@ -48,7 +56,8 @@ export function QuestionCard({
       <div className="question-body">
         {question.type === 'single_choice' ? (
           <div className="single-options">
-            {question.options.map((option) => {
+            {question.options.map((option, index) => {
+              const optionLabel = String.fromCharCode(65 + index)
               const selected = answer === option
               const normalizedCorrect = normalizeText(question.answer)
               const normalizedOption = normalizeText(option)
@@ -66,6 +75,7 @@ export function QuestionCard({
                   onClick={() => onSingleChoice(question.id, option)}
                   disabled={locked}
                 >
+                  <span className="option-index">{optionLabel}</span>
                   <span>{option}</span>
                   {selected ? <strong>✓</strong> : null}
                 </button>
@@ -75,7 +85,7 @@ export function QuestionCard({
         ) : null}
 
         {question.type === 'text_answer' ? (
-          <div>
+          <div className="text-question">
             <textarea
               className="text-answer"
               value={(answer as string) || ''}
@@ -97,13 +107,15 @@ export function QuestionCard({
         ) : null}
 
         {question.type === 'matching_matrix' ? (
-          <MatchingQuestion
-            question={question}
-            answer={(answer as Record<string, string>) || {}}
-            disabled={locked}
-            onSelect={(number, value) => onMatching(question.id, number, value)}
-            showResult={showResult}
-          />
+          <div className="matching-question-wrap">
+            <MatchingQuestion
+              question={question}
+              answer={(answer as Record<string, string>) || {}}
+              disabled={locked}
+              onSelect={(number, value) => onMatching(question.id, number, value)}
+              showResult={showResult}
+            />
+          </div>
         ) : null}
       </div>
 
@@ -113,7 +125,16 @@ export function QuestionCard({
           {result ? <div>Đáp án đúng: {result.correctAnswer}</div> : null}
         </div>
       ) : null}
-      {question.note ? <div className="note">Gợi ý: {question.note}</div> : null}
+      {/* {question.note ? <div className="note">Gợi ý: {question.note}</div> : null} */}
+      {question.type === 'text_answer' && showResult ? (
+        <div className="question-feedback-inline">
+          {result ? (
+            <strong className={isEvaluated && result.isCorrect ? 'feedback-ok' : 'feedback-no'}>
+              {result.isCorrect ? '✅ Chính xác' : '⚠️ Chưa đúng'}
+            </strong>
+          ) : null}
+        </div>
+      ) : null}
     </article>
   )
 }

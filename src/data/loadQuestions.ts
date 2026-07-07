@@ -1,18 +1,67 @@
-import type { NormalizedQuestionUnion, RawQuestion } from '../types/question'
+import type {
+  MatchingAnswerItem,
+  MatchingLegacyAnswerItem,
+  NormalizedQuestionUnion,
+  RawQuestion
+} from '../types/question'
 import { slugify } from '../lib/normalize'
 
-export async function loadQuestions(): Promise<NormalizedQuestionUnion[]> {
-  const response = await fetch('/data/chap2.json')
-  if (!response.ok) {
-    throw new Error(`Không tải được dữ liệu câu hỏi (${response.status} ${response.statusText})`)
-  }
-  const json = (await response.json()) as RawQuestion[]
-  return json.map((q) => normalizeQuestion(q))
+export const AVAILABLE_CHAPTERS = ['chap1', 'chap2', 'chap3', 'chap4', 'chap5', 'chap6', 'chap7', 'chap8', 'chap9', 'chap10'] as const
+export type ChapterId = (typeof AVAILABLE_CHAPTERS)[number]
+
+export function isChapterId(value: string): value is ChapterId {
+  return (AVAILABLE_CHAPTERS as readonly string[]).includes(value)
 }
 
-function normalizeQuestion(question: RawQuestion): NormalizedQuestionUnion {
+export function toDisplayChapter(chapterId: ChapterId): string {
+  const map: Record<ChapterId, string> = {
+    chap1: 'Chapter 1',
+    chap2: 'Chapter 2',
+    chap3: 'Chapter 3',
+    chap4: 'Chapter 4',
+    chap5: 'Chapter 5',
+    chap6: 'Chapter 6',
+    chap7: 'Chapter 7',
+    chap8: 'Chapter 8',
+    chap9: 'Chapter 9',
+    chap10: 'Chapter 10'
+  }
+  return map[chapterId]
+}
+
+function normalizeMatchingAnswer(answer: Array<MatchingAnswerItem | MatchingLegacyAnswerItem>): MatchingAnswerItem[] {
+  return answer
+    .map((item) => {
+      if ('number' in item && typeof item.number === 'string' && typeof item.component === 'string') {
+        return { number: item.number.trim(), component: item.component.trim() }
+      }
+
+      if (
+        typeof item.component === 'string' &&
+        typeof item.state === 'string'
+      ) {
+        return { number: item.component.trim(), component: item.state.trim() }
+      }
+
+      return null
+    })
+    .filter((item): item is MatchingAnswerItem => item !== null)
+}
+
+export async function loadQuestions(chapterId: ChapterId): Promise<NormalizedQuestionUnion[]> {
+  const response = await fetch(`/data/${chapterId}.json`)
+  if (!response.ok) {
+    throw new Error(`Không tải được dữ liệu của ${chapterId}.json (${response.status} ${response.statusText})`)
+  }
+  const json = (await response.json()) as RawQuestion[]
+  return json.map((q) => normalizeQuestion(q, chapterId))
+}
+
+function normalizeQuestion(question: RawQuestion, chapterId: ChapterId): NormalizedQuestionUnion {
   const id = `${slugify(question.chapter)}-q${String(question.question_number).padStart(2, '0')}`
-  const image = question.manual_image_needed ? `/images/chap2/q${question.question_number}.png` : null
+  const image = question.manual_image_needed
+    ? `/images/${chapterId}/q${question.question_number}.png`
+    : null
 
   if (question.type === 'single_choice') {
     return {
@@ -41,6 +90,8 @@ function normalizeQuestion(question: RawQuestion): NormalizedQuestionUnion {
     image,
     type: 'matching_matrix',
     columns: question.columns ?? [],
-    answer: question.answer as Array<{ number: string; component: string }>
+    answer: Array.isArray(question.answer)
+      ? normalizeMatchingAnswer(question.answer)
+      : []
   }
 }

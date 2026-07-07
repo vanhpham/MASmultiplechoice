@@ -11,7 +11,8 @@ export function ManualImage({ src, alt }: ManualImageProps) {
   if (!src || failed) {
     return (
       <div className="manual-image missing">
-        <span>🖼️ Cần ảnh minh họa</span>
+        <span>Ảnh minh hoạ</span>
+        <small>Hiện chưa có ảnh cho câu này</small>
       </div>
     )
   }

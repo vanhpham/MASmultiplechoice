@@ -8,9 +8,14 @@ export interface RawQuestion {
   type: QuestionType
   options?: string[]
   columns?: string[]
-  answer: string | MatchingAnswerItem[]
+  answer: string | MatchingAnswerItem[] | MatchingLegacyAnswerItem[]
   manual_image_needed: boolean
   note?: string
+}
+
+export interface MatchingLegacyAnswerItem {
+  component: string
+  state: string
 }
 
 export interface MatchingAnswerItem {

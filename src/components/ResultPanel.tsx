@@ -18,7 +18,10 @@ export function ResultPanel({
 
   return (
     <section className="result-panel card">
-      <h3>Kết quả</h3>
+      <div className="result-panel-head">
+        <h3>Kết quả phiên</h3>
+        <p>Nhấn “Làm lại” để bắt đầu từ đầu</p>
+      </div>
       <div className="result-grid">
         <div>
           <p className="label">Tổng câu</p>

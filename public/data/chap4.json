@@ -1,0 +1,523 @@
+[
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 22,
+        "question_number": "1",
+        "question": "Which of these following is not the function of the transmission and transaxle?",
+        "type": "single_choice",
+        "options": [
+            "Provide the torque needed to move the vehicle under a variety of road and load conditions.",
+            "Distribute the driving torque to the left and right wheels when the vehicle turns.",
+            "Be shifted into neutral for starting the engine and running it without turning the drive wheels.",
+            "Be shifted into reverse so the vehicle can move backward."
+        ],
+        "answer": "Distribute the driving torque to the left and right wheels when the vehicle turns.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 22,
+        "question_number": "2",
+        "question": "Which of the following is not the requirement of the transmission and transaxle?",
+        "type": "single_choice",
+        "options": [
+            "Easy to shift and shifted gear can not jump out.",
+            "Have a proper ratio range.",
+            "Ensure only one gear is shifted at a moment.",
+            "Slippable when drivetrain overload."
+        ],
+        "answer": "Slippable when drivetrain overload.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 23,
+        "question_number": "3",
+        "question": "Which of the followings is not the requirement of the transmission and transaxle?",
+        "type": "single_choice",
+        "options": [
+            "Slippable when drivetrain overload.",
+            "Have a proper ratio range.",
+            "Can not shift into reverse gear when vehicle moving forward.",
+            "Ensure only one gear is shifted at a moment."
+        ],
+        "answer": "Slippable when drivetrain overload.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 23,
+        "question_number": "4",
+        "question": "Choose the name for gear box on the figure?",
+        "type": "single_choice",
+        "options": [
+            "Transaxle.",
+            "Transmission.",
+            "Electronic automatic transmission (EAT).",
+            "Continuously variable transmission (CVT)."
+        ],
+        "answer": "Transmission.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình hộp số, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 24,
+        "question_number": "5",
+        "question": "Choose the name for gear box on the figure?",
+        "type": "single_choice",
+        "options": [
+            "Transmission.",
+            "Continuously variable transmission (CVT).",
+            "Electronic automatic transmission (EAT).",
+            "Transaxle."
+        ],
+        "answer": "Electronic automatic transmission (EAT).",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình hộp số tự động, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 24,
+        "question_number": "6",
+        "question": "Choose the name for gear box on the figure?",
+        "type": "single_choice",
+        "options": [
+            "Transmission.",
+            "Transaxle.",
+            "Electronic automatic transmission (EAT).",
+            "Continuously variable transmission (CVT)."
+        ],
+        "answer": "Transaxle.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình transaxle, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 25,
+        "question_number": "7",
+        "question": "Choose the name for gear box on the figure?",
+        "type": "single_choice",
+        "options": [
+            "Transmission.",
+            "Continuously variable transmission (CVT).",
+            "Transaxle.",
+            "Electronic automatic transmission (EAT)."
+        ],
+        "answer": "Continuously variable transmission (CVT).",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình CVT, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 25,
+        "question_number": "8",
+        "question": "Find the incorrect statement in the followings talking about transaxle?",
+        "type": "single_choice",
+        "options": [
+            "Higher efficiency than transmission.",
+            "One gear (ratio) is made by a pair of gears.",
+            "Output shaft of transaxle connect to the propeller shaft.",
+            "Widely used in FF vehicle."
+        ],
+        "answer": "Output shaft of transaxle connect to the propeller shaft.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 26,
+        "question_number": "9",
+        "question": "Find the incorrect statement in the followings talking about transmission?",
+        "type": "single_choice",
+        "options": [
+            "Widely used for FR vehicle.",
+            "Higher efficiency than transaxle.",
+            "Has direct drive, that resulting longevity when compare to the transaxle in the same producing conditions.",
+            "It has three shafts: input shaft, counter shaft and output shaft."
+        ],
+        "answer": "Higher efficiency than transaxle.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 26,
+        "question_number": "10",
+        "question": "Calculate the first gear ratio of the transmission on the figure? (the number in () is the number of that gear teeth)",
+        "type": "single_choice",
+        "options": [
+            "1",
+            "1,6",
+            "7",
+            "4"
+        ],
+        "answer": "7",
+        "manual_image_needed": true,
+        "note": "Câu tính tỉ số truyền phụ thuộc vào hình bánh răng, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 27,
+        "question_number": "11",
+        "question": "Calculate the second gear ratio of the transmission on the figure? (the number in () is the number of that gear teeth)",
+        "type": "single_choice",
+        "options": [
+            "7",
+            "1,6",
+            "4",
+            "1"
+        ],
+        "answer": "4",
+        "manual_image_needed": true,
+        "note": "Câu tính tỉ số truyền phụ thuộc vào hình bánh răng, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 27,
+        "question_number": "12",
+        "question": "Calculate the third gear ratio of the transmission on the figure? (the number in () is the number of that gear teeth)",
+        "type": "single_choice",
+        "options": [
+            "1",
+            "1,6",
+            "4",
+            "7"
+        ],
+        "answer": "1,6",
+        "manual_image_needed": true,
+        "note": "Câu tính tỉ số truyền phụ thuộc vào hình bánh răng, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 28,
+        "question_number": "13",
+        "question": "Calculate the fourth gear ratio of the transmission on the figure? (the number in () is the number of that gear teeth)",
+        "type": "single_choice",
+        "options": [
+            "7",
+            "4",
+            "1",
+            "1,6"
+        ],
+        "answer": "1",
+        "manual_image_needed": true,
+        "note": "Câu tính tỉ số truyền phụ thuộc vào hình bánh răng, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 28,
+        "question_number": "14",
+        "question": "In the transmission using key-type synchronizer, which of following part directly pushing the synchronizer ring when synchronous?",
+        "type": "single_choice",
+        "options": [
+            "Synchronizer sleeve.",
+            "Ring-shaped spring.",
+            "Keys.",
+            "Synchronizer hub."
+        ],
+        "answer": "Keys.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 28,
+        "question_number": "15",
+        "question": "Talking about the operation of transmission of FR vehicles, which of the following statements is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The driven (output) shaft is connecting with the propeller shaft.",
+            "The teeth inside the synchronizer hub are splined with the output shaft.",
+            "Interlock mechanism in a device to prevent jump out of shifting gear.",
+            "Transmission case is normally made from cast steel or aluminum alloy."
+        ],
+        "answer": "Interlock mechanism in a device to prevent jump out of shifting gear.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được. Trong ảnh có một đoạn chữ Việt bị lẫn sau option 2, mình đã bỏ để giữ câu tiếng Anh sạch."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 29,
+        "question_number": "16",
+        "question": "Talking about three shafts transmission, which of following statements is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The function of the synchronizer is to make the rotating gears with different speed to same speed and to lock them together.",
+            "Transmission case is normally made from cast steel or aluminum alloy.",
+            "Output shaft and propeller shaft are splined together and rotating at same speed.",
+            "The counter shaft always rotates even when the clutch is disengaged."
+        ],
+        "answer": "The counter shaft always rotates even when the clutch is disengaged.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 29,
+        "question_number": "17",
+        "question": "Talking about movements of the shift lever, which of the followings is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "First movement is horizontal lever to select shift fork and synchronizer for the desired gear.",
+            "To shift the gear, the driver does horizontal lever firstly, and then does longitudinal lever.",
+            "Second movement is longitudinal lever to move the synchronizer sleeve.",
+            "First movement is horizontal lever to move the synchronizer sleeve."
+        ],
+        "answer": "First movement is horizontal lever to move the synchronizer sleeve.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 29,
+        "question_number": "18",
+        "question": "Choose the name from the followings for part a?",
+        "type": "single_choice",
+        "options": [
+            "Pump impeller.",
+            "Gear set.",
+            "Stator.",
+            "Turbine runner."
+        ],
+        "answer": "Turbine runner.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình torque converter/fluid coupling, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 30,
+        "question_number": "19",
+        "question": "Choose the name from the followings for part a?",
+        "type": "single_choice",
+        "options": [
+            "Stator.",
+            "Gear set.",
+            "Pump impeller.",
+            "Turbine runner."
+        ],
+        "answer": "Pump impeller.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình torque converter/fluid coupling, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 30,
+        "question_number": "20",
+        "question": "Choose the name from the followings for part a?",
+        "type": "single_choice",
+        "options": [
+            "Stator.",
+            "Turbine runner.",
+            "Gear set.",
+            "Pump impeller."
+        ],
+        "answer": "Stator.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình torque converter/fluid coupling, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 31,
+        "question_number": "21",
+        "question": "Talking about the torque converter, which of the following is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The torque converter need a two-way clutch for operation.",
+            "The torque converter need a lockup clutch mechanism inside.",
+            "The torque converter can increase the torque.",
+            "The torque converter is different from the fluid coupling because it has the stator."
+        ],
+        "answer": "The torque converter need a two-way clutch for operation.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 31,
+        "question_number": "22",
+        "question": "The figure shows the one-way clutch, find the rotation direction of outer race?",
+        "type": "single_choice",
+        "options": [
+            "Clockwise.",
+            "Counter clockwise."
+        ],
+        "answer": "Counter clockwise.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình one-way clutch, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 32,
+        "question_number": "23",
+        "question": "The figure shows the one-way clutch, find the rotation direction of outer race?",
+        "type": "single_choice",
+        "options": [
+            "Clockwise.",
+            "Counter clockwise."
+        ],
+        "answer": "Clockwise.",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình one-way clutch, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 32,
+        "question_number": "24",
+        "question": "See the illustrate and choose the answer that matches the condition of the planetary gear in the illustrate?",
+        "type": "single_choice",
+        "options": [
+            "Reverse",
+            "Neutral",
+            "OD",
+            "Direct drive",
+            "Reduction"
+        ],
+        "answer": "Reduction",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình planetary gear, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 33,
+        "question_number": "25",
+        "question": "See the illustrate and choose the answer that matches the condition of the planetary gear in the illustrate?",
+        "type": "single_choice",
+        "options": [
+            "Reverse",
+            "Direct drive",
+            "Over drive",
+            "Neutral",
+            "Under drive (reduction)"
+        ],
+        "answer": "Over drive",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình planetary gear, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 34,
+        "question_number": "26",
+        "question": "See the illustrate and choose the answer that matches the condition of the planetary gear in the illustrate?",
+        "type": "single_choice",
+        "options": [
+            "Reverse",
+            "Under drive",
+            "Neutral",
+            "Direct drive",
+            "Over drive"
+        ],
+        "answer": "Reverse",
+        "manual_image_needed": true,
+        "note": "Câu phụ thuộc vào hình planetary gear, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 34,
+        "question_number": "27",
+        "question": "When is the planetary gear set in direct drive condition?",
+        "type": "matching_matrix",
+        "columns": [
+            "Turn or driving (input)",
+            "Driven (output)",
+            "Held (stationary)",
+            "Free"
+        ],
+        "answer": [
+            {
+                "component": "Sun gear",
+                "state": "Turn or driving (input)"
+            },
+            {
+                "component": "Ring gear",
+                "state": "Turn or driving (input)"
+            },
+            {
+                "component": "Planet carrier",
+                "state": "Driven (output)"
+            }
+        ],
+        "manual_image_needed": false,
+        "note": "Câu matrix/table, không bắt buộc ảnh nhưng frontend nên hỗ trợ dạng matching_matrix."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 35,
+        "question_number": "28",
+        "question": "When is the planetary gear set in neutral condition?",
+        "type": "matching_matrix",
+        "columns": [
+            "Turn or driving (input)",
+            "Driven (output)",
+            "Held (stationary)",
+            "Free"
+        ],
+        "answer": [
+            {
+                "component": "Sun gear",
+                "state": "Turn or driving (input)"
+            },
+            {
+                "component": "Ring gear",
+                "state": "Free"
+            },
+            {
+                "component": "Planet carrier",
+                "state": "Free"
+            }
+        ],
+        "manual_image_needed": false,
+        "note": "Câu matrix/table, không bắt buộc ảnh nhưng frontend nên hỗ trợ dạng matching_matrix."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 35,
+        "question_number": "29",
+        "question": "Find the incorrect statement in the followings?",
+        "type": "single_choice",
+        "options": [
+            "A single planetary gear set has three main parts, these are a ring gear, a planetary carrier with planetary pinions, and a sun gear.",
+            "The planetary gearset can provide 5 conditions: speed increase (overdrive), speed decrease (reduction), direct drive (lockup), neutral, and reverse.",
+            "When fixing the ring gear (stationary), driving member is sun gear, driven member is planetary carrier, planetary gearset becomes overdrive mechanism with the same direction.",
+            "From two planetary gearsets, it is possible to combine them using common sun gear or common planetary carrier to have more many gear ratios."
+        ],
+        "answer": "When fixing the ring gear (stationary), driving member is sun gear, driven member is planetary carrier, planetary gearset becomes overdrive mechanism with the same direction.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 36,
+        "question_number": "30",
+        "question": "The automatic transmission control is not base on which of the following signals?",
+        "type": "single_choice",
+        "options": [
+            "Shift lever position signal.",
+            "Brake pedal position signal.",
+            "Throttle opening signal.",
+            "Vehicle speed signal."
+        ],
+        "answer": "Brake pedal position signal.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 4: Transmission and Transaxle",
+        "source_page": 36,
+        "question_number": "31",
+        "question": "Talking about the gear shifting schedule for automatic transmission, which of the followings is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The curves on the gear shifting schedule start from origin of coordinate system.",
+            "On the gear shifting schedule, the horizontal axis the vehicle speed, and the vertical axis is the throttle opening.",
+            "The upshift curve and the downshift curve are two separate curve.",
+            "Gear shifting schedule has kick down area, that respond the need of acceleration."
+        ],
+        "answer": "The curves on the gear shifting schedule start from origin of coordinate system.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    }
+]

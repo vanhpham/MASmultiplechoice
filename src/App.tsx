@@ -1,8 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
-import { loadQuestions } from './data/loadQuestions'
+import {
+  AVAILABLE_CHAPTERS,
+  isChapterId,
+  loadQuestions,
+  toDisplayChapter,
+  type ChapterId
+} from './data/loadQuestions'
 import type { NormalizedQuestionUnion, QuestionAnswer, QuestionResult } from './types/question'
 import { normalizeText } from './lib/normalize'
-import { loadProgress, saveProgress } from './lib/storage'
+import { clearProgress, loadProgress, saveProgress } from './lib/storage'
 import { QuestionCard } from './components/QuestionCard'
 import { ResultPanel } from './components/ResultPanel'
 
@@ -122,18 +128,33 @@ export default function App() {
   const [startedAt, setStartedAt] = useState(() => Date.now())
   const [nowTick, setNowTick] = useState(() => Date.now())
   const [mode, setMode] = useState<LearnMode>('exam')
+  const [selectedChapter, setSelectedChapter] = useState<ChapterId>('chap2')
+  const [isReadyToSave, setIsReadyToSave] = useState(false)
   const [wrongQuestionIds, setWrongQuestionIds] = useState<string[]>([])
   const [textSubmittedQuestionIds, setTextSubmittedQuestionIds] = useState<string[]>([])
 
   useEffect(() => {
     let isActive = true
+    const now = Date.now()
+    setQuestions([])
+    setAnswers({})
+    setWrongQuestionIds([])
+    setTextSubmittedQuestionIds([])
+    setIsSubmitted(false)
+    setScore(0)
+    setMode('exam')
+    setError(null)
+    setStartedAt(now)
+    setNowTick(now)
+    setIsReadyToSave(false)
+    setLoading(true)
 
-    loadQuestions()
+    loadQuestions(selectedChapter)
       .then((data) => {
         if (!isActive) return
         setQuestions(data)
 
-        const saved = loadProgress()
+        const saved = loadProgress(selectedChapter)
         if (saved) {
           const loadedAnswers: Record<string, QuestionAnswer> = {}
           data.forEach((question) => {
@@ -155,6 +176,7 @@ export default function App() {
             Number.isFinite(saved.startedAt) && saved.startedAt > 0 ? saved.startedAt : Date.now()
           )
         }
+        setIsReadyToSave(true)
         setLoading(false)
       })
       .catch((err: unknown) => {
@@ -166,7 +188,7 @@ export default function App() {
     return () => {
       isActive = false
     }
-  }, [])
+  }, [selectedChapter])
 
   useEffect(() => {
     if (mode === 'exam' && !isSubmitted) {
@@ -249,9 +271,17 @@ export default function App() {
 
   const currentQuestionCount = visibleQuestions.length
 
+  const progressPercent = currentQuestionCount === 0
+    ? 0
+    : Math.round((answeredCount / currentQuestionCount) * 100)
+
+  const accuracyPercent = currentQuestionCount === 0
+    ? 0
+    : Math.round((correctCount / currentQuestionCount) * 100)
+
   useEffect(() => {
-    if (!questions.length) return
-    saveProgress({
+    if (!questions.length || !isReadyToSave) return
+    saveProgress(selectedChapter, {
       answers,
       isSubmitted: isSubmitted && mode === 'exam',
       score: isSubmitted && mode === 'exam' ? score : null,
@@ -261,7 +291,7 @@ export default function App() {
       wrongQuestionIds,
       textSubmittedQuestionIds
     })
-  }, [answers, isSubmitted, score, startedAt, mode, wrongQuestionIds, textSubmittedQuestionIds, questions.length])
+  }, [answers, isSubmitted, score, startedAt, mode, wrongQuestionIds, textSubmittedQuestionIds, isReadyToSave, questions.length, selectedChapter])
 
   function handleSingleChoice(questionId: string, value: string) {
     if (isSubmitted && mode === 'exam') {
@@ -337,6 +367,7 @@ export default function App() {
     setScore(0)
     setStartedAt(Date.now())
     setNowTick(Date.now())
+    clearProgress(selectedChapter)
   }
 
   function handleClearWrongHistory() {
@@ -348,6 +379,13 @@ export default function App() {
     setIsSubmitted(false)
     setStartedAt(Date.now())
     setNowTick(Date.now())
+  }
+
+  function handleChapterChange(chapterInput: string) {
+    if (!isChapterId(chapterInput) || chapterInput === selectedChapter) {
+      return
+    }
+    setSelectedChapter(chapterInput)
   }
 
   function getModeLabel(label: LearnMode): string {
@@ -374,7 +412,7 @@ export default function App() {
       <main className="app">
         <section className="status-card card">
           <h1>Đang tải bài ôn</h1>
-          <p>Đang tải dữ liệu từ chap2.json...</p>
+          <p>Đang tải dữ liệu từ {selectedChapter}.json...</p>
         </section>
       </main>
     )
@@ -401,9 +439,53 @@ export default function App() {
   return (
     <main className="app">
       <header className="topbar card">
-        <div>
-          <h1>Ôn luyện Chapter 2: Arrangement of automobile</h1>
-          <p>{getModeLabel(mode)}</p>
+        <div className="topbar-main">
+          <div>
+            <p className="eyebrow">ÔN LUYỆN CHƯƠNG</p>
+            <h1>{questions[0]?.chapter || `${toDisplayChapter(selectedChapter)}`}</h1>
+            <p className="subtitle">{getModeLabel(mode)}</p>
+          </div>
+          <div className="chapter-switch">
+            <label htmlFor="chapter-select" className="chapter-switch-label">
+              Chọn chương
+            </label>
+            <select
+              id="chapter-select"
+              value={selectedChapter}
+              className="chapter-select"
+              onChange={(event) => handleChapterChange(event.target.value)}
+            >
+              {AVAILABLE_CHAPTERS.map((item) => (
+                <option key={item} value={item}>
+                  {toDisplayChapter(item)}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mode-stats">
+            <div className="mode-stat">
+              <span>Tiến độ</span>
+              <strong>{answeredCount}/{currentQuestionCount}</strong>
+            </div>
+            <div className="mode-stat">
+              <span>Thời gian</span>
+              <strong>{formatTime(elapsedSeconds)}</strong>
+            </div>
+            {mode === 'exam' && isSubmitted ? (
+              <div className="mode-stat">
+                <span>Điểm</span>
+                <strong>{score}/{currentQuestionCount}</strong>
+              </div>
+            ) : null}
+            {mode !== 'exam' ? (
+              <div className="mode-stat">
+                <span>Đúng</span>
+                <strong>
+                  {correctCount}/{currentQuestionCount} ({accuracyPercent}%)
+                </strong>
+              </div>
+            ) : null}
+          </div>
         </div>
 
         <div className="mode-switch">
@@ -430,19 +512,25 @@ export default function App() {
           </button>
         </div>
 
-        <div className="meta">
-          <div>Tiến độ: {answeredCount}/{currentQuestionCount}</div>
-          <div>Thời gian: {formatTime(elapsedSeconds)}</div>
-          {mode === 'exam' && isSubmitted ? <div>Điểm: {score}/{currentQuestionCount}</div> : null}
-          {mode !== 'exam' ? <div>Đúng: {correctCount}/{currentQuestionCount}</div> : null}
+        <div className="progress-wrap">
+          <div className="progress-meta">
+            <span>{mode === 'exam' ? 'Hành trình làm bài' : 'Tiến độ ôn tập'}</span>
+            <strong>{progressPercent}%</strong>
+          </div>
+          <div className="progress-track" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progressPercent}>
+            <div className="progress-fill" style={{ width: `${progressPercent}%` }} />
+          </div>
         </div>
       </header>
 
       <section className="content">
-        <p className="hint">{getModeHint()}</p>
+        <section className="session-tip card">
+          <p>{getModeHint()}</p>
+        </section>
 
+        <section className="question-list-card card">
         {mode === 'mistakes' && wrongQuestionIds.length === 0 ? (
-          <section className="status-card card">
+          <section className="status-card">
             <h2>Không có câu sai</h2>
             <p>Bạn chưa có câu sai đang chờ ôn lại. Chuyển sang chế độ Ôn tập hoặc làm bài để tạo dữ liệu.</p>
           </section>
@@ -485,6 +573,7 @@ export default function App() {
             ) : null}
           </>
         )}
+        </section>
 
         <ResultPanel
           totalQuestions={currentQuestionCount}

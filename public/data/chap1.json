@@ -1,0 +1,198 @@
+[
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 1,
+        "question_number": "1",
+        "question": "According to statistics, the annual output of passenger cars in the world accounts for about a% of the total production of vehicles. Choose the most suitable a value from the following values?",
+        "type": "single_choice",
+        "options": [
+            "35",
+            "50",
+            "75",
+            "90"
+        ],
+        "answer": "75",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 1,
+        "question_number": "2",
+        "question": "What does EFI stand for?",
+        "type": "text_answer",
+        "answer": "Electronic Fuel Injection",
+        "manual_image_needed": false,
+        "note": "Câu text answer, không cần hình."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 1,
+        "question_number": "3",
+        "question": "What does CVT stand for?",
+        "type": "text_answer",
+        "answer": "Continuously Variable Transmission",
+        "manual_image_needed": false,
+        "note": "Câu text answer, không cần hình."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 1,
+        "question_number": "4",
+        "question": "What does RR stand for?",
+        "type": "text_answer",
+        "answer": "Rear-engine, Rear-wheel drive",
+        "manual_image_needed": false,
+        "note": "Trong ảnh phần Correct answers ghi ngắn hơn là 'Rear engine Rear drive', nhưng mình chuẩn hóa theo câu trả lời đã nhập là Rear-engine, Rear-wheel drive."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 1,
+        "question_number": "5",
+        "question": "What does 4WD stand for?",
+        "type": "text_answer",
+        "answer": "Four-Wheel Drive",
+        "manual_image_needed": false,
+        "note": "Trong ảnh phần Correct answers ghi là '4 Wheel Drive', mình chuẩn hóa thành Four-Wheel Drive."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 1,
+        "question_number": "6",
+        "question": "What does FF stand for?",
+        "type": "text_answer",
+        "answer": "Front-engine, Front-wheel drive",
+        "manual_image_needed": false,
+        "note": "Trong ảnh phần Correct answers ghi ngắn hơn là 'Front engine Front drive', mình chuẩn hóa theo câu trả lời đã nhập."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 1,
+        "question_number": "7",
+        "question": "What does 4WS stand for?",
+        "type": "text_answer",
+        "answer": "Four-Wheel Steering",
+        "manual_image_needed": false,
+        "note": "Trong ảnh phần Correct answers ghi là '4 Wheel Steering', mình chuẩn hóa thành Four-Wheel Steering."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 2,
+        "question_number": "8",
+        "question": "Who is considered to be the inventor of the first automobile in the following names?",
+        "type": "single_choice",
+        "options": [
+            "James Watt",
+            "Nicolaus August Otto",
+            "Karl Benz",
+            "Henry Ford"
+        ],
+        "answer": "Karl Benz",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 2,
+        "question_number": "9",
+        "question": "Which of the following functions does not belong to the basic functions of the automobile?",
+        "type": "single_choice",
+        "options": [
+            "Run",
+            "Stop",
+            "Comfort",
+            "Turn"
+        ],
+        "answer": "Comfort",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 2,
+        "question_number": "10",
+        "question": "What does ABS stand for?",
+        "type": "text_answer",
+        "answer": "Anti-lock Brake System",
+        "manual_image_needed": false,
+        "note": "Trong ảnh câu trả lời đã nhập là 'Anti-lock Braking System', nhưng Correct answers ghi 'Anti-lock Brake System'. Mình lấy theo Correct answers."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 2,
+        "question_number": "11",
+        "question": "What does MT stand for?",
+        "type": "text_answer",
+        "answer": "Manual Transmission",
+        "manual_image_needed": false,
+        "note": "Câu text answer, không cần hình."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 2,
+        "question_number": "12",
+        "question": "Which of the following is not the reason car manufacturers switch to electric motors?",
+        "type": "single_choice",
+        "options": [
+            "Oil resources in the world are gradually depleting",
+            "The air is polluted and the earth is warming",
+            "The internal combustion engine has had a long history, so it needs to be renewed with an electric motor",
+            "An electric motor has a characteristic and performance curve better than an internal combustion engine"
+        ],
+        "answer": "The internal combustion engine has had a long history, so it needs to be renewed with an electric motor",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 3,
+        "question_number": "13",
+        "question": "The total number of annual passenger cars in the world in recent years (2015 - 2019) is close to which number?",
+        "type": "single_choice",
+        "options": [
+            "60 million",
+            "80 million",
+            "100 million",
+            "120 million"
+        ],
+        "answer": "100 million",
+        "manual_image_needed": false,
+        "note": "Câu này nằm ở page 3 phía trên tiêu đề Chapter 2, nên mình xếp vào Chapter 1."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 3,
+        "question_number": "14",
+        "question": "What does AT stand for?",
+        "type": "text_answer",
+        "answer": "Automatic Transmission",
+        "manual_image_needed": false,
+        "note": "Câu text answer, không cần hình."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 3,
+        "question_number": "15",
+        "question": "What does FR stand for?",
+        "type": "text_answer",
+        "answer": "Front-engine, Rear-wheel drive",
+        "manual_image_needed": false,
+        "note": "Trong ảnh câu trả lời đã nhập là 'Front-engine, Rear-wheel drive', nhưng Correct answers ghi ngắn là 'Front engine Rear drive'. Mình chuẩn hóa theo câu trả lời đã nhập."
+    },
+    {
+        "chapter": "Chapter 1: Overview of automotive vehicle",
+        "source_page": 3,
+        "question_number": "16",
+        "question": "The supersonic car has such name because of which of the following reasons?",
+        "type": "single_choice",
+        "options": [
+            "It is shaped like supersonic aircraft",
+            "It has the maximum ground speed over the sound speed",
+            "It has the maximum flying speed over the sound speed",
+            "Just a name to advertise for a special car-making project"
+        ],
+        "answer": "It has the maximum ground speed over the sound speed",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    }
+]

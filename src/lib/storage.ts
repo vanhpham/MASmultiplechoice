@@ -1,6 +1,7 @@
 import type { QuestionAnswer } from '../types/question'
 
 export interface QuizPersist {
+  chapter: string
   answers: Record<string, QuestionAnswer>
   isSubmitted: boolean
   score: number | null
@@ -11,14 +12,21 @@ export interface QuizPersist {
   textSubmittedQuestionIds: string[]
 }
 
-const STORAGE_KEY = 'mas-mc-chap2-progress'
+const CURRENT_KEY_PREFIX = 'mas-mc'
+const LEGACY_KEY = 'mas-mc-chap2-progress'
 
-export function loadProgress(): QuizPersist | null {
+function toStorageKey(chapter: string) {
+  return `${CURRENT_KEY_PREFIX}-${chapter}-progress`
+}
+
+export function loadProgress(chapter: string): QuizPersist | null {
   if (typeof window === 'undefined') {
     return null
   }
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY)
+    const primary = window.localStorage.getItem(toStorageKey(chapter))
+    const fallback = primary ?? (chapter === 'chap2' ? window.localStorage.getItem(LEGACY_KEY) : null)
+    const raw = primary ?? fallback
     if (!raw) {
       return null
     }
@@ -27,6 +35,7 @@ export function loadProgress(): QuizPersist | null {
       return null
     }
     return {
+      chapter: parsed.chapter ?? chapter,
       answers: parsed.answers ?? {},
       isSubmitted: Boolean(parsed.isSubmitted),
       score: typeof parsed.score === 'number' ? parsed.score : null,
@@ -43,16 +52,27 @@ export function loadProgress(): QuizPersist | null {
   }
 }
 
-export function saveProgress(data: QuizPersist): void {
+export function saveProgress(chapter: string, data: QuizPersist): void {
   if (typeof window === 'undefined') {
     return
   }
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+  const payload: QuizPersist = {
+    ...data,
+    chapter
+  }
+  window.localStorage.setItem(toStorageKey(chapter), JSON.stringify(payload))
+  if (chapter !== 'chap2') {
+    return
+  }
+  window.localStorage.removeItem(LEGACY_KEY)
 }
 
-export function clearProgress(): void {
+export function clearProgress(chapter: string): void {
   if (typeof window === 'undefined') {
     return
   }
-  window.localStorage.removeItem(STORAGE_KEY)
+  window.localStorage.removeItem(toStorageKey(chapter))
+  if (chapter === 'chap2') {
+    window.localStorage.removeItem(LEGACY_KEY)
+  }
 }
