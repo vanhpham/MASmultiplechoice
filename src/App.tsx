@@ -20,6 +20,15 @@ import {
 import { QuestionCard } from './components/QuestionCard'
 import { ResultPanel } from './components/ResultPanel'
 import { en } from './i18n/en'
+import {
+  initializeAnalytics,
+  isAnalyticsReady,
+  trackEvent,
+  trackModeEvent,
+  trackQuestionEvent
+} from './lib/analytics'
+const githubProfileUrl = 'https://github.com/vanhpham'
+const brandName = 'MAS Multiple Choice'
 
 type LearnMode = 'exam' | 'practice' | 'mistakes' | 'mixed_review'
 
@@ -171,6 +180,31 @@ export default function App() {
 
   const prevModeRef = useRef<LearnMode | null>(null)
   const prevChapterRef = useRef<ChapterId>(selectedChapter)
+  const analyticsInitializedRef = useRef(false)
+  const lastTrackedQuestionRef = useRef<string | null>(null)
+
+  function getTrackingChapterLabel(chapterInput: ChapterId, activeMode: LearnMode) {
+    if (activeMode === 'mixed_review') {
+      return 'all'
+    }
+    return toDisplayChapter(chapterInput)
+  }
+
+  useEffect(() => {
+    if (analyticsInitializedRef.current) {
+      return
+    }
+    analyticsInitializedRef.current = true
+    const initialized = initializeAnalytics()
+    if (!initialized) {
+      return
+    }
+    trackEvent('app_launch', {
+      session_mode: mode,
+      question_count: 0
+    })
+    trackModeEvent(mode, getTrackingChapterLabel(selectedChapter, mode), allQuestions.length)
+  }, [])
 
   useEffect(() => {
     const shouldLoad =
@@ -210,6 +244,15 @@ export default function App() {
           return
         }
         setQuestions(data)
+        if (isAnalyticsReady()) {
+          trackModeEvent(mode, getTrackingChapterLabel(selectedChapter, mode), data.length)
+          trackEvent('chapter_questions_loaded', {
+            data_source: 'json',
+            chapter_label: getTrackingChapterLabel(selectedChapter, mode),
+            question_count: data.length,
+            session_mode: mode
+          })
+        }
 
         const saved = loadProgress(selectedChapter)
         if (saved) {
@@ -277,6 +320,14 @@ export default function App() {
         }
 
         const allIds = data.map((item) => item.id)
+        if (isAnalyticsReady()) {
+          trackEvent('all_chapters_questions_loaded', {
+            data_source: 'json',
+            chapter_label: 'all',
+            question_count: allIds.length,
+            session_mode: 'mixed_review'
+          })
+        }
         const saved = loadAllReviewProgress()
         setQuestions(data)
         setAllQuestions(data)
@@ -377,6 +428,45 @@ export default function App() {
     )
   }, [questions, answers, mode, isSubmitted, textSubmittedQuestionIds])
 
+  const questionMap = useMemo(() => {
+    return new Map(questions.map((question) => [question.id, question]))
+  }, [questions])
+
+  useEffect(() => {
+    if (mode !== 'mixed_review' || loading) {
+      return
+    }
+
+    if (!currentQuestionId) {
+      return
+    }
+
+    const question = questionMap.get(currentQuestionId)
+    if (!question) {
+      return
+    }
+
+    if (lastTrackedQuestionRef.current === currentQuestionId) {
+      return
+    }
+
+    trackQuestionEvent('mixed_review_question_view', question.id, question.type, question.chapter, {
+      session_mode: mode,
+      question_number: question.question_number,
+      question_position: doneQuestionIds.length + 1,
+      queue_remaining: reviewQueue.length,
+      attempt_count: attempts[question.id] ?? 0,
+      total_questions: allQuestions.length
+    })
+    lastTrackedQuestionRef.current = currentQuestionId
+  }, [loading, mode, currentQuestionId, questionMap, doneQuestionIds.length, reviewQueue.length, attempts, allQuestions.length])
+
+  useEffect(() => {
+    if (mode !== 'mixed_review') {
+      lastTrackedQuestionRef.current = null
+    }
+  }, [mode])
+
   useEffect(() => {
     const timer = window.setInterval(() => {
       if (!isSubmitted || mode !== 'exam') {
@@ -409,10 +499,6 @@ export default function App() {
   const visibleQuestionSet = useMemo(() => {
     return new Set(visibleQuestions.map((question) => question.id))
   }, [visibleQuestions])
-
-  const questionMap = useMemo(() => {
-    return new Map(questions.map((question) => [question.id, question]))
-  }, [questions])
 
   const answeredCount = useMemo(() => {
     if (mode === 'mixed_review' && currentQuestionId) {
@@ -534,6 +620,16 @@ export default function App() {
     ) {
       return
     }
+
+    const question = questionMap.get(questionId)
+    if (question && isAnalyticsReady()) {
+      trackQuestionEvent('answer_select', question.id, question.type, question.chapter, {
+        session_mode: mode,
+        question_number: question.question_number,
+        action: 'single_choice'
+      })
+    }
+
     setAnswers((prev) => ({ ...prev, [questionId]: value }))
   }
 
@@ -554,6 +650,14 @@ export default function App() {
       (mode === 'mixed_review' && (!currentQuestionId || doneQuestionIds.includes(questionId)))
     ) {
       return
+    }
+    const question = questionMap.get(questionId)
+    if (question && isAnalyticsReady()) {
+      trackQuestionEvent('matching_select', question.id, question.type, question.chapter, {
+        session_mode: mode,
+        question_number: question.question_number,
+        blank_id: number
+      })
     }
     setAnswers((prev) => {
       const existed = (typeof prev[questionId] === 'object' && prev[questionId] !== null
@@ -584,6 +688,15 @@ export default function App() {
       return
     }
 
+    if (isAnalyticsReady()) {
+      const result = gradeQuestion(question, answer)
+      trackQuestionEvent('text_check', question.id, question.type, question.chapter, {
+        session_mode: mode,
+        question_number: question.question_number,
+        is_correct: result.isCorrect
+      })
+    }
+
     setTextSubmittedQuestionIds((prev) =>
       prev.includes(questionId) ? prev : [...prev, questionId]
     )
@@ -611,7 +724,19 @@ export default function App() {
         false
       )
       setWrongQuestionIds(finalWrong)
-      setScore(results.filter((item) => item.isCorrect).length)
+      const finalScore = results.filter((item) => item.isCorrect).length
+      setScore(finalScore)
+      if (isAnalyticsReady()) {
+        trackEvent('exam_submit', {
+          session_mode: mode,
+          chapter_label: getTrackingChapterLabel(selectedChapter, mode),
+          total_questions: questions.length,
+          answered_count: answeredCount,
+          correct_count: finalScore,
+          wrong_count: Math.max(questions.length - finalScore, 0),
+          time_spent_seconds: elapsedSeconds
+        })
+      }
       setIsSubmitted(true)
       return
     }
@@ -632,6 +757,13 @@ export default function App() {
     const currentResult = gradeQuestion(current, answers[currentQuestionId])
     const previousAttempt = attempts[currentQuestionId] ?? 0
     const shouldRetry = !currentResult.isCorrect && previousAttempt === 0
+    const nextAttempt = previousAttempt + 1
+    const doneAfter = doneQuestionIds.includes(currentQuestionId) ? doneQuestionIds.length : doneQuestionIds.length + 1
+    const nextQueue = [...reviewQueue]
+    if (shouldRetry) {
+      const randomIndex = Math.floor(Math.random() * (nextQueue.length + 1))
+      nextQueue.splice(randomIndex, 0, currentQuestionId)
+    }
 
     setAttempts((prev) => {
       if (!shouldRetry) {
@@ -642,14 +774,20 @@ export default function App() {
     setReviewFinalCorrect((prev) => ({ ...prev, [currentQuestionId]: currentResult.isCorrect }))
     setDoneQuestionIds((prev) => (prev.includes(currentQuestionId) ? prev : [...prev, currentQuestionId]))
 
-    setReviewQueue((prevQueue) => {
-      const nextQueue = [...prevQueue]
-      if (shouldRetry) {
-        const randomIndex = Math.floor(Math.random() * (nextQueue.length + 1))
-        nextQueue.splice(randomIndex, 0, currentQuestionId)
-      }
-      return nextQueue
-    })
+    if (isAnalyticsReady()) {
+      trackQuestionEvent('review_question_submit', current.id, current.type, current.chapter, {
+        session_mode: mode,
+        question_number: current.question_number,
+        attempt_count: nextAttempt,
+        is_correct: currentResult.isCorrect,
+        queue_remaining: nextQueue.length,
+        total_questions: allQuestions.length,
+        done_questions: doneAfter,
+        time_spent_seconds: elapsedSeconds
+      })
+    }
+
+    setReviewQueue(() => nextQueue)
   }
 
   function handleReviewNext() {
@@ -657,7 +795,16 @@ export default function App() {
       return
     }
 
+    if (isAnalyticsReady()) {
+      trackEvent('review_next', {
+        session_mode: mode,
+        queue_remaining: reviewQueue.length,
+        total_questions: allQuestions.length,
+        current_question_id: currentQuestionId
+      })
+    }
     setTextSubmittedQuestionIds((prev) => prev.filter((id) => id !== currentQuestionId))
+    lastTrackedQuestionRef.current = null
     setReviewQueue((prevQueue) => {
       const { nextQuestionId, nextQueue } = getNextQuestionIdFromQueue(prevQueue)
       setCurrentQuestionId(nextQuestionId)
@@ -682,6 +829,12 @@ export default function App() {
       const { nextQuestionId, nextQueue } = getNextQuestionIdFromQueue(initialQueue)
       setReviewQueue(nextQueue)
       setCurrentQuestionId(nextQuestionId)
+      if (isAnalyticsReady()) {
+        trackEvent('review_session_restart', {
+          session_mode: mode,
+          total_questions: allQuestions.length
+        })
+      }
       return
     }
 
@@ -692,13 +845,38 @@ export default function App() {
     setStartedAt(Date.now())
     setNowTick(Date.now())
     clearProgress(selectedChapter)
+    if (isAnalyticsReady()) {
+      trackEvent('answers_clear', {
+        session_mode: mode,
+        question_count: questions.length,
+        chapter_label: getTrackingChapterLabel(selectedChapter, mode)
+      })
+    }
   }
 
   function handleClearWrongHistory() {
     setWrongQuestionIds([])
+    if (isAnalyticsReady()) {
+      trackEvent('wrong_history_clear', {
+        session_mode: mode,
+        total_wrong_count: wrongQuestionIds.length
+      })
+    }
   }
 
   function handleModeChange(next: LearnMode) {
+    if (next === mode) {
+      return
+    }
+    if (isAnalyticsReady()) {
+      trackModeEvent(next, getTrackingChapterLabel(selectedChapter, next), next === 'mixed_review' ? allQuestions.length : questions.length)
+      trackEvent('mode_switch', {
+        previous_mode: mode,
+        next_mode: next,
+        current_chapter: getTrackingChapterLabel(selectedChapter, mode),
+        total_questions: mode === 'mixed_review' ? allQuestions.length : questions.length
+      })
+    }
     if (mode === 'mixed_review' && next !== 'mixed_review') {
       setAllQuestions([])
     }
@@ -711,6 +889,13 @@ export default function App() {
   function handleChapterChange(chapterInput: string) {
     if (!isChapterId(chapterInput) || chapterInput === selectedChapter) {
       return
+    }
+    if (isAnalyticsReady()) {
+      trackEvent('chapter_change', {
+        session_mode: mode,
+        previous_chapter: getTrackingChapterLabel(selectedChapter, mode),
+        next_chapter: getTrackingChapterLabel(chapterInput, mode)
+      })
     }
     setSelectedChapter(chapterInput)
   }
@@ -887,7 +1072,7 @@ export default function App() {
         </div>
       </header>
 
-      <section className="content">
+        <section className="content">
         <section className="session-tip card">
           <p>{getModeHint()}</p>
         </section>
@@ -976,6 +1161,15 @@ export default function App() {
           ) : null}
         </div>
       </section>
+
+      <footer className="app-footer">
+        <p>
+          {brandName} — Practice interface by{' '}
+          <a href={githubProfileUrl} target="_blank" rel="noreferrer">
+            {githubProfileUrl.replace('https://github.com/', '@')}
+          </a>
+        </p>
+      </footer>
     </main>
   )
 }

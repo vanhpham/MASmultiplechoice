@@ -280,6 +280,17 @@ select:focus-visible {
   font-size: 14px;
 }
 
+.session-tip .analytics-status {
+  color: #0f766e;
+  font-size: 12px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.session-tip .analytics-status.error {
+  color: #b91c1c;
+}
+
 .question-list-card {
   padding: 12px;
   display: grid;
@@ -699,6 +710,30 @@ select {
   max-width: 100%;
   padding: 16px 18px;
   border-radius: var(--radius-lg);
+}
+
+.app-footer {
+  padding: 0 2px 4px;
+  display: grid;
+  justify-items: start;
+}
+
+.app-footer p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.app-footer a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+  color: var(--primary);
 }
 
 .hint {

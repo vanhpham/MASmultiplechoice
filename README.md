@@ -24,3 +24,20 @@ npm run dev
   - `matching_matrix`
 - Chấm điểm + lưu tiến độ (answers, `isSubmitted`, `score`, thời gian bắt đầu) trong `localStorage`
 - Hỗ trợ xem lại đáp án đúng sau khi nộp
+
+## Google Analytics 4
+
+Tạo file `.env` và thêm biến sau để bật tracking:
+
+```bash
+VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+```
+
+Lưu ý:
+
+- Dự án nhận diện GA4 ngay khi khởi động app.
+- Restart `npm run dev` sau khi sửa `.env`.
+- Kiểm tra DevTools:
+  - Console có hiển thị `[GA4] ...` nếu thiếu/sai `VITE_GA_MEASUREMENT_ID`.
+  - Network có request đến `www.googletagmanager.com/gtag/js`.
+- Trong UI, nếu cấu hình GA chưa hợp lệ thì dòng **Google Analytics is not configured/invalid** sẽ báo ở phần tip trên cùng.
