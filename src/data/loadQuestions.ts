@@ -59,6 +59,11 @@ export async function loadQuestions(chapterId: ChapterId): Promise<NormalizedQue
   return json.map((q) => normalizeQuestion(q, chapterId))
 }
 
+export async function loadAllQuestions(): Promise<NormalizedQuestionUnion[]> {
+  const allChapters = await Promise.all(AVAILABLE_CHAPTERS.map((chapterId) => loadQuestions(chapterId)))
+  return allChapters.flat()
+}
+
 function normalizeQuestion(question: RawQuestion, chapterId: ChapterId): NormalizedQuestionUnion {
   const id = `${slugify(question.chapter)}-q${String(question.question_number).padStart(2, '0')}`
   const image = question.manual_image_needed
