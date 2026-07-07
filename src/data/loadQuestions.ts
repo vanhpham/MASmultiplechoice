@@ -70,8 +70,9 @@ function normalizeMatchingAnswer(answer: Array<MatchingAnswerItem | MatchingLega
       }
 
       if (
-        typeof item.component === 'string' &&
-        typeof item.state === 'string'
+        'state' in item &&
+        typeof item.state === 'string' &&
+        typeof item.component === 'string'
       ) {
         return { number: item.component.trim(), component: item.state.trim() }
       }

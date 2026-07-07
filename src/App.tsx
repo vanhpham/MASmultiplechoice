@@ -504,6 +504,7 @@ export default function App() {
     }
     if (!questions.length) return
     saveProgress(selectedChapter, {
+      chapter: selectedChapter,
       answers,
       isSubmitted: isSubmitted && mode === 'exam',
       score: isSubmitted && mode === 'exam' ? score : null,
