@@ -36,13 +36,19 @@ function ensureTrailingSlash(value: string): string {
   return value.endsWith('/') ? value : `${value}/`
 }
 
+function toPublicAssetPath(assetPath: string): string {
+  const base = ensureTrailingSlash(import.meta.env.BASE_URL ?? '/')
+  const normalized = assetPath.startsWith('/') ? assetPath.slice(1) : assetPath
+  return `${base}${normalized}`
+}
+
 function getDataUrls(chapterId: ChapterId): string[] {
   const base = ensureTrailingSlash(import.meta.env.BASE_URL ?? '/')
   const directoryBase = new URL('.', window.location.href).toString()
   const candidates = [
     `${directoryBase}data/${chapterId}.json`,
+    toPublicAssetPath(`data/${chapterId}.json`),
     `${base}data/${chapterId}.json`,
-    `/data/${chapterId}.json`,
     `./data/${chapterId}.json`,
     `data/${chapterId}.json`
   ]
@@ -128,7 +134,7 @@ export async function loadAllQuestions(): Promise<NormalizedQuestionUnion[]> {
 function normalizeQuestion(question: RawQuestion, chapterId: ChapterId): NormalizedQuestionUnion {
   const id = `${slugify(question.chapter)}-q${String(question.question_number).padStart(2, '0')}`
   const image = question.manual_image_needed
-    ? `/images/${chapterId}/q${question.question_number}.png`
+    ? toPublicAssetPath(`images/${chapterId}/q${question.question_number}.png`)
     : null
 
   if (question.type === 'single_choice') {
