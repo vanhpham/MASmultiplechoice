@@ -17,6 +17,8 @@ export const en = {
       examIncomplete: 'Please answer all questions before submitting.',
       practice: 'Single choice/matching questions are graded instantly. Text questions need to press “Check” first.',
       mixedReview: 'Answer one question each time. Wrong answers are shown one more time.',
+      mixedReviewStatus: (answered: number, total: number, remainingInQueue: number) =>
+        `Progress: ${answered}/${total}. Remaining in queue: ${remainingInQueue}.`,
       mistakesEmpty: 'No wrong questions to review.',
       mistakes:
         'Only previously wrong questions are shown. Correct answers are removed automatically.'

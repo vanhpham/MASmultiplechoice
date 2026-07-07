@@ -692,9 +692,14 @@ export default function App() {
       if (!questions.length) {
         return en.mixedReview.noProgress
       }
-      return doneQuestionIds.length === allQuestions.length
-        ? en.mixedReview.resetHint
-        : en.app.modeHint.mixedReview
+      if (doneQuestionIds.length === allQuestions.length) {
+        return en.mixedReview.resetHint
+      }
+      return en.app.modeHint.mixedReviewStatus(
+        doneQuestionIds.length,
+        allQuestions.length,
+        reviewQueue.length
+      )
     }
     return wrongQuestionIds.length === 0
       ? en.app.modeHint.mistakesEmpty
@@ -910,9 +915,11 @@ export default function App() {
           <button type="button" className="ghost-btn" onClick={handleResetAnswers}>
             {en.app.status.buttons.clearAnswers}
           </button>
-          <button type="button" className="ghost-btn" onClick={handleClearWrongHistory}>
-            {en.app.status.buttons.clearWrongHistory}
-          </button>
+          {mode !== 'mixed_review' ? (
+            <button type="button" className="ghost-btn" onClick={handleClearWrongHistory}>
+              {en.app.status.buttons.clearWrongHistory}
+            </button>
+          ) : null}
         </div>
       </section>
     </main>
