@@ -308,15 +308,15 @@
         ],
         "answer": [
             {
-                "number": "Figure a",
+                "number": "a",
                 "component": "Semi floating axle shaft (1/2 load)"
             },
             {
-                "number": "Figure b",
+                "number": "b",
                 "component": "Semi floating axle shaft (3/4 load)"
             },
             {
-                "number": "Figure c",
+                "number": "c",
                 "component": "Full floating axle shaft"
             }
         ],

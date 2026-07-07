@@ -86,13 +86,13 @@
         "question": "Select a name for part numbered in the following table?",
         "type": "matching_matrix",
         "columns": [
-            "1",
-            "2",
-            "3",
-            "5",
-            "6",
-            "7",
-            "8"
+            "Tie rod",
+            "Drag link",
+            "Steering arm",
+            "Steering wheel",
+            "Steering column",
+            "Kingpin",
+            "Steering gear"
         ],
         "answer": [
             {
@@ -294,13 +294,13 @@
         "question": "Select a name for part numbered in the following table?",
         "type": "matching_matrix",
         "columns": [
-            "1",
-            "2",
-            "6",
-            "7",
-            "12",
-            "21",
-            "22"
+            "Worm",
+            "Ball nut",
+            "Sector gear",
+            "Adjusting screw",
+            "Lock nut",
+            "Sector shaft",
+            "Pitman arm"
         ],
         "answer": [
             {
