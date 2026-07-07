@@ -5,8 +5,9 @@ import type {
   RawQuestion
 } from '../types/question'
 import { slugify } from '../lib/normalize'
+import { en } from '../i18n/en'
 
-export const AVAILABLE_CHAPTERS = ['chap1', 'chap2', 'chap3', 'chap4', 'chap5', 'chap6', 'chap7', 'chap8', 'chap9', 'chap10'] as const
+export const AVAILABLE_CHAPTERS = ['chap1', 'chap2', 'chap3', 'chap4', 'chap5', 'chap6', 'chap7', 'chap8', 'chap9', 'chap10', 'chap11'] as const
 export type ChapterId = (typeof AVAILABLE_CHAPTERS)[number]
 
 export function isChapterId(value: string): value is ChapterId {
@@ -24,7 +25,8 @@ export function toDisplayChapter(chapterId: ChapterId): string {
     chap7: 'Chapter 7',
     chap8: 'Chapter 8',
     chap9: 'Chapter 9',
-    chap10: 'Chapter 10'
+    chap10: 'Chapter 10',
+    chap11: 'Chapter 11'
   }
   return map[chapterId]
 }
@@ -51,7 +53,7 @@ function normalizeMatchingAnswer(answer: Array<MatchingAnswerItem | MatchingLega
 export async function loadQuestions(chapterId: ChapterId): Promise<NormalizedQuestionUnion[]> {
   const response = await fetch(`/data/${chapterId}.json`)
   if (!response.ok) {
-    throw new Error(`Không tải được dữ liệu của ${chapterId}.json (${response.status} ${response.statusText})`)
+    throw new Error(`Could not load data of ${chapterId}.json (${response.status} ${response.statusText})`)
   }
   const json = (await response.json()) as RawQuestion[]
   return json.map((q) => normalizeQuestion(q, chapterId))
