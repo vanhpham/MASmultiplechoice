@@ -5,7 +5,6 @@ import type {
   RawQuestion
 } from '../types/question'
 import { slugify } from '../lib/normalize'
-import { en } from '../i18n/en'
 
 export const AVAILABLE_CHAPTERS = ['chap1', 'chap2', 'chap3', 'chap4', 'chap5', 'chap6', 'chap7', 'chap8', 'chap9', 'chap10', 'chap11'] as const
 export type ChapterId = (typeof AVAILABLE_CHAPTERS)[number]
@@ -31,6 +30,38 @@ export function toDisplayChapter(chapterId: ChapterId): string {
   return map[chapterId]
 }
 
+function ensureTrailingSlash(value: string): string {
+  return value.endsWith('/') ? value : `${value}/`
+}
+
+function getDataUrls(chapterId: ChapterId): string[] {
+  const base = ensureTrailingSlash(import.meta.env.BASE_URL ?? '/')
+  const candidates = [
+    `${base}data/${chapterId}.json`,
+    `/data/${chapterId}.json`,
+    `./data/${chapterId}.json`,
+    `data/${chapterId}.json`
+  ]
+  if (typeof window !== 'undefined' && window.location.protocol === 'file:') {
+    return ['data/' + chapterId + '.json', './data/' + chapterId + '.json']
+  }
+  return Array.from(new Set(candidates))
+}
+
+async function loadQuestionsFromUrl(url: string, timeoutMs = 9000): Promise<RawQuestion[]> {
+  const controller = new AbortController()
+  const timeout = window.setTimeout(() => controller.abort(), timeoutMs)
+  try {
+    const response = await fetch(url, { signal: controller.signal })
+    if (!response.ok) {
+      throw new Error(`Could not load data from ${url} (${response.status} ${response.statusText})`)
+    }
+    return (await response.json()) as RawQuestion[]
+  } finally {
+    window.clearTimeout(timeout)
+  }
+}
+
 function normalizeMatchingAnswer(answer: Array<MatchingAnswerItem | MatchingLegacyAnswerItem>): MatchingAnswerItem[] {
   return answer
     .map((item) => {
@@ -51,12 +82,25 @@ function normalizeMatchingAnswer(answer: Array<MatchingAnswerItem | MatchingLega
 }
 
 export async function loadQuestions(chapterId: ChapterId): Promise<NormalizedQuestionUnion[]> {
-  const response = await fetch(`/data/${chapterId}.json`)
-  if (!response.ok) {
-    throw new Error(`Could not load data of ${chapterId}.json (${response.status} ${response.statusText})`)
+  const urls = getDataUrls(chapterId)
+  let lastError: Error = new Error(`Could not load data of ${chapterId}.json`)
+
+  for (const url of urls) {
+    try {
+      const json = await loadQuestionsFromUrl(url)
+      return json.map((q) => normalizeQuestion(q, chapterId))
+    } catch (error) {
+      if (error instanceof Error) {
+        lastError = error
+      } else {
+        lastError = new Error(`Unknown error while loading ${chapterId}.json from ${url}`)
+      }
+    }
   }
-  const json = (await response.json()) as RawQuestion[]
-  return json.map((q) => normalizeQuestion(q, chapterId))
+
+  throw new Error(
+    `Could not load data of ${chapterId}.json. Tried: ${urls.join(', ')}. Last error: ${lastError.message}`
+  )
 }
 
 export async function loadAllQuestions(): Promise<NormalizedQuestionUnion[]> {
