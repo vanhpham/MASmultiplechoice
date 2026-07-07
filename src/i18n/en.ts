@@ -2,21 +2,24 @@ export const en = {
   app: {
     eyebrow: 'REVIEW CHAPTER',
     loadingTitle: 'Loading study session',
-    loadingDescription: (chapter: string) => `Loading data from ${chapter}.json...`,
+    loadingDescription: (label: string) => `Loading data for ${label}...`,
     errorTitle: 'Error',
     loadDataError: 'Unable to load question data',
     chapterSelectLabel: 'Select chapter',
     modeLabel: {
       exam: 'Exam',
       practice: 'Practice',
-      mistakes: 'Wrong questions'
+      mistakes: 'Wrong questions',
+      mixedReview: 'Review all'
     },
     modeHint: {
       examReady: 'All questions answered. Click submit to grade.',
       examIncomplete: 'Please answer all questions before submitting.',
       practice: 'Single choice/matching questions are graded instantly. Text questions need to press “Check” first.',
+      mixedReview: 'Answer one question each time. Wrong answers are shown one more time.',
       mistakesEmpty: 'No wrong questions to review.',
-      mistakes: 'Only previously wrong questions are shown. Correct answers are removed automatically.'
+      mistakes:
+        'Only previously wrong questions are shown. Correct answers are removed automatically.'
     },
     status: {
       loadingTitle: 'Loading study mode',
@@ -25,23 +28,26 @@ export const en = {
         'No wrong questions are currently queued. Switch to Practice or Exam mode to generate data.',
       progressMetaExam: 'Exam progress',
       progressMetaPractice: 'Practice progress',
+      progressMetaMixedReview: 'Review progress',
       stats: {
         progress: 'Progress',
         time: 'Time',
         score: 'Score',
         correct: 'Correct'
       },
-    submit: {
-      submitted: 'Submitted',
-      submitLabel: 'Submit',
-      practiceModeLabel: 'Practicing'
-    },
+      submit: {
+        submitted: 'Submitted',
+        submitLabel: 'Submit',
+        practiceModeLabel: 'Practicing',
+        mixedReviewSubmit: 'Submit answer'
+      },
       buttons: {
         clearAnswers: 'Clear answers',
         clearWrongHistory: 'Clear wrong history'
       },
       questionLabel: 'Question',
-      manualImageBadge: 'Has image'
+      manualImageBadge: 'Has image',
+      chapterAllLabel: 'All chapters'
     }
   },
   questionCard: {
@@ -74,6 +80,12 @@ export const en = {
   manualImage: {
     title: 'Illustration',
     placeholder: 'Image is not available for this question yet'
+  },
+  mixedReview: {
+    title: 'Review all chapters',
+    sessionTitle: 'Review session result',
+    noProgress: 'No progress yet. Start the review to generate a queue.',
+    resetHint: 'Press “Reset” to start again'
   },
   resultPanel: {
     title: 'Session result',
