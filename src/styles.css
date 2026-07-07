@@ -507,6 +507,55 @@ select:focus-visible {
   padding: 12px;
 }
 
+.cloze-matching .cloze-text {
+  line-height: 1.75;
+  color: #0f172a;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.cloze-text-token {
+  white-space: pre-wrap;
+}
+
+.cloze-blank {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 4px;
+  vertical-align: baseline;
+}
+
+.cloze-blank select {
+  width: min(220px, 56vw);
+  min-width: 150px;
+  max-width: 100%;
+}
+
+.cloze-inline-result {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cloze-inline-result.ok {
+  color: #166534;
+  border: 1px solid #86efac;
+  background: var(--success-soft);
+}
+
+.cloze-inline-result.wrong,
+.cloze-inline-result.empty {
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  background: var(--danger-soft);
+}
+
 .matching-grid {
   display: grid;
   gap: 8px;
@@ -826,6 +875,16 @@ select {
 
   .question-card {
     padding: 14px;
+  }
+
+  .cloze-blank {
+    margin: 0 2px;
+    flex-wrap: wrap;
+  }
+
+  .cloze-blank select {
+    width: min(100%, 190px);
+    min-width: 130px;
   }
 }
 

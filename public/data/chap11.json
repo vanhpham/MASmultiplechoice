@@ -46,24 +46,24 @@
         ],
         "answer": [
             {
-                "assembly": "Two - leading shoes",
-                "figure": "b"
+                "number": "b",
+                "component": "Two - leading shoes"
             },
             {
-                "assembly": "Trailing and leading shoe",
-                "figure": "a"
+                "number": "a",
+                "component": "Trailing and leading shoe"
             },
             {
-                "assembly": "Floating",
-                "figure": "d"
+                "number": "d",
+                "component": "Floating"
             },
             {
-                "assembly": "Duo servo",
-                "figure": "c"
+                "number": "c",
+                "component": "Duo servo"
             },
             {
-                "assembly": "Self energizing",
-                "figure": "e"
+                "number": "e",
+                "component": "Self energizing"
             }
         ],
         "manual_image_needed": true,

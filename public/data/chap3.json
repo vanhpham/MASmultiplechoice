@@ -52,6 +52,7 @@
         "source_page": 10,
         "question_number": "2",
         "question": "Choose the proper words for the missing word place in the following statements describes the operating principle of the clutch.",
+        "cloze_text": "\"Engage state: the operator (driver) do not presses the clutch pedal. The force from pressure springs through (1) and pushes on the (2) forward to flywheel. This action locks the flywheel, (2), (1) and clutch shaft together. The engine rotates the transmission shaft.\"\n\n\"Disengage state: the operator presses the clutch pedal. The clutch linkage pulls or pushes on the (3). The (3) moves the (4) into the centre of pressure plate, end of the release lever goes (5), the other end of the lever go (6), causing the pressure disc to pull away from the friction disc, releasing disc from the flywheel. The engine crank shaft can then turn without turning friction disc and input transmission shaft.\"",
         "type": "matching_matrix",
         "columns": [
             "Friction disc",
@@ -271,6 +272,7 @@
         "source_page": 15,
         "question_number": "14",
         "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted mechanical clutch linkage.",
+        "cloze_text": "\"When operator pushes on the clutch pedal: according to mechanical linkage, valve housing 3 move to (1) side. Due to the large resistant of the clutch mechanism, plunger 5 cannot move, valve housing 3 slide relative to the (2). Air valve 4 move with valve housing 3 until attach plunger 5, it stops and (3) air exhaust gate. Valve housing 3 continue moving relative to the 4 and 5, separating partition between chamber A and B separates from (4), (5) the gate for compress air enter from chamber A to chamber B. Compress air goes to air cylinder 7, pushes the piston, make the force, assist the release fork 8 pushing the release bearing to the left to disengage the clutch. The stronger push on the clutch pedal, the larger air gate opened, the greater assist force made.\"",
         "type": "matching_matrix",
         "columns": [
             "Air valve 4",
@@ -310,6 +312,7 @@
         "source_page": 16,
         "question_number": "15",
         "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted mechanical clutch linkage.",
+        "cloze_text": "\"When operator stops clutch pedal on a certain position: valve housing 3 stops, but due to the inertial the group of sticking together air valve 4 and (1) continueing move to (2) side until (3) attach the separating partition, (4) the air inlet gate to the chamber B. The valve in state of (5) all the gates, there are not air enter and not air exhaust, the forces in system are balance, causing the release bearing and pressure plat also stop at a certain position.\"",
         "type": "matching_matrix",
         "columns": [
             "Air valve 4",
@@ -349,6 +352,7 @@
         "source_page": 17,
         "question_number": "16",
         "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted mechanical clutch linkage.",
+        "cloze_text": "\"When the operator release the clutch pedal: due to forces of return springs, the pedal return quickly to its original position, pulls the valve housing 3 move to (1) side. This movement and springs 6 make the separating partition attach the opening air valve 4, (2) the compress air inlet and pull (3) to the left, separate it from (4), (5) the air exhaust gate. The compress air in the air cylinder 7 returns to the chamber B and exhaust to outside, decrease the assist power to engage gradually the clutch.\"",
         "type": "matching_matrix",
         "columns": [
             "Air valve 4",
@@ -388,6 +392,7 @@
         "source_page": 18,
         "question_number": "17",
         "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted hydraulic clutch linkage.",
+        "cloze_text": "\"When operator pushes on the clutch pedal: according to hydraulic linkage, the fluid pressure in the chamber B increase, but due to the large resistant of the clutch mechanism, piston 10 cannot move. Chamber B is connected to chamber D, fluid pressure push the control valve piston 9 to the (1) side, it push the sliding tube together and attach to the (2) and (3) the air exhaust hole. Piston 9 continue to move to the left, since the 6 and 7 are connected the (4) move to the left and (5) the gate for compress air enter to chamber A. Compress air pushes the piston 12, make the force, assist the piston 10 to pushes the release fork 8, pushes the release bearing to the left to disengage the clutch. The stronger push on the clutch pedal, the larger air gate opened, the greater assist force made.\"",
         "type": "matching_matrix",
         "columns": [
             "Air inlet valve 6",
@@ -427,6 +432,7 @@
         "source_page": 19,
         "question_number": "18",
         "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted hydraulic clutch linkage.",
+        "cloze_text": "\"When operator stops clutch pedal on a certain position: piston 4 stops, but due to the inertial the group of part 10, 11, 12 continuing move to right side, the volume of chamber B increase, pressure in it decrease, cause the piston 9 move to (1). Due to the forces from valve springs, the group of (2) and (3) move to right too until air inlet valve 6 (4) the air inlet gate to the chamber E and A. The valves in state of (5) all the gates, there are not air enter and not air exhaust, the forces in system are balance, causing the release bearing and pressure plat also stop at a certain position.\"",
         "type": "matching_matrix",
         "columns": [
             "Air inlet valve 6",
@@ -465,6 +471,7 @@
         "chapter": "Chapter 3: Clutch",
         "source_page": 20,
         "question_number": "19",
+        "cloze_text": "\"When the operator release the clutch pedal: due to forces of return springs, the pedal return quickly to its original position, the pressure in the tubes and B chamber decrease quickly, causing the piston 9 move to (1) side. Due to the forces from valve springs, the group of valve 6 and 7 move to right too, (2) the air inlet gate from chamber E to the chamber A. The group of (3) and (4) stops but the piston 9 continue going to the right, separate sliding tube from (5), (open) the air exhaust gate. The compress air in the chamber A exhaust to outside through the air exhaust hole 8, decrease the pressure to piston 12 and 10 to engage gradually the clutch.\"",
         "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted hydraulic clutch linkage.",
         "type": "matching_matrix",
         "columns": [

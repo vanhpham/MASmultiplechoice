@@ -308,16 +308,16 @@
         ],
         "answer": [
             {
-                "figure": "Figure a",
-                "type": "Semi floating axle shaft (1/2 load)"
+                "number": "Figure a",
+                "component": "Semi floating axle shaft (1/2 load)"
             },
             {
-                "figure": "Figure b",
-                "type": "Semi floating axle shaft (3/4 load)"
+                "number": "Figure b",
+                "component": "Semi floating axle shaft (3/4 load)"
             },
             {
-                "figure": "Figure c",
-                "type": "Full floating axle shaft"
+                "number": "Figure c",
+                "component": "Full floating axle shaft"
             }
         ],
         "manual_image_needed": true,

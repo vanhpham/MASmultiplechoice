@@ -5,6 +5,7 @@ export interface RawQuestion {
   source_page: number
   question_number: string
   question: string
+  cloze_text?: string
   type: QuestionType
   options?: string[]
   columns?: string[]
@@ -42,6 +43,7 @@ export interface BaseQuestion {
   source_page: number
   question_number: string
   question: string
+  cloze_text?: string
   type: QuestionType
   manual_image_needed: boolean
   note?: string

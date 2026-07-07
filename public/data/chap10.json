@@ -230,13 +230,13 @@
         "question": "Select a name for part numbered in the following table?",
         "type": "matching_matrix",
         "columns": [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "7",
-            "11"
+            "Pinion",
+            "Rack",
+            "Rack guide",
+            "Compression spring",
+            "Yoke plug (adjusting plug)",
+            "Tie rod",
+            "Jam nut (adjusting nut)"
         ],
         "answer": [
             {
@@ -248,7 +248,7 @@
                 "number": "1"
             },
             {
-                "component": "Rack guid",
+                "component": "Rack guide",
                 "number": "2"
             },
             {
@@ -269,7 +269,7 @@
             }
         ],
         "manual_image_needed": true,
-        "note": "Câu matching/matrix dựa trên hình rack and pinion steering gear. Cần ảnh thủ công. Row 'Worm' không có đáp án được chọn trong bảng."
+        "note": "Câu matching/matrix dựa trên hình rack and pinion steering gear. Cần ảnh thủ công."
     },
     {
         "chapter": "Chapter 10: Steering system",

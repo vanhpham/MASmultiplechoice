@@ -1,6 +1,7 @@
 import type { NormalizedQuestionUnion, QuestionAnswer, QuestionResult } from '../types/question'
 import { ManualImage } from './ManualImage'
 import { MatchingQuestion } from './MatchingQuestion'
+import { ClozeMatchingQuestion } from './ClozeMatchingQuestion'
 import { normalizeText } from '../lib/normalize'
 import { en } from '../i18n/en'
 
@@ -113,13 +114,23 @@ export function QuestionCard({
 
         {question.type === 'matching_matrix' ? (
           <div className="matching-question-wrap">
-            <MatchingQuestion
-              question={question}
-              answer={(answer as Record<string, string>) || {}}
-              disabled={locked}
-              onSelect={(number, value) => onMatching(question.id, number, value)}
-              showResult={showResult}
-            />
+            {question.cloze_text ? (
+              <ClozeMatchingQuestion
+                question={question}
+                answer={(answer as Record<string, string>) || {}}
+                disabled={locked}
+                onSelect={(number, value) => onMatching(question.id, number, value)}
+                showResult={showResult}
+              />
+            ) : (
+              <MatchingQuestion
+                question={question}
+                answer={(answer as Record<string, string>) || {}}
+                disabled={locked}
+                onSelect={(number, value) => onMatching(question.id, number, value)}
+                showResult={showResult}
+              />
+            )}
           </div>
         ) : null}
       </div>
