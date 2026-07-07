@@ -38,11 +38,11 @@
         "question": "Choose a name for drum brake assembly in each figure?",
         "type": "matching_matrix",
         "columns": [
-            "a",
-            "b",
-            "c",
-            "d",
-            "e"
+            "Two - leading shoes",
+            "Floating",
+            "Self energizing",
+            "Duo servo",
+            "Trailing and leading shoe"
         ],
         "answer": [
             {
