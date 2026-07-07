@@ -1,3 +1,5 @@
+import { en } from '../i18n/en'
+
 interface ResultPanelProps {
   totalQuestions: number
   correctAnswers: number
@@ -19,33 +21,33 @@ export function ResultPanel({
   return (
     <section className="result-panel card">
       <div className="result-panel-head">
-        <h3>Kết quả phiên</h3>
-        <p>Nhấn “Làm lại” để bắt đầu từ đầu</p>
+        <h3>{en.resultPanel.title}</h3>
+        <p>{en.resultPanel.resetHint}</p>
       </div>
       <div className="result-grid">
         <div>
-          <p className="label">Tổng câu</p>
+          <p className="label">{en.resultPanel.label.total}</p>
           <strong>{totalQuestions}</strong>
         </div>
         <div>
-          <p className="label">Đã trả lời</p>
+          <p className="label">{en.resultPanel.label.answered}</p>
           <strong>{answeredCount}</strong>
         </div>
         <div>
-          <p className="label">Điểm</p>
+          <p className="label">{en.resultPanel.label.score}</p>
           <strong>
             {correctAnswers}/{totalQuestions}
           </strong>
         </div>
         <div>
-          <p className="label">Thời gian</p>
+          <p className="label">{en.resultPanel.label.time}</p>
           <strong>
             {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
           </strong>
         </div>
       </div>
       <button type="button" className="reset-btn" onClick={onReset}>
-        Làm lại
+        {en.resultPanel.resetButton}
       </button>
     </section>
   )

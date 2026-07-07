@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { en } from '../i18n/en'
 
 interface ManualImageProps {
   src: string | null
@@ -11,8 +12,8 @@ export function ManualImage({ src, alt }: ManualImageProps) {
   if (!src || failed) {
     return (
       <div className="manual-image missing">
-        <span>Ảnh minh hoạ</span>
-        <small>Hiện chưa có ảnh cho câu này</small>
+        <span>{en.manualImage.title}</span>
+        <small>{en.manualImage.placeholder}</small>
       </div>
     )
   }

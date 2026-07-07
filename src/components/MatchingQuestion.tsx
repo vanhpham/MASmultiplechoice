@@ -1,5 +1,6 @@
 import { normalizeText } from '../lib/normalize'
 import type { NormalizedMatchingMatrix } from '../types/question'
+import { en } from '../i18n/en'
 
 interface MatchingQuestionProps {
   question: NormalizedMatchingMatrix
@@ -29,9 +30,9 @@ export function MatchingQuestion({
   return (
     <div className="matching-grid">
       <div className="matching-header">
-        <span>Mục số</span>
-        <span>Chọn thành phần</span>
-        {showResult ? <span>Kết quả</span> : null}
+        <span>{en.matchingQuestion.header.item}</span>
+        <span>{en.matchingQuestion.header.selectItem}</span>
+        {showResult ? <span>{en.matchingQuestion.header.result}</span> : null}
       </div>
       {itemNumbers.map((number) => {
         const selected = answer[number] ?? ''
@@ -46,7 +47,7 @@ export function MatchingQuestion({
                 disabled={disabled}
                 onChange={(event) => onSelect(number, event.target.value)}
               >
-                <option value="">-- Chưa chọn --</option>
+                <option value="">{en.matchingQuestion.optionNotSelected}</option>
                 {question.columns.map((column) => (
                   <option key={column} value={column}>
                     {column}
@@ -54,7 +55,13 @@ export function MatchingQuestion({
                 ))}
               </select>
             </div>
-            {showResult ? <div className={`cell result ${isCorrect ? 'ok' : 'wrong'}`}>{isCorrect ? 'Đúng' : 'Sai'}</div> : null}
+            {showResult
+              ? (
+                <div className={`cell result ${isCorrect ? 'ok' : 'wrong'}`}>
+                  {isCorrect ? en.matchingQuestion.correct : en.matchingQuestion.wrong}
+                </div>
+              )
+              : null}
           </div>
         )
       })}

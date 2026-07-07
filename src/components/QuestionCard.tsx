@@ -2,6 +2,7 @@ import type { NormalizedQuestionUnion, QuestionAnswer, QuestionResult } from '..
 import { ManualImage } from './ManualImage'
 import { MatchingQuestion } from './MatchingQuestion'
 import { normalizeText } from '../lib/normalize'
+import { en } from '../i18n/en'
 
 interface QuestionCardProps {
   question: NormalizedQuestionUnion
@@ -16,9 +17,9 @@ interface QuestionCardProps {
 }
 
 function getQuestionTypeLabel(type: NormalizedQuestionUnion['type']): string {
-  if (type === 'single_choice') return 'Trắc nghiệm một đáp án'
-  if (type === 'text_answer') return 'Điền từ khóa'
-  return 'Khớp cột'
+  if (type === 'single_choice') return en.questionCard.typeLabel.single_choice
+  if (type === 'text_answer') return en.questionCard.typeLabel.text_answer
+  return en.questionCard.typeLabel.matching_matrix
 }
 
 export function QuestionCard({
@@ -32,7 +33,11 @@ export function QuestionCard({
   onTextSubmit,
   result
 }: QuestionCardProps) {
-  const resultText = result ? (result.isCorrect ? 'Bạn làm đúng' : 'Bạn làm sai') : ''
+  const resultText = result
+    ? result.isCorrect
+      ? en.questionCard.result.correct
+      : en.questionCard.result.incorrect
+    : ''
   const answerTextClass = result && (result.isCorrect ? 'result-correct' : 'result-wrong')
   const isEvaluated = !!result
 
@@ -41,16 +46,16 @@ export function QuestionCard({
       <div className="question-meta">
         <div>
           <div className="chapter-name">{question.chapter}</div>
-          <h2>Câu {question.question_number}</h2>
-        </div>
+        <h2>{`${en.app.status.questionLabel} ${question.question_number}`}</h2>
+      </div>
         <span className="question-chip">{getQuestionTypeLabel(question.type)}</span>
       </div>
-      {question.manual_image_needed ? <span className="manual-chip">Có hình</span> : null}
+      {question.manual_image_needed ? <span className="manual-chip">{en.app.status.manualImageBadge}</span> : null}
 
       <p className="question-text">{question.question}</p>
 
       {question.manual_image_needed ? (
-        <ManualImage src={question.image} alt={`Hình câu ${question.question_number}`} />
+        <ManualImage src={question.image} alt={en.questionCard.imageAlt(question.question_number)} />
       ) : null}
 
       <div className="question-body">
@@ -90,7 +95,7 @@ export function QuestionCard({
               className="text-answer"
               value={(answer as string) || ''}
               disabled={locked}
-              placeholder="Nhập đáp án..."
+              placeholder={en.questionCard.textAnswerPlaceholder}
               onChange={(event) => onTextAnswer(question.id, event.target.value)}
             />
             {onTextSubmit && (
@@ -100,7 +105,7 @@ export function QuestionCard({
                 onClick={() => onTextSubmit(question.id)}
                 disabled={locked || String(answer || '').trim() === ''}
               >
-                Kiểm tra
+                {en.questionCard.checkButton}
               </button>
             )}
           </div>
@@ -122,15 +127,14 @@ export function QuestionCard({
       {showResult ? (
         <div className={`result-bar ${answerTextClass}`}>
           <div>{resultText}</div>
-          {result ? <div>Đáp án đúng: {result.correctAnswer}</div> : null}
+          {result ? <div>{`${en.questionCard.result.answerLabel} ${result.correctAnswer}`}</div> : null}
         </div>
       ) : null}
-      {/* {question.note ? <div className="note">Gợi ý: {question.note}</div> : null} */}
       {question.type === 'text_answer' && showResult ? (
         <div className="question-feedback-inline">
           {result ? (
             <strong className={isEvaluated && result.isCorrect ? 'feedback-ok' : 'feedback-no'}>
-              {result.isCorrect ? '✅ Chính xác' : '⚠️ Chưa đúng'}
+              {result.isCorrect ? en.questionCard.result.inlineCorrect : en.questionCard.result.inlineWrong}
             </strong>
           ) : null}
         </div>
