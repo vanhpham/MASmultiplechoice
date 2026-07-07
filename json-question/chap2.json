@@ -1,0 +1,209 @@
+[
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 4,
+        "question_number": "1",
+        "question": "What does the axle/wheel configuration 4x2 mean?",
+        "type": "single_choice",
+        "options": [
+            "Automobile has 4 wheels, 2 driving wheels",
+            "Automobile has 4 shafts, 2 drive shafts",
+            "Automobile has 4 wheels and 2 shafts",
+            "Automobile has 4 shaft heads, 2 drive shaft heads"
+        ],
+        "answer": "Automobile has 4 shaft heads, 2 drive shaft heads",
+        "manual_image_needed": false,
+        "note": "Trong ảnh có radio xám ở option khác, nhưng dấu tick xanh nằm ở đáp án này nên mình lấy đáp án theo tick xanh."
+    },
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 4,
+        "question_number": "2",
+        "question": "Choose the correct axle configuration for truck in the figure?",
+        "type": "single_choice",
+        "options": [
+            "8 x 4",
+            "6 x 2",
+            "4 x 2",
+            "6 x 4"
+        ],
+        "answer": "6 x 4",
+        "manual_image_needed": true,
+        "note": "Câu này phụ thuộc vào hình xe tải, nên nên tạo ảnh thủ công trong quiz."
+    },
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 4,
+        "question_number": "3",
+        "question": "Write down the names of major components of FF powertrain in order of torque transmission?",
+        "type": "text_answer",
+        "answer": "Engine, Clutch, Transaxle (Transmission, Final gear, Differential), Drive shaft, Wheel.",
+        "manual_image_needed": false,
+        "note": "Câu text answer, không cần hình."
+    },
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 5,
+        "question_number": "4",
+        "question": "Write down the names of major components of FR powertrain in order of torque transmission?",
+        "type": "text_answer",
+        "answer": "Engine, Clutch, Transmission, Propeller shaft, Final gear, Differential, Half shaft (or Drive shaft), Wheel.",
+        "manual_image_needed": false,
+        "note": "Trong ảnh gốc có vẻ ghi 'Haft shaft', nhiều khả năng là lỗi chính tả của 'Half shaft'."
+    },
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 5,
+        "question_number": "5",
+        "question": "Choose the wrong statement that does not match with the figure.",
+        "type": "single_choice",
+        "options": [
+            "Figure shows the FF powertrain system of automobile.",
+            "This powertrain system is widely used for passenger car.",
+            "The engine and transaxle are mounted transversely.",
+            "The weight distribution for rear axle is greater than that of front axle."
+        ],
+        "answer": "The weight distribution for rear axle is greater than that of front axle.",
+        "manual_image_needed": true,
+        "note": "Câu này phụ thuộc vào hình layout FF powertrain, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 5,
+        "question_number": "6",
+        "question": "Choose the wrong statement that does not match with the figure.",
+        "type": "single_choice",
+        "options": [
+            "Figure shows the FR powertrain system of automobile.",
+            "The weight distribution for rear axle is greater than that of front axle.",
+            "This powertrain system is widely used for passenger car.",
+            "The engine and transmission are mounted longitudinally."
+        ],
+        "answer": "This powertrain system is widely used for passenger car.",
+        "manual_image_needed": true,
+        "note": "Câu này phụ thuộc vào hình layout FR powertrain, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 6,
+        "question_number": "7",
+        "question": "Choose the wrong statement that does not match with the figure.",
+        "type": "single_choice",
+        "options": [
+            "The engine is mounted at the end of the automobile, that can help reduce noise and heat transfer into the passenger compartment.",
+            "The weight distribution for rear axle is greater than that of front axle.",
+            "This powertrain system is widely used for busses and coaches.",
+            "Figure shows the FR powertrain system of automobile."
+        ],
+        "answer": "Figure shows the FR powertrain system of automobile.",
+        "manual_image_needed": true,
+        "note": "Câu này phụ thuộc vào hình layout động cơ đặt sau, nên nên tạo ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 6,
+        "question_number": "8",
+        "question": "Choose the name for each numbered component.",
+        "type": "matching_matrix",
+        "columns": [
+            "Engine",
+            "Transmission",
+            "Final gear and differential",
+            "Clutch",
+            "Drive shaft",
+            "Wheel"
+        ],
+        "answer": [
+            {
+                "number": "1",
+                "component": "Engine"
+            },
+            {
+                "number": "2",
+                "component": "Transmission"
+            },
+            {
+                "number": "3",
+                "component": "Clutch"
+            },
+            {
+                "number": "4",
+                "component": "Drive shaft"
+            },
+            {
+                "number": "5",
+                "component": "Final gear and differential"
+            },
+            {
+                "number": "6",
+                "component": "Wheel"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Đây là câu matching/matrix dựa trên hình đánh số. Mình đã trích mapping, nhưng quiz nên có ảnh thủ công để người học nhìn số trên sơ đồ."
+    },
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 7,
+        "question_number": "9",
+        "question": "Choose the name for each numbered component.",
+        "type": "matching_matrix",
+        "columns": [
+            "Engine",
+            "Transmission",
+            "Final gear and differential",
+            "Clutch",
+            "Half shaft",
+            "Wheel",
+            "Propeller shaft"
+        ],
+        "answer": [
+            {
+                "number": "1",
+                "component": "Engine"
+            },
+            {
+                "number": "2",
+                "component": "Transmission"
+            },
+            {
+                "number": "3",
+                "component": "Clutch"
+            },
+            {
+                "number": "4",
+                "component": "Half shaft"
+            },
+            {
+                "number": "5",
+                "component": "Final gear and differential"
+            },
+            {
+                "number": "6",
+                "component": "Wheel"
+            },
+            {
+                "number": "7",
+                "component": "Propeller shaft"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Đây là câu matching/matrix dựa trên hình đánh số. Trong ảnh gốc header có vẻ ghi 'Haft shaft', mình chuẩn hóa thành 'Half shaft'."
+    },
+    {
+        "chapter": "Chapter 2: Arrangement of automobile",
+        "source_page": 7,
+        "question_number": "10",
+        "question": "Choose the incorrect statement.",
+        "type": "single_choice",
+        "options": [
+            "The above layouts are usually used for race cars or sport cars.",
+            "Given to the race cars, arrangement in figure d is better than that in figure e.",
+            "Given to the race cars, arrangement in figure e is better than that in figure d.",
+            "They are a RR type of powertrain arrangement."
+        ],
+        "answer": "Given to the race cars, arrangement in figure e is better than that in figure d.",
+        "manual_image_needed": true,
+        "note": "Câu này phụ thuộc vào hình layout d và e, nên nên tạo ảnh thủ công."
+    }
+]

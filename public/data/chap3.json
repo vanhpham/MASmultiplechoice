@@ -1,0 +1,503 @@
+[
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 9,
+        "question_number": "1",
+        "question": "Choose the name for the parts numbered in the figure.",
+        "type": "matching_matrix",
+        "columns": [
+            "2",
+            "3",
+            "4",
+            "6",
+            "9",
+            "11",
+            "12"
+        ],
+        "answer": [
+            {
+                "component": "Clutch cover",
+                "number": "2"
+            },
+            {
+                "component": "Friction disc",
+                "number": "4"
+            },
+            {
+                "component": "Release bearing",
+                "number": "9"
+            },
+            {
+                "component": "Release fork",
+                "number": "12"
+            },
+            {
+                "component": "Release lever (diaphragm spring)",
+                "number": "11"
+            },
+            {
+                "component": "Pressure plate",
+                "number": "3"
+            },
+            {
+                "component": "Transmission input shaft",
+                "number": "6"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu matching dựa trên hình clutch engage/disengage, nên cần ảnh thủ công để người học nhìn số trên sơ đồ."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 10,
+        "question_number": "2",
+        "question": "Choose the proper words for the missing word place in the following statements describes the operating principle of the clutch.",
+        "type": "matching_matrix",
+        "columns": [
+            "Friction disc",
+            "Pressure plate",
+            "Release bearing",
+            "Release fork",
+            "Right",
+            "Left"
+        ],
+        "answer": [
+            {
+                "blank": "(1)",
+                "word": "Pressure plate"
+            },
+            {
+                "blank": "(2)",
+                "word": "Friction disc"
+            },
+            {
+                "blank": "(3)",
+                "word": "Release fork"
+            },
+            {
+                "blank": "(4)",
+                "word": "Release bearing"
+            },
+            {
+                "blank": "(5)",
+                "word": "Right"
+            },
+            {
+                "blank": "(6)",
+                "word": "Left"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu điền từ có hình nguyên lý clutch engage/disengage. Có thể dùng text-only, nhưng nên có ảnh thủ công để dễ hiểu."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 11,
+        "question_number": "3",
+        "question": "When talking about the working principle of a single-disc dry friction clutch, which of the following statements is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The clutch cover fastens to the flywheel by bolts so it also transmits torque.",
+            "The torque from the engine is transmitted through the flywheel, the front facing of friction disc, the cushion spring, the dampening spring, the damper plate, and then to the clutch shaft.",
+            "The torque from the engine is transmitted through the flywheel, the clutch cover, the rear facing of friction disc, the cushion spring, the dampening spring, the damper plate, and then to the clutch shaft.",
+            "The torque from the engine is transmitted through the flywheel, the clutch cover, the torque transmission bar, the pressure plate, the rear facing of friction disc, the cushion spring, the dampening spring, the damper plate, and then to the clutch shaft."
+        ],
+        "answer": "The torque from the engine is transmitted through the flywheel, the clutch cover, the rear facing of friction disc, the cushion spring, the dampening spring, the damper plate, and then to the clutch shaft.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 11,
+        "question_number": "4",
+        "question": "The clutch torque transmission capacity does not depend on which of the following parameters?",
+        "type": "single_choice",
+        "options": [
+            "The force from pressure spring applied to",
+            "Diameter of friction disc",
+            "Thickness of friction disc",
+            "The material of the friction disc"
+        ],
+        "answer": "Thickness of friction disc",
+        "manual_image_needed": false,
+        "note": "Option đầu tiên trong ảnh có vẻ bị cụt ở cuối câu, cần review nếu muốn chỉnh wording đẹp hơn."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 11,
+        "question_number": "5",
+        "question": "Talking about the torque transmission bar, which of following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The torque transmission bar allows the pressure plate to have movement relative to the clutch cover.",
+            "The torque transmission bar help transfer torque from clutch cover to the pressure plate.",
+            "In other construction, the torque bar is replaced by a pin or lug, but still keep its two functions.",
+            "The torque transmission bar does not allow the pressure plate to have movement relative to the clutch cover."
+        ],
+        "answer": "The torque transmission bar does not allow the pressure plate to have movement relative to the clutch cover.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 12,
+        "question_number": "6",
+        "question": "Which of following part does not help the smooth engagement of the clutch?",
+        "type": "single_choice",
+        "options": [
+            "Friction ring.",
+            "Dampening spring.",
+            "Torque transmission bar.",
+            "Cushion spring."
+        ],
+        "answer": "Torque transmission bar.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 12,
+        "question_number": "7",
+        "question": "Which of the following is not the reason why the diaphragm spring widely used?",
+        "type": "single_choice",
+        "options": [
+            "The pressure force made by the diaphragm spring is almost unchanged when the friction disc is worn out.",
+            "The force applied to pedal to disengage the clutch uses the diaphragm spring is smaller than the clutch uses coil spring.",
+            "The diaphragm spring simplifies the construction of clutch.",
+            "The pressure force of the diaphragm spring is greater than that of the cylindrical spring."
+        ],
+        "answer": "The pressure force of the diaphragm spring is greater than that of the cylindrical spring.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 12,
+        "question_number": "8",
+        "question": "Talking about the release lever in the clutch, which of following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The clutch using cylindrical spring has a construction for adjustment release lever end.",
+            "The head of release lever in contact with release bearing must be in the same plane perpendicular with clutch shaft.",
+            "The clutch using diaphragm spring has a construction for adjustment release lever end.",
+            "The release lever operates on the principle of levers with the fulcrum fixed to the clutch cover."
+        ],
+        "answer": "The clutch using diaphragm spring has a construction for adjustment release lever end.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 13,
+        "question_number": "9",
+        "question": "Talking about the clearance (gap) between the release lever and the release bearing (delta clearance) in the clutch, which of the following statements is the correct one?",
+        "type": "single_choice",
+        "options": [
+            "The clearance is smaller when the friction disc is worn out during work.",
+            "The clearance is larger when the friction disc is worn out during work.",
+            "The clearance is not changed when the friction disc is worn out during work.",
+            "The clearance is not related to clutch pedal free play."
+        ],
+        "answer": "The clearance is smaller when the friction disc is worn out during work.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 13,
+        "question_number": "10",
+        "question": "Compare twin disc dry friction clutch with single disc dry friction clutch, which of the following is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The diameter is smaller than that of single disc clutch at the same transmission torque.",
+            "Disengagement is more definitive than single disc clutch.",
+            "The construction is more complex than that of single disc clutch.",
+            "Transmission torque is greater than that of single disc clutch at the same diameter."
+        ],
+        "answer": "Disengagement is more definitive than single disc clutch.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 13,
+        "question_number": "11",
+        "question": "Talking about the twin disc clutch, which of following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "Engagement is not smooth in comparison with single disc clutch.",
+            "The diameter is smaller than that of single disc clutch at the same transmission torque.",
+            "Usually used in heavy trucks.",
+            "Disengagement is not definitive in comparison with single disc clutch."
+        ],
+        "answer": "Engagement is not smooth in comparison with single disc clutch.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 14,
+        "question_number": "12",
+        "question": "Talking about the mechanical linkage of the clutch, which of following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The mechanical linkage is easy to locate in complex systems.",
+            "Mechanical linkage is easy to creep, causing delay in operation and poorer sensitivity.",
+            "The mechanical linkage has high reliability.",
+            "The mechanical linkage has a simple structure, low cost."
+        ],
+        "answer": "The mechanical linkage is easy to locate in complex systems.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 14,
+        "question_number": "13",
+        "question": "Talking about the hydraulic linkage of the clutch, which of following statement is incorrect?",
+        "type": "single_choice",
+        "options": [
+            "The hydraulic linkage has high sensitivity.",
+            "The hydraulic linkage is low cost and environmentally friendly.",
+            "The hydraulic linkage is easy to locate in complex systems.",
+            "Hydraulic linkage often required tightness, so high precision cutting is required."
+        ],
+        "answer": "The hydraulic linkage is low cost and environmentally friendly.",
+        "manual_image_needed": false,
+        "note": "Câu text-only xử lý được."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 15,
+        "question_number": "14",
+        "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted mechanical clutch linkage.",
+        "type": "matching_matrix",
+        "columns": [
+            "Air valve 4",
+            "Plunger 5",
+            "Open (Opening)",
+            "Close (Closing)",
+            "Right",
+            "Left"
+        ],
+        "answer": [
+            {
+                "blank": "(1)",
+                "word": "Right"
+            },
+            {
+                "blank": "(2)",
+                "word": "Air valve 4"
+            },
+            {
+                "blank": "(3)",
+                "word": "Close (Closing)"
+            },
+            {
+                "blank": "(4)",
+                "word": "Air valve 4"
+            },
+            {
+                "blank": "(5)",
+                "word": "Plunger 5"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu điền từ dựa trên sơ đồ pneumatic assisted mechanical clutch linkage. Nên có ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 16,
+        "question_number": "15",
+        "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted mechanical clutch linkage.",
+        "type": "matching_matrix",
+        "columns": [
+            "Air valve 4",
+            "Plunger 5",
+            "Open (Opening)",
+            "Close (Closing)",
+            "Right",
+            "Left"
+        ],
+        "answer": [
+            {
+                "blank": "(1)",
+                "word": "Plunger 5"
+            },
+            {
+                "blank": "(2)",
+                "word": "Right"
+            },
+            {
+                "blank": "(3)",
+                "word": "Air valve 4"
+            },
+            {
+                "blank": "(4)",
+                "word": "Close (Closing)"
+            },
+            {
+                "blank": "(5)",
+                "word": "Close (Closing)"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu điền từ dựa trên sơ đồ pneumatic assisted mechanical clutch linkage. Nên có ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 17,
+        "question_number": "16",
+        "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted mechanical clutch linkage.",
+        "type": "matching_matrix",
+        "columns": [
+            "Air valve 4",
+            "Plunger 5",
+            "Open (Opening)",
+            "Close (Closing)",
+            "Right",
+            "Left"
+        ],
+        "answer": [
+            {
+                "blank": "(1)",
+                "word": "Left"
+            },
+            {
+                "blank": "(2)",
+                "word": "Air valve 4"
+            },
+            {
+                "blank": "(3)",
+                "word": "Plunger 5"
+            },
+            {
+                "blank": "(4)",
+                "word": "Close (Closing)"
+            },
+            {
+                "blank": "(5)",
+                "word": "Open (Opening)"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu điền từ dựa trên sơ đồ pneumatic assisted mechanical clutch linkage. Nên có ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 18,
+        "question_number": "17",
+        "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted hydraulic clutch linkage.",
+        "type": "matching_matrix",
+        "columns": [
+            "Air inlet valve 6",
+            "Close (closing)",
+            "Open (Opening)",
+            "Right",
+            "Left",
+            "Air outlet valve 7"
+        ],
+        "answer": [
+            {
+                "blank": "(1)",
+                "word": "Left"
+            },
+            {
+                "blank": "(2)",
+                "word": "Air outlet valve 7"
+            },
+            {
+                "blank": "(3)",
+                "word": "Close (closing)"
+            },
+            {
+                "blank": "(4)",
+                "word": "Air inlet valve 6"
+            },
+            {
+                "blank": "(5)",
+                "word": "Open (Opening)"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu điền từ dựa trên sơ đồ pneumatic assisted hydraulic clutch linkage. Nên có ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 19,
+        "question_number": "18",
+        "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted hydraulic clutch linkage.",
+        "type": "matching_matrix",
+        "columns": [
+            "Air inlet valve 6",
+            "Close (closing)",
+            "Open (Opening)",
+            "Right",
+            "Left",
+            "Air outlet valve 7"
+        ],
+        "answer": [
+            {
+                "blank": "(1)",
+                "word": "Right"
+            },
+            {
+                "blank": "(2)",
+                "word": "Air inlet valve 6"
+            },
+            {
+                "blank": "(3)",
+                "word": "Air outlet valve 7"
+            },
+            {
+                "blank": "(4)",
+                "word": "Close (closing)"
+            },
+            {
+                "blank": "(5)",
+                "word": "Close (closing)"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu điền từ dựa trên sơ đồ pneumatic assisted hydraulic clutch linkage. Nên có ảnh thủ công."
+    },
+    {
+        "chapter": "Chapter 3: Clutch",
+        "source_page": 20,
+        "question_number": "19",
+        "question": "Choose the proper words for missing word places in the below statement describing the working principle of pneumatic assisted hydraulic clutch linkage.",
+        "type": "matching_matrix",
+        "columns": [
+            "Air inlet valve 6",
+            "Close (closing)",
+            "Open (Opening)",
+            "Right",
+            "Left",
+            "Air outlet valve 7"
+        ],
+        "answer": [
+            {
+                "blank": "(1)",
+                "word": "Right"
+            },
+            {
+                "blank": "(2)",
+                "word": "Close (closing)"
+            },
+            {
+                "blank": "(3)",
+                "word": "Air outlet valve 7"
+            },
+            {
+                "blank": "(4)",
+                "word": "Open (Opening)"
+            },
+            {
+                "blank": "(5)",
+                "word": "Air inlet valve 6"
+            }
+        ],
+        "manual_image_needed": true,
+        "note": "Câu điền từ dựa trên sơ đồ pneumatic assisted hydraulic clutch linkage. Mình giữ đáp án theo các ô được tick trong ảnh; câu gốc có grammar hơi khó hiểu nên nên review lại khi đưa vào quiz."
+    }
+]
