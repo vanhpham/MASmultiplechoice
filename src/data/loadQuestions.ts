@@ -36,7 +36,9 @@ function ensureTrailingSlash(value: string): string {
 
 function getDataUrls(chapterId: ChapterId): string[] {
   const base = ensureTrailingSlash(import.meta.env.BASE_URL ?? '/')
+  const directoryBase = new URL('.', window.location.href).toString()
   const candidates = [
+    `${directoryBase}data/${chapterId}.json`,
     `${base}data/${chapterId}.json`,
     `/data/${chapterId}.json`,
     `./data/${chapterId}.json`,
