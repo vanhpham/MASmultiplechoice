@@ -6,42 +6,42 @@
         "question": "Choose a name for the tire types A, B in the figure and the names for the tire structure?",
         "type": "matching_matrix",
         "columns": [
-            "A",
-            "B",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"
+            "Radial ply tire",
+            "Bias ply tire",
+            "Steel bead wire",
+            "Casing plies",
+            "Tread reinforced plies (Belt)",
+            "Tread",
+            "Inner line"
         ],
         "answer": [
             {
-                "item": "Radial ply tire",
-                "label": "A"
+                "number": "A",
+                "component": "Radial ply tire"
             },
             {
-                "item": "Bias ply tire",
-                "label": "B"
+                "number": "B",
+                "component": "Bias ply tire"
             },
             {
-                "item": "Steel bead wire",
-                "label": "5"
+                "number": "5",
+                "component": "Steel bead wire"
             },
             {
-                "item": "Casing plies",
-                "label": "3"
+                "number": "3",
+                "component": "Casing plies"
             },
             {
-                "item": "Tread reinforced plies (Belt)",
-                "label": "2"
+                "number": "2",
+                "component": "Tread reinforced plies (Belt)"
             },
             {
-                "item": "Tread",
-                "label": "1"
+                "number": "1",
+                "component": "Tread"
             },
             {
-                "item": "Inner line",
-                "label": "4"
+                "number": "4",
+                "component": "Inner line"
             }
         ],
         "manual_image_needed": true,
@@ -86,37 +86,37 @@
         "question": "The numbers and letters in the figure are the tire size designation, Choose proper meaning for these indicators in the table?",
         "type": "matching_matrix",
         "columns": [
-            "225",
-            "50",
-            "R",
-            "16",
-            "92",
-            "V"
+            "Section width (mm)",
+            "Aspect ratio H/B (%)",
+            "Type of casing plies: radial ply",
+            "Rim diameter (inches)",
+            "Load index",
+            "Speed rating index"
         ],
         "answer": [
             {
-                "indicator": "225",
-                "meaning": "Section width (mm)"
+                "number": "225",
+                "component": "Section width (mm)"
             },
             {
-                "indicator": "50",
-                "meaning": "Aspect ratio H/B (%)"
+                "number": "50",
+                "component": "Aspect ratio H/B (%)"
             },
             {
-                "indicator": "R",
-                "meaning": "Type of casing plies: radial ply"
+                "number": "R",
+                "component": "Type of casing plies: radial ply"
             },
             {
-                "indicator": "16",
-                "meaning": "Rim diameter (inches)"
+                "number": "16",
+                "component": "Rim diameter (inches)"
             },
             {
-                "indicator": "92",
-                "meaning": "Load index"
+                "number": "92",
+                "component": "Load index"
             },
             {
-                "indicator": "V",
-                "meaning": "Speed rating index"
+                "number": "V",
+                "component": "Speed rating index"
             }
         ],
         "manual_image_needed": true,

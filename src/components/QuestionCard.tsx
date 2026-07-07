@@ -42,7 +42,7 @@ export function QuestionCard({
   const isEvaluated = !!result
 
   return (
-    <article className="question-card" id={question.id}>
+    <article className={`question-card question-type-${question.type}`} id={question.id}>
       <div className="question-meta">
         <div>
           <div className="chapter-name">{question.chapter}</div>

@@ -2,6 +2,7 @@ import type {
   MatchingAnswerItem,
   MatchingLegacyAnswerItem,
   MatchingBlankAnswerItem,
+  MatchingLabelAnswerItem,
   NormalizedQuestionUnion,
   RawQuestion
 } from '../types/question'
@@ -66,7 +67,9 @@ async function loadQuestionsFromUrl(url: string, timeoutMs = 9000): Promise<RawQ
 }
 
 function normalizeMatchingAnswer(
-  answer: Array<MatchingAnswerItem | MatchingLegacyAnswerItem | MatchingBlankAnswerItem>
+  answer: Array<
+    MatchingAnswerItem | MatchingLegacyAnswerItem | MatchingBlankAnswerItem | MatchingLabelAnswerItem
+  >
 ): MatchingAnswerItem[] {
   return answer
     .map((item) => {
@@ -80,6 +83,10 @@ function normalizeMatchingAnswer(
         typeof item.component === 'string'
       ) {
         return { number: item.component.trim(), component: item.state.trim() }
+      }
+
+      if ('item' in item && typeof item.item === 'string' && typeof item.label === 'string') {
+        return { number: item.label.trim(), component: item.item.trim() }
       }
 
       if ('blank' in item && typeof item.blank === 'string' && typeof item.word === 'string') {
