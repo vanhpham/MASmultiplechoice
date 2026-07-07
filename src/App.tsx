@@ -1,19 +1,27 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   AVAILABLE_CHAPTERS,
   isChapterId,
   loadQuestions,
+  loadAllQuestions,
   toDisplayChapter,
   type ChapterId
 } from './data/loadQuestions'
 import type { NormalizedQuestionUnion, QuestionAnswer, QuestionResult } from './types/question'
 import { normalizeText } from './lib/normalize'
-import { clearProgress, loadProgress, saveProgress } from './lib/storage'
+import {
+  clearAllReviewProgress,
+  clearProgress,
+  loadAllReviewProgress,
+  loadProgress,
+  saveAllReviewProgress,
+  saveProgress
+} from './lib/storage'
 import { QuestionCard } from './components/QuestionCard'
 import { ResultPanel } from './components/ResultPanel'
 import { en } from './i18n/en'
 
-type LearnMode = 'exam' | 'practice' | 'mistakes'
+type LearnMode = 'exam' | 'practice' | 'mistakes' | 'mixed_review'
 
 function hasAnswered(question: NormalizedQuestionUnion, answer: QuestionAnswer | undefined): boolean {
   if (!answer) {
@@ -119,6 +127,27 @@ function formatTime(totalSeconds: number): string {
   return `${Math.floor(totalSeconds / 60).toString().padStart(2, '0')}:${(totalSeconds % 60).toString().padStart(2, '0')}`
 }
 
+function shuffleIds(questionIds: string[]): string[] {
+  const pool = [...questionIds]
+  for (let index = pool.length - 1; index > 0; index--) {
+    const randomIndex = Math.floor(Math.random() * (index + 1))
+    ;[pool[index], pool[randomIndex]] = [pool[randomIndex], pool[index]]
+  }
+  return pool
+}
+
+function getNextQuestionIdFromQueue(queue: string[]): { nextQuestionId: string | null; nextQueue: string[] } {
+  if (!queue.length) {
+    return { nextQuestionId: null, nextQueue: [] }
+  }
+  const randomIndex = Math.floor(Math.random() * queue.length)
+  const selectedId = queue[randomIndex]
+  return {
+    nextQuestionId: selectedId,
+    nextQueue: [...queue.slice(0, randomIndex), ...queue.slice(randomIndex + 1)]
+  }
+}
+
 export default function App() {
   const [questions, setQuestions] = useState<NormalizedQuestionUnion[]>([])
   const [answers, setAnswers] = useState<Record<string, QuestionAnswer>>({})
@@ -133,8 +162,33 @@ export default function App() {
   const [isReadyToSave, setIsReadyToSave] = useState(false)
   const [wrongQuestionIds, setWrongQuestionIds] = useState<string[]>([])
   const [textSubmittedQuestionIds, setTextSubmittedQuestionIds] = useState<string[]>([])
+  const [allQuestions, setAllQuestions] = useState<NormalizedQuestionUnion[]>([])
+  const [reviewQueue, setReviewQueue] = useState<string[]>([])
+  const [currentQuestionId, setCurrentQuestionId] = useState<string | null>(null)
+  const [attempts, setAttempts] = useState<Record<string, number>>({})
+  const [doneQuestionIds, setDoneQuestionIds] = useState<string[]>([])
+  const [reviewFinalCorrect, setReviewFinalCorrect] = useState<Record<string, boolean>>({})
+
+  const prevModeRef = useRef<LearnMode | null>(null)
+  const prevChapterRef = useRef<ChapterId>(selectedChapter)
 
   useEffect(() => {
+    if (mode === 'mixed_review') {
+      return
+    }
+
+    const shouldLoad =
+      prevModeRef.current === null ||
+      prevModeRef.current === 'mixed_review' ||
+      prevChapterRef.current !== selectedChapter
+
+    prevChapterRef.current = selectedChapter
+    prevModeRef.current = mode
+
+    if (!shouldLoad) {
+      return
+    }
+
     let isActive = true
     const now = Date.now()
     setQuestions([])
@@ -143,7 +197,6 @@ export default function App() {
     setTextSubmittedQuestionIds([])
     setIsSubmitted(false)
     setScore(0)
-    setMode('exam')
     setError(null)
     setStartedAt(now)
     setNowTick(now)
@@ -152,7 +205,9 @@ export default function App() {
 
     loadQuestions(selectedChapter)
       .then((data) => {
-        if (!isActive) return
+        if (!isActive) {
+          return
+        }
         setQuestions(data)
 
         const saved = loadProgress(selectedChapter)
@@ -168,7 +223,6 @@ export default function App() {
           }
           setIsSubmitted(saved.isSubmitted || false)
           setScore(typeof saved.score === 'number' ? saved.score : 0)
-          setMode(saved.mode || 'exam')
           setWrongQuestionIds(Array.isArray(saved.wrongQuestionIds) ? saved.wrongQuestionIds : [])
           setTextSubmittedQuestionIds(
             Array.isArray(saved.textSubmittedQuestionIds) ? saved.textSubmittedQuestionIds : []
@@ -189,10 +243,125 @@ export default function App() {
     return () => {
       isActive = false
     }
-  }, [selectedChapter])
+  }, [selectedChapter, mode])
+
+  useEffect(() => {
+    if (mode !== 'mixed_review') {
+      return
+    }
+
+    let isActive = true
+    const now = Date.now()
+    setQuestions([])
+    setAllQuestions([])
+    setReviewQueue([])
+    setCurrentQuestionId(null)
+    setAttempts({})
+    setDoneQuestionIds([])
+    setReviewFinalCorrect({})
+    setAnswers({})
+    setTextSubmittedQuestionIds([])
+    setIsSubmitted(false)
+    setScore(0)
+    setError(null)
+    setStartedAt(now)
+    setNowTick(now)
+    setIsReadyToSave(false)
+    setLoading(true)
+
+    loadAllQuestions()
+      .then((data) => {
+        if (!isActive) {
+          return
+        }
+
+        const allIds = data.map((item) => item.id)
+        const saved = loadAllReviewProgress()
+        setQuestions(data)
+        setAllQuestions(data)
+
+        if (!saved || !saved.allQuestionIds.length) {
+          const initialQueue = shuffleIds(allIds)
+          const { nextQuestionId, nextQueue } = getNextQuestionIdFromQueue(initialQueue)
+          setReviewQueue(nextQueue)
+          setCurrentQuestionId(nextQuestionId)
+          setIsReadyToSave(true)
+          setLoading(false)
+          return
+        }
+
+        const availableSet = new Set(allIds)
+        const filteredQueue = Array.isArray(saved.reviewQueue)
+          ? saved.reviewQueue.filter((id: string) => availableSet.has(id))
+          : []
+        const filteredDoneIds = Array.isArray(saved.doneQuestionIds)
+          ? saved.doneQuestionIds.filter((id: string) => availableSet.has(id))
+          : []
+        const filteredAttempts =
+          saved.attempts && typeof saved.attempts === 'object'
+            ? Object.fromEntries(
+                Object.entries(saved.attempts).filter(([id]) => availableSet.has(id))
+              )
+            : {}
+        const filteredFinalCorrect =
+          saved.reviewFinalCorrect && typeof saved.reviewFinalCorrect === 'object'
+            ? Object.fromEntries(
+                Object.entries(saved.reviewFinalCorrect).filter(([id]) => availableSet.has(id))
+              )
+            : {}
+        const filteredTextSubmitted = Array.isArray(saved.textSubmittedQuestionIds)
+          ? saved.textSubmittedQuestionIds.filter((id: string) => availableSet.has(id))
+          : []
+        const filteredAnswers: Record<string, QuestionAnswer> = {}
+        const savedAnswers = saved.answers && typeof saved.answers === 'object' ? saved.answers : {}
+        data.forEach((question) => {
+          if (Object.prototype.hasOwnProperty.call(savedAnswers, question.id)) {
+            filteredAnswers[question.id] = savedAnswers[question.id] as QuestionAnswer
+          }
+        })
+
+        const currentInProgress = availableSet.has(saved.currentQuestionId || '')
+          ? saved.currentQuestionId
+          : null
+
+        let nextQuestionId = currentInProgress
+        let nextQueue = filteredQueue
+        if (!nextQuestionId) {
+          const drawn = getNextQuestionIdFromQueue(nextQueue)
+          nextQuestionId = drawn.nextQuestionId
+          nextQueue = drawn.nextQueue
+        }
+
+        setReviewQueue(nextQueue)
+        setCurrentQuestionId(nextQuestionId)
+        setAttempts(filteredAttempts)
+        setDoneQuestionIds(filteredDoneIds)
+        setReviewFinalCorrect(filteredFinalCorrect)
+        setAnswers(filteredAnswers)
+        setTextSubmittedQuestionIds(filteredTextSubmitted)
+        setStartedAt(
+          Number.isFinite(saved.startedAt) && saved.startedAt > 0 ? saved.startedAt : now
+        )
+
+        setIsReadyToSave(true)
+        setLoading(false)
+      })
+      .catch((err: unknown) => {
+        if (!isActive) return
+        setError(err instanceof Error ? err.message : en.app.loadDataError)
+        setLoading(false)
+      })
+
+    return () => {
+      isActive = false
+    }
+  }, [mode])
 
   useEffect(() => {
     if (mode === 'exam' && !isSubmitted) {
+      return
+    }
+    if (mode === 'mixed_review') {
       return
     }
 
@@ -225,8 +394,14 @@ export default function App() {
       const mistakeSet = new Set(wrongQuestionIds)
       return questions.filter((q) => mistakeSet.has(q.id))
     }
+    if (mode === 'mixed_review' && currentQuestionId) {
+      return questions.filter((question) => question.id === currentQuestionId)
+    }
+    if (mode === 'mixed_review') {
+      return []
+    }
     return questions
-  }, [questions, mode, wrongQuestionIds])
+  }, [questions, mode, wrongQuestionIds, currentQuestionId])
 
   const textSubmittedSet = useMemo(() => new Set(textSubmittedQuestionIds), [textSubmittedQuestionIds])
 
@@ -239,8 +414,15 @@ export default function App() {
   }, [questions])
 
   const answeredCount = useMemo(() => {
+    if (mode === 'mixed_review' && currentQuestionId) {
+      const current = questionMap.get(currentQuestionId)
+      if (!current) {
+        return 0
+      }
+      return hasAnswered(current, answers[current.id]) ? 1 : 0
+    }
     return visibleQuestions.filter((question) => hasAnswered(question, answers[question.id])).length
-  }, [visibleQuestions, answers])
+  }, [visibleQuestions, answers, mode, currentQuestionId, questionMap])
 
   const results: QuestionResult[] = useMemo(
     () => questions.map((question) => gradeQuestion(question, answers[question.id])),
@@ -256,6 +438,9 @@ export default function App() {
     if (mode === 'exam') {
       return results.filter((item) => item.isCorrect).length
     }
+    if (mode === 'mixed_review') {
+      return Object.values(reviewFinalCorrect).filter(Boolean).length
+    }
     return visibleResults.filter((item) => {
       const question = questionMap.get(item.id)
       if (!question) {
@@ -266,22 +451,58 @@ export default function App() {
       }
       return item.isCorrect
     }).length
-  }, [questionMap, visibleResults, mode, textSubmittedSet])
+  }, [questionMap, visibleResults, mode, textSubmittedSet, reviewFinalCorrect])
 
-  const canSubmit = visibleQuestions.length > 0 && answeredCount === visibleQuestions.length
+  const canSubmit = useMemo(() => {
+    if (mode !== 'mixed_review') {
+      return visibleQuestions.length > 0 && answeredCount === visibleQuestions.length
+    }
+    const current = currentQuestionId ? questionMap.get(currentQuestionId) : null
+    if (!current) {
+      return false
+    }
+    if (!hasAnswered(current, answers[current.id])) {
+      return false
+    }
+    if (current.type === 'text_answer' && !textSubmittedSet.has(current.id)) {
+      return false
+    }
+    return true
+  }, [visibleQuestions.length, answeredCount, mode, currentQuestionId, questionMap, answers, textSubmittedSet])
 
-  const currentQuestionCount = visibleQuestions.length
+  const currentQuestionCount = mode === 'mixed_review' ? allQuestions.length : visibleQuestions.length
 
   const progressPercent = currentQuestionCount === 0
     ? 0
-    : Math.round((answeredCount / currentQuestionCount) * 100)
+    : mode === 'mixed_review'
+      ? Math.round((doneQuestionIds.length / currentQuestionCount) * 100)
+      : Math.round((answeredCount / currentQuestionCount) * 100)
 
   const accuracyPercent = currentQuestionCount === 0
     ? 0
-    : Math.round((correctCount / currentQuestionCount) * 100)
+    : mode === 'mixed_review'
+      ? Math.round((correctCount / Math.max(doneQuestionIds.length, 1)) * 100)
+      : Math.round((correctCount / currentQuestionCount) * 100)
 
   useEffect(() => {
-    if (!questions.length || !isReadyToSave) return
+    if (!isReadyToSave) return
+    if (mode === 'mixed_review') {
+      if (!allQuestions.length) return
+      saveAllReviewProgress({
+        answers,
+        startedAt,
+        lastRunAt: Date.now(),
+        allQuestionIds: allQuestions.map((question) => question.id),
+        reviewQueue,
+        currentQuestionId,
+        attempts,
+        doneQuestionIds,
+        reviewFinalCorrect,
+        textSubmittedQuestionIds
+      })
+      return
+    }
+    if (!questions.length) return
     saveProgress(selectedChapter, {
       answers,
       isSubmitted: isSubmitted && mode === 'exam',
@@ -292,17 +513,17 @@ export default function App() {
       wrongQuestionIds,
       textSubmittedQuestionIds
     })
-  }, [answers, isSubmitted, score, startedAt, mode, wrongQuestionIds, textSubmittedQuestionIds, isReadyToSave, questions.length, selectedChapter])
+  }, [answers, isSubmitted, score, startedAt, mode, wrongQuestionIds, textSubmittedQuestionIds, isReadyToSave, questions.length, selectedChapter, allQuestions.length, reviewQueue, currentQuestionId, attempts, doneQuestionIds, reviewFinalCorrect])
 
   function handleSingleChoice(questionId: string, value: string) {
-    if (isSubmitted && mode === 'exam') {
+    if ((mode === 'exam' && isSubmitted) || (mode === 'mixed_review' && !currentQuestionId)) {
       return
     }
     setAnswers((prev) => ({ ...prev, [questionId]: value }))
   }
 
   function handleTextAnswer(questionId: string, value: string) {
-    if (isSubmitted && mode === 'exam') {
+    if ((mode === 'exam' && isSubmitted) || (mode === 'mixed_review' && !currentQuestionId)) {
       return
     }
     setTextSubmittedQuestionIds((prev) => prev.filter((id) => id !== questionId))
@@ -310,7 +531,7 @@ export default function App() {
   }
 
   function handleMatchingAnswer(questionId: string, number: string, value: string) {
-    if (isSubmitted && mode === 'exam') {
+    if ((mode === 'exam' && isSubmitted) || (mode === 'mixed_review' && !currentQuestionId)) {
       return
     }
     setAnswers((prev) => {
@@ -348,20 +569,81 @@ export default function App() {
   }
 
   function handleSubmit() {
-    if (mode !== 'exam' || isSubmitted) return
-    const finalWrong = reconcileWrongQuestionIds(
-      wrongQuestionIds,
-      questions,
-      answers,
-      textSubmittedQuestionIds,
-      false
-    )
-    setWrongQuestionIds(finalWrong)
-    setScore(results.filter((item) => item.isCorrect).length)
-    setIsSubmitted(true)
+    if (isSubmitted && mode === 'exam') return
+    if (mode === 'exam') {
+      const finalWrong = reconcileWrongQuestionIds(
+        wrongQuestionIds,
+        questions,
+        answers,
+        textSubmittedQuestionIds,
+        false
+      )
+      setWrongQuestionIds(finalWrong)
+      setScore(results.filter((item) => item.isCorrect).length)
+      setIsSubmitted(true)
+      return
+    }
+
+    if (mode !== 'mixed_review') {
+      return
+    }
+
+    if (!currentQuestionId || !canSubmit) {
+      return
+    }
+
+    const current = questionMap.get(currentQuestionId)
+    if (!current) {
+      return
+    }
+
+    const currentResult = gradeQuestion(current, answers[currentQuestionId])
+    const previousAttempt = attempts[currentQuestionId] ?? 0
+    const shouldRetry = !currentResult.isCorrect && previousAttempt === 0
+
+    setAttempts((prev) => {
+      if (!shouldRetry) {
+        return prev
+      }
+      return { ...prev, [currentQuestionId]: 1 }
+    })
+    setReviewFinalCorrect((prev) => ({ ...prev, [currentQuestionId]: currentResult.isCorrect }))
+    setDoneQuestionIds((prev) => (prev.includes(currentQuestionId) ? prev : [...prev, currentQuestionId]))
+
+    setReviewQueue((prevQueue) => {
+      const nextQueue = [...prevQueue]
+      if (shouldRetry) {
+        const randomIndex = Math.floor(Math.random() * (nextQueue.length + 1))
+        nextQueue.splice(randomIndex, 0, currentQuestionId)
+      }
+
+      const { nextQuestionId, nextQueue: afterPopQueue } = getNextQuestionIdFromQueue(nextQueue)
+      setCurrentQuestionId(nextQuestionId)
+      setTextSubmittedQuestionIds((prev) => prev.filter((id) => id !== currentQuestionId))
+      return afterPopQueue
+    })
   }
 
   function handleResetAnswers() {
+    if (mode === 'mixed_review') {
+      clearAllReviewProgress()
+      setAnswers({})
+      setTextSubmittedQuestionIds([])
+      setAttempts({})
+      setDoneQuestionIds([])
+      setReviewFinalCorrect({})
+      setCurrentQuestionId(null)
+      setReviewQueue([])
+      setStartedAt(Date.now())
+      setNowTick(Date.now())
+      const allIds = allQuestions.map((question) => question.id)
+      const initialQueue = shuffleIds(allIds)
+      const { nextQuestionId, nextQueue } = getNextQuestionIdFromQueue(initialQueue)
+      setReviewQueue(nextQueue)
+      setCurrentQuestionId(nextQuestionId)
+      return
+    }
+
     setAnswers({})
     setTextSubmittedQuestionIds([])
     setIsSubmitted(false)
@@ -376,6 +658,9 @@ export default function App() {
   }
 
   function handleModeChange(next: LearnMode) {
+    if (mode === 'mixed_review' && next !== 'mixed_review') {
+      setAllQuestions([])
+    }
     setMode(next)
     setIsSubmitted(false)
     setStartedAt(Date.now())
@@ -392,7 +677,8 @@ export default function App() {
   function getModeLabel(label: LearnMode): string {
     if (label === 'exam') return en.app.modeLabel.exam
     if (label === 'practice') return en.app.modeLabel.practice
-    return en.app.modeLabel.mistakes
+    if (label === 'mistakes') return en.app.modeLabel.mistakes
+    return en.app.modeLabel.mixedReview
   }
 
   function getModeHint() {
@@ -401,6 +687,14 @@ export default function App() {
     }
     if (mode === 'practice') {
       return en.app.modeHint.practice
+    }
+    if (mode === 'mixed_review') {
+      if (!questions.length) {
+        return en.mixedReview.noProgress
+      }
+      return doneQuestionIds.length === allQuestions.length
+        ? en.mixedReview.resetHint
+        : en.app.modeHint.mixedReview
     }
     return wrongQuestionIds.length === 0
       ? en.app.modeHint.mistakesEmpty
@@ -412,7 +706,7 @@ export default function App() {
       <main className="app">
         <section className="status-card card">
           <h1>{en.app.loadingTitle}</h1>
-          <p>{en.app.loadingDescription(selectedChapter)}</p>
+          <p>{mode === 'mixed_review' ? en.app.loadingDescription(en.app.status.chapterAllLabel) : en.app.loadingDescription(selectedChapter)}</p>
         </section>
       </main>
     )
@@ -429,12 +723,15 @@ export default function App() {
     )
   }
 
-  const lockInput = mode === 'exam' && isSubmitted
+  const isMixedReviewComplete = mode === 'mixed_review' && !reviewQueue.length && !currentQuestionId
+  const lockInput = (mode === 'exam' && isSubmitted) || isMixedReviewComplete
   const activeSubmitText = mode === 'exam'
     ? isSubmitted
       ? en.app.status.submit.submitted
       : `${en.app.status.submit.submitLabel} ${answeredCount}/${currentQuestionCount}`
-    : en.app.status.submit.practiceModeLabel
+    : mode === 'mixed_review'
+      ? en.app.status.submit.mixedReviewSubmit
+      : en.app.status.submit.practiceModeLabel
 
   return (
     <main className="app">
@@ -442,30 +739,34 @@ export default function App() {
         <div className="topbar-main">
           <div>
             <p className="eyebrow">{en.app.eyebrow}</p>
-            <h1>{questions[0]?.chapter || `${toDisplayChapter(selectedChapter)}`}</h1>
+            <h1>{mode === 'mixed_review' ? en.app.status.chapterAllLabel : questions[0]?.chapter || `${toDisplayChapter(selectedChapter)}`}</h1>
             <p className="subtitle">{getModeLabel(mode)}</p>
           </div>
-          <div className="chapter-switch">
-            <label htmlFor="chapter-select" className="chapter-switch-label">
-              {en.app.chapterSelectLabel}
-            </label>
-            <select
-              id="chapter-select"
-              value={selectedChapter}
-              className="chapter-select"
-              onChange={(event) => handleChapterChange(event.target.value)}
-            >
-              {AVAILABLE_CHAPTERS.map((item) => (
-                <option key={item} value={item}>
-                  {toDisplayChapter(item)}
-                </option>
-              ))}
-            </select>
-          </div>
+          {mode !== 'mixed_review' ? (
+            <div className="chapter-switch">
+              <label htmlFor="chapter-select" className="chapter-switch-label">
+                {en.app.chapterSelectLabel}
+              </label>
+              <select
+                id="chapter-select"
+                value={selectedChapter}
+                className="chapter-select"
+                onChange={(event) => handleChapterChange(event.target.value)}
+              >
+                {AVAILABLE_CHAPTERS.map((item) => (
+                  <option key={item} value={item}>
+                    {toDisplayChapter(item)}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ) : null}
           <div className="mode-stats">
             <div className="mode-stat">
               <span>{en.app.status.stats.progress}</span>
-              <strong>{answeredCount}/{currentQuestionCount}</strong>
+              <strong>
+                {mode === 'mixed_review' ? doneQuestionIds.length : answeredCount}/{currentQuestionCount}
+              </strong>
             </div>
             <div className="mode-stat">
               <span>{en.app.status.stats.time}</span>
@@ -481,7 +782,9 @@ export default function App() {
               <div className="mode-stat">
                 <span>{en.app.status.stats.correct}</span>
                 <strong>
-                  {correctCount}/{currentQuestionCount} ({accuracyPercent}%)
+                  {mode === 'mixed_review'
+                    ? `${correctCount}/${doneQuestionIds.length} (${accuracyPercent}%)`
+                    : `${correctCount}/${currentQuestionCount} (${accuracyPercent}%)`}
                 </strong>
               </div>
             ) : null}
@@ -510,6 +813,13 @@ export default function App() {
           >
             {en.app.modeLabel.mistakes}
           </button>
+          <button
+            type="button"
+            className={mode === 'mixed_review' ? 'mode-btn active' : 'mode-btn'}
+            onClick={() => handleModeChange('mixed_review')}
+          >
+            {en.app.modeLabel.mixedReview}
+          </button>
         </div>
 
         <div className="progress-wrap">
@@ -517,7 +827,9 @@ export default function App() {
             <span>
               {mode === 'exam'
                 ? en.app.status.progressMetaExam
-                : en.app.status.progressMetaPractice}
+                : mode === 'mixed_review'
+                  ? en.app.status.progressMetaMixedReview
+                  : en.app.status.progressMetaPractice}
             </span>
             <strong>{progressPercent}%</strong>
           </div>
@@ -538,6 +850,11 @@ export default function App() {
             <h2>{en.app.status.emptyWrongTitle}</h2>
             <p>{en.app.status.emptyWrongBody}</p>
           </section>
+        ) : mode === 'mixed_review' && isMixedReviewComplete ? (
+          <section className="status-card">
+            <h2>{en.mixedReview.sessionTitle}</h2>
+            <p>{en.mixedReview.resetHint}</p>
+          </section>
         ) : (
           <>
             <div className="questions">
@@ -549,9 +866,11 @@ export default function App() {
                   showResult={
                     mode === 'exam'
                       ? isSubmitted
-                      : question.type === 'text_answer'
-                        ? textSubmittedSet.has(question.id)
-                        : hasAnswered(question, answers[question.id])
+                      : mode === 'mixed_review'
+                        ? doneQuestionIds.includes(question.id)
+                        : question.type === 'text_answer'
+                          ? textSubmittedSet.has(question.id)
+                          : hasAnswered(question, answers[question.id])
                   }
                   locked={lockInput}
                   onSingleChoice={handleSingleChoice}
@@ -563,7 +882,7 @@ export default function App() {
               ))}
             </div>
 
-            {mode === 'exam' ? (
+            {mode === 'exam' || mode === 'mixed_review' ? (
               <div className="submit-row">
                 <button
                   type="button"
@@ -583,7 +902,7 @@ export default function App() {
           totalQuestions={currentQuestionCount}
           correctAnswers={correctCount}
           elapsedSeconds={elapsedSeconds}
-          answeredCount={answeredCount}
+          answeredCount={mode === 'mixed_review' ? doneQuestionIds.length : answeredCount}
           onReset={handleResetAnswers}
         />
 
